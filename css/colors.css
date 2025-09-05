@@ -1,0 +1,180 @@
+/* ==========================================================
+   SUPER RICH COLOR PALETTE
+   File: colors.css
+   Purpose: Defines all site-wide color variables for the CineWatch
+            streaming platform. This file is intended to be the
+            single source of truth for all color-related styles,
+            making it easy to manage light and dark modes, and
+            maintain design consistency across all components.
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   Default Theme: Dark Mode
+   ---------------------------------------------------------- */
+:root {
+  /* --- Global & Background Colors --- */
+  --bg-primary: #121212;
+  --bg-secondary: #181818;
+  --bg-tertiary: #202020;
+  --bg-surface: #262626;
+  --bg-card: #2c2c2c;
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+  --bg-transparent: rgba(18, 18, 18, 0.85);
+
+  /* --- Text Colors --- */
+  --text-primary: #e0e0e0;
+  --text-secondary: #b3b3b3;
+  --text-tertiary: #8c8c8c;
+  --text-link: #ffffff;
+  --text-link-hover: #e50914;
+  --text-placeholder: #666666;
+
+  /* --- Accent Colors --- */
+  --accent-primary: #e50914; /* Main brand red */
+  --accent-secondary: #0084ff; /* A bright blue for highlights */
+  --accent-tertiary: #ff9900; /* A warm orange for ratings */
+
+  /* --- Border & Divider Colors --- */
+  --border-primary: #333333;
+  --border-secondary: #444444;
+  --border-divider: #555555;
+  --border-card: #444444;
+
+  /* --- Shadow Colors --- */
+  --shadow-primary: rgba(0, 0, 0, 0.5);
+  --shadow-secondary: rgba(0, 0, 0, 0.3);
+
+  /* --- State Colors (Semantic) --- */
+  --state-success: #28a745;
+  --state-info: #17a2b8;
+  --state-warning: #ffc107;
+  --state-error: #dc3545;
+  --state-disabled: #6c757d;
+
+  /* --- Button Colors --- */
+  --btn-primary-bg: var(--accent-primary);
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #b20710;
+  --btn-secondary-bg: var(--bg-surface);
+  --btn-secondary-text: var(--text-primary);
+  --btn-secondary-hover: #3a3a3a;
+  --btn-outline-border: var(--border-primary);
+  --btn-outline-text: var(--text-primary);
+  --btn-outline-hover-bg: var(--border-primary);
+
+  /* --- Card Colors --- */
+  --card-bg: var(--bg-card);
+  --card-hover-bg: #3a3a3a;
+  --card-shadow: var(--shadow-secondary);
+  --card-border: var(--border-card);
+  
+  /* --- Rating Colors --- */
+  --rating-star-filled: #ffc107;
+  --rating-star-empty: #555555;
+  
+  /* --- Badge Colors --- */
+  --badge-bg-primary: var(--accent-primary);
+  --badge-text-primary: var(--text-link);
+  --badge-bg-secondary: #8c8c8c;
+  --badge-text-secondary: var(--text-link);
+  
+  /* --- Swatch Colors (for categories, genres) --- */
+  --swatch-action: #ff5733;
+  --swatch-comedy: #ffd700;
+  --swatch-drama: #9933ff;
+  --swatch-sci-fi: #00bfff;
+  --swatch-horror: #8b0000;
+  --swatch-fantasy: #a52a2a;
+  --swatch-thriller: #008b8b;
+  --swatch-animation: #6495ed;
+  --swatch-documentary: #4682b4;
+  --swatch-family: #7b68ee;
+  --swatch-romance: #ff69b4;
+  --swatch-crime: #5c5c5c;
+}
+
+/* ----------------------------------------------------------
+   Light Mode Theme
+   (Toggled with a class on the <body> tag, e.g., <body class="light-mode">)
+   ---------------------------------------------------------- */
+body.light-mode {
+  /* --- Global & Background Colors --- */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f0f0f0;
+  --bg-tertiary: #e6e6e6;
+  --bg-surface: #f7f7f7;
+  --bg-card: #ffffff;
+  --bg-overlay: rgba(255, 255, 255, 0.7);
+  --bg-transparent: rgba(255, 255, 255, 0.85);
+
+  /* --- Text Colors --- */
+  --text-primary: #212121;
+  --text-secondary: #555555;
+  --text-tertiary: #888888;
+  --text-link: #333333;
+  --text-link-hover: #e50914;
+  --text-placeholder: #aaaaaa;
+
+  /* --- Accent Colors --- */
+  --accent-primary: #e50914;
+  --accent-secondary: #007bff;
+  --accent-tertiary: #ff9900;
+
+  /* --- Border & Divider Colors --- */
+  --border-primary: #dddddd;
+  --border-secondary: #cccccc;
+  --border-divider: #bbbbbb;
+  --border-card: #e0e0e0;
+
+  /* --- Shadow Colors --- */
+  --shadow-primary: rgba(0, 0, 0, 0.1);
+  --shadow-secondary: rgba(0, 0, 0, 0.05);
+
+  /* --- State Colors (Semantic) --- */
+  --state-success: #28a745;
+  --state-info: #17a2b8;
+  --state-warning: #ffc107;
+  --state-error: #dc3545;
+  --state-disabled: #bbbbbb;
+
+  /* --- Button Colors --- */
+  --btn-primary-bg: var(--accent-primary);
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #b20710;
+  --btn-secondary-bg: var(--bg-card);
+  --btn-secondary-text: var(--text-primary);
+  --btn-secondary-hover: #e6e6e6;
+  --btn-outline-border: var(--border-primary);
+  --btn-outline-text: var(--text-primary);
+  --btn-outline-hover-bg: var(--border-primary);
+
+  /* --- Card Colors --- */
+  --card-bg: var(--bg-card);
+  --card-hover-bg: #f5f5f5;
+  --card-shadow: var(--shadow-secondary);
+  --card-border: var(--border-card);
+  
+  /* --- Rating Colors --- */
+  --rating-star-filled: #ffc107;
+  --rating-star-empty: #aaaaaa;
+  
+  /* --- Badge Colors --- */
+  --badge-bg-primary: var(--accent-primary);
+  --badge-text-primary: var(--text-link);
+  --badge-bg-secondary: #8c8c8c;
+  --badge-text-secondary: var(--text-link);
+  
+  /* --- Swatch Colors (for categories, genres) --- */
+  --swatch-action: #ff5733;
+  --swatch-comedy: #ffd700;
+  --swatch-drama: #9933ff;
+  --swatch-sci-fi: #00bfff;
+  --swatch-horror: #8b0000;
+  --swatch-fantasy: #a52a2a;
+  --swatch-thriller: #008b8b;
+  --swatch-animation: #6495ed;
+  --swatch-documentary: #4682b4;
+  --swatch-family: #7b68ee;
+  --swatch-romance: #ff69b4;
+  --swatch-crime: #5c5c5c;
+}

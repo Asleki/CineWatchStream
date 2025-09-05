@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CineWatch: Your ultimate guide for movies, TV shows, and entertainment. Discover trending content, new releases, and personalized recommendations.">
+  <meta name="keywords" content="movies, tv shows, streaming, entertainment, watchlist, popular, trending, CineWatch">
+  <meta name="author" content="Alex Malunda">
+
+  <meta property="og:title" content="CineWatch - Stream Movies & TV Shows">
+  <meta property="og:description" content="Discover and watch trending movies and popular TV shows on CineWatch. Explore new releases and build your perfect watchlist.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://asleki.github.io/CineWatchStreaming/CineWatch-index.html">
+  <meta property="og:image" content="https://asleki.github.io/CineWatchStreaming/images/CineWatch-logo.ico">
+
+  <link rel="canonical" href="https://asleki.github.io/CineWatchStreaming/CineWatch-index.html">
+
+  <title>CineWatch - Homepage</title>
+
+  <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/colors.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+</head>
+<body>
+  <div id="customAlert" class="custom-alert">
+    <div class="alert-content">
+      <i id="alertIcon" class="alert-icon"></i>
+      <p id="alertMessage">This is a custom alert message.</p>
+      <button id="closeAlertBtn">OK</button>
+    </div>
+  </div>
+
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="hero-section" id="heroSection">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 id="heroTitle">Loading Featured Content...</h1>
+        <p id="heroSynopsis">Discover and enjoy a wide variety of movies, TV shows, and documentaries.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn" id="heroWatchNowBtn"><i class="fas fa-play"></i> Watch Now</a>
+          <a href="#" class="btn" id="heroAddToWatchlistBtn"><i class="fas fa-plus"></i> Add to Watchlist</a>
+        </div>
+      </div>
+      <div class="hero-quote-card">
+        "The best stories are found here."
+      </div>
+    </section>
+
+    <section class="content-section" id="popularTvSection">
+      <h2>Popular TV Shows</h2>
+      <div class="show-carousel">
+        <button class="carousel-arrow left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+        <div class="show-carousel-inner" id="popularTvContainer">
+          <div class="spinner" id="spinnerPopularTv"></div>
+        </div>
+        <button class="carousel-arrow right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="load-more-btn-wrapper">
+        <a href="category_details.html?categoryName=Popular%20TV%20Shows&endpoint=/tv/popular&mediaType=tv" class="load-more-btn">Load More Shows</a>
+      </div>
+    </section>
+
+    <section class="content-section" id="trendingMoviesSection">
+      <h2>Trending Movies</h2>
+      <div class="show-carousel">
+        <button class="carousel-arrow left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+        <div class="show-carousel-inner" id="trendingMoviesContainer">
+          <div class="spinner" id="spinnerTrendingMovies"></div>
+        </div>
+        <button class="carousel-arrow right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="load-more-btn-wrapper">
+        <a href="category_details.html?categoryName=Trending%20Movies&endpoint=/trending/movie/week&mediaType=movie" class="load-more-btn">Load More Shows</a>
+      </div>
+    </section>
+
+    <section class="content-section" id="newReleasesTvSection">
+      <h2>New Releases (TV Shows)</h2>
+      <div class="show-carousel">
+        <button class="carousel-arrow left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+        <div class="show-carousel-inner" id="newReleasesTvContainer">
+          <div class="spinner" id="spinnerNewReleasesTv"></div>
+        </div>
+        <button class="carousel-arrow right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="load-more-btn-wrapper">
+        <a href="category_details.html?categoryName=New%20Releases%20(TV%20Shows)&endpoint=/tv/on_the_air&mediaType=tv" class="load-more-btn">Load More Shows</a>
+      </div>
+    </section>
+
+    <section class="content-section" id="documentariesSection">
+      <h2>Documentaries</h2>
+      <div class="show-carousel">
+        <button class="carousel-arrow left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+        <div class="show-carousel-inner" id="documentariesContainer">
+          <div class="spinner" id="spinnerDocumentaries"></div>
+        </div>
+        <button class="carousel-arrow right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="load-more-btn-wrapper">
+        <a href="category_details.html?categoryName=Documentaries&endpoint=/discover/movie?with_genres=99&mediaType=movie" class="load-more-btn">Load More Shows</a>
+      </div>
+    </section>
+
+    <section class="content-section" id="realityTvSection">
+      <h2>Reality TV Shows</h2>
+      <div class="show-carousel">
+        <button class="carousel-arrow left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+        <div class="show-carousel-inner" id="realityTvContainer">
+          <div class="spinner" id="spinnerRealityTv"></div>
+        </div>
+        <button class="carousel-arrow right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="load-more-btn-wrapper">
+        <a href="category_details.html?categoryName=Reality%20TV%20Shows&endpoint=/discover/tv?with_genres=10764&mediaType=tv" class="load-more-btn">Load More Shows</a>
+      </div>
+    </section>
+
+    <section class="content-section" id="talkShowsSection">
+      <h2>Talk Shows</h2>
+      <div class="show-carousel">
+        <button class="carousel-arrow left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+        <div class="show-carousel-inner" id="talkShowsContainer">
+          <div class="spinner" id="spinnerTalkShows"></div>
+        </div>
+        <button class="carousel-arrow right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="load-more-btn-wrapper">
+        <a href="category_details.html?categoryName=Talk%20Shows&endpoint=/discover/tv?with_genres=10767&mediaType=tv" class="load-more-btn">Load More Shows</a>
+      </div>
+    </section>
+
+    <section class="content-section" id="comingSoonSection">
+      <h2>Coming Soon (Movies)</h2>
+      <div class="show-carousel">
+        <button class="carousel-arrow left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+        <div class="show-carousel-inner" id="comingSoonContainer">
+          <div class="spinner" id="spinnerComingSoon"></div>
+        </div>
+        <button class="carousel-arrow right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="load-more-btn-wrapper">
+        <a href="category_details.html?categoryName=Coming%20Soon%20(Movies)&endpoint=/movie/upcoming&mediaType=movie" class="load-more-btn">Load More Shows</a>
+      </div>
+    </section>
+
+    <section class="content-section" id="seasonFinaleSection">
+      <h2>Top Rated TV Shows</h2>
+      <div class="show-carousel">
+        <button class="carousel-arrow left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+        <div class="show-carousel-inner" id="seasonFinaleContainer">
+          <div class="spinner" id="spinnerSeasonFinale"></div>
+        </div>
+        <button class="carousel-arrow right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="load-more-btn-wrapper">
+        <a href="category_details.html?categoryName=Top%20Rated%20TV%20Shows&endpoint=/tv/top_rated&mediaType=tv" class="load-more-btn">Load More Shows</a>
+      </div>
+    </section>
+
+    <section class="content-section" id="kenyanDramaSection">
+      <h2>Kenyan Drama</h2>
+      <div class="show-carousel">
+        <button class="carousel-arrow left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+        <div class="show-carousel-inner" id="kenyanDramaContainer">
+          <div class="spinner" id="spinnerKenyanDrama"></div>
+        </div>
+        <button class="carousel-arrow right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="load-more-btn-wrapper">
+        <a href="category_details.html?categoryName=Kenyan%20Drama&endpoint=/discover/tv?with_origin_country=KE&with_genres=18&mediaType=tv" class="load-more-btn">Load More Shows</a>
+      </div>
+    </section>
+
+    <section class="content-section" id="kDramaSection">
+      <h2>K-Drama</h2>
+      <div class="show-carousel">
+        <button class="carousel-arrow left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+        <div class="show-carousel-inner" id="kDramaContainer">
+          <div class="spinner" id="spinnerKDrama"></div>
+        </div>
+        <button class="carousel-arrow right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="load-more-btn-wrapper">
+        <a href="category_details.html?categoryName=K-Drama&endpoint=/discover/tv?with_original_language=ko&mediaType=tv" class="load-more-btn">Load More Shows</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+    
+    
+    <script src="js/header.js"></script>
+    <script src="js/CineWatch-main.js"></script>
+</body>
+</html>

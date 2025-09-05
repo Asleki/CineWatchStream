@@ -1,0 +1,371 @@
+/* ======================== */
+/* Main Body and Layout    */
+/* ======================== */
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+main {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content-section {
+  position: relative;
+  padding: 20px 0;
+}
+
+.content-section h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+/* ======================== */
+/* Hero Section            */
+/* ======================== */
+
+.hero-section {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 40px;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  max-width: 600px;
+  margin-left: 5%;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.hero-buttons .btn {
+  background-color: var(--accent-primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-right: 15px;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+}
+
+.hero-buttons .btn:hover {
+  background-color: var(--accent-hover);
+}
+
+.hero-buttons .btn .fas {
+  font-size: 1.1rem;
+}
+
+.hero-quote-card {
+  position: absolute;
+  bottom: 20px;
+  right: 5%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-style: italic;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  display: none; /* Hidden by default */
+}
+
+/* ======================== */
+/* Carousels               */
+/* ======================== */
+
+.show-carousel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.show-carousel-inner {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 0;
+  gap: 20px;
+}
+
+.show-carousel-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.show-carousel .carousel-arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.show-carousel .carousel-arrow.left {
+  left: 0;
+}
+
+.show-carousel .carousel-arrow.right {
+  right: 0;
+}
+
+.show-carousel .carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.show-carousel-inner {
+  flex-wrap: nowrap;
+}
+
+/* ======================== */
+/* Movie/Show Cards        */
+/* ======================== */
+
+.show-card {
+  position: relative;
+  width: 200px;
+  min-width: 200px;
+  height: auto;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.show-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.show-card .poster {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.show-info {
+  padding: 10px;
+  position: relative;
+}
+
+.show-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-primary);
+}
+
+.show-year {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.rating-pill {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--highlight-primary);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.details-link {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.load-more-btn-wrapper {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.load-more-btn {
+  background-color: var(--accent-primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.load-more-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* ======================== */
+/* Custom Alert Modal      */
+/* ======================== */
+
+.custom-alert {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+}
+
+.alert-content {
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 400px;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-out;
+}
+
+.custom-alert.show .alert-content {
+  transform: scale(1);
+}
+
+.alert-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.alert-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.alert-content button {
+  background-color: var(--accent-primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.alert-content button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Spinner Styles */
+.spinner {
+  border: 4px solid var(--text-secondary);
+  border-top: 4px solid var(--accent-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ======================== */
+/* Responsive Design       */
+/* ======================== */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .show-card {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-buttons .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    margin-right: 10px;
+  }
+}

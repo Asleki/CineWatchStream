@@ -1,0 +1,456 @@
+/* ==========================================================
+ * HEADER STYLES
+ * File: header.css
+ * Purpose: Styles the main site header, navigation, and associated
+ * components like the search bar, mode toggle, and
+ * mobile menu.
+ * ========================================================== */
+
+/* ----------------------------------------------------------
+ * Base Header and Layout
+ * ---------------------------------------------------------- */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--header-bg);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-secondary);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px var(--shadow-secondary);
+}
+
+.logo-container {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo-image {
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ----------------------------------------------------------
+ * Main Navigation
+ * ---------------------------------------------------------- */
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--accent-primary);
+}
+
+/* ----------------------------------------------------------
+ * Header Action Buttons
+ * ---------------------------------------------------------- */
+.action-button {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.action-button:hover,
+.action-button:focus {
+  color: var(--accent-primary);
+}
+
+/* ----------------------------------------------------------
+ * Search Bar
+ * ---------------------------------------------------------- */
+.search-bar-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-primary);
+  box-shadow: 0 4px 6px var(--shadow-secondary);
+  max-height: 0; /* Changed from display: none for animation */
+  overflow: hidden;
+  display: flex; /* Changed from display: none to allow flexbox behavior */
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 2rem; /* Initial padding is 0 */
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease;
+}
+
+.search-bar-container.active {
+  max-height: 200px; /* A large enough value to show content */
+  padding: 1rem 2rem;
+}
+
+.search-bar-inner {
+  display: flex;
+  flex-grow: 1;
+  max-width: 800px;
+  background-color: var(--bg-surface);
+  border-radius: 5px;
+  border: 1px solid var(--border-secondary);
+  padding: 0.5rem;
+}
+
+#searchInput {
+  flex-grow: 1;
+  border: none;
+  background: none;
+  color: var(--text-primary);
+  font-size: 1rem;
+  padding-right: 0.5rem;
+}
+
+#searchInput:focus {
+  outline: none;
+}
+
+#searchInput::placeholder {
+  color: var(--text-placeholder);
+}
+
+.input-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+}
+
+.input-controls.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.clear-button, #searchButton {
+  background: none;
+  border: none;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  font-size: 1.1em;
+  padding: 0.25rem;
+}
+
+.mic-button {
+  background-color: var(--bg-surface);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border-secondary);
+}
+
+/* ----------------------------------------------------------
+ * Dropdown Menus (Genres, About, Account)
+ * ---------------------------------------------------------- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu,
+.account-dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  box-shadow: 0 8px 16px var(--shadow-primary);
+  z-index: 10;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  border-radius: 8px;
+  max-height: 250px; /* Enable vertical scroll */
+  overflow-y: auto;
+}
+
+.dropdown-menu.active,
+.account-dropdown-content.active {
+  display: block;
+}
+
+/* Desktop Hover Behavior */
+@media (min-width: 1025px) {
+  .dropdown:hover .dropdown-menu,
+  .account-menu:hover .account-dropdown-content {
+    display: block;
+  }
+}
+
+.dropdown-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-link:hover,
+.dropdown-link:focus {
+  background-color: var(--bg-secondary);
+  color: var(--accent-primary);
+}
+
+.dropdown-link i {
+  margin-right: 0.75rem;
+  color: var(--text-tertiary);
+  font-size: 1.1em;
+}
+
+/* Account dropdown specific styles */
+.account-menu {
+  position: relative;
+}
+
+.account-dropdown-content {
+  right: 0;
+  left: auto;
+}
+
+/* ----------------------------------------------------------
+ * Mode Toggle (Moon/Sun Icons)
+ * ---------------------------------------------------------- */
+#darkModeToggle {
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#darkModeToggle .fa-moon {
+  color: #111;
+}
+
+/* Hide the sun icon by default */
+#darkModeToggle .fa-sun {
+  display: none;
+  color: #FFC107;
+}
+
+/* Show the sun icon when in light mode */
+body.light-mode #darkModeToggle .fa-sun {
+  display: inline-block;
+}
+
+/* Hide the moon icon when in light mode */
+body.light-mode #darkModeToggle .fa-moon {
+  display: none;
+}
+body.light-mode #darkModeToggle {
+  background-color: #111;
+}
+
+/* ----------------------------------------------------------
+ * Mobile Menu Toggle
+ * ---------------------------------------------------------- */
+.mobile-menu-toggle {
+  display: none; /* Hidden on large screens */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.mobile-menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--text-primary);
+  border-radius: 1px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Transform the hamburger to an 'X' */
+.mobile-menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ----------------------------------------------------------
+ * Responsive Design (Small Screens)
+ * ---------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .main-nav {
+    display: none; /* Hide desktop navigation */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-secondary);
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px var(--shadow-secondary);
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+  }
+
+  .main-nav.active {
+    display: block;
+    transform: translateX(0);
+  }
+
+  .main-nav ul {
+    flex-direction: column; /* Vertical links on mobile */
+    align-items: flex-start;
+  }
+
+  .nav-link {
+    padding: 1rem 2rem;
+    width: 100%;
+  }
+
+  .mobile-menu-toggle {
+    display: flex; /* Show mobile menu toggle */
+  }
+
+  .dropdown-menu {
+    position: static; /* Position normally inside the mobile menu */
+    display: none;
+    box-shadow: none;
+    border: none;
+    padding-left: 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .dropdown-menu.active {
+    display: block;
+    max-height: 250px; /* Adjust height based on content */
+    overflow-y: auto;
+  }
+
+  .dropdown-toggle .dropdown-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .dropdown-toggle[aria-expanded="true"] .dropdown-icon {
+    transform: rotate(180deg);
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+}
+
+/* ----------------------------------------------------------
+ * Modal Styles
+ * ---------------------------------------------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background-color: var(--bg-card);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  transform: scale(0.9);
+  opacity: 0;
+  animation: modal-fade-in 0.3s ease-out forwards;
+}
+
+@keyframes modal-fade-in {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.modal-mic-icon {
+  font-size: 2.5rem;
+  color: var(--accent-primary);
+  margin-top: 0.5rem;
+}
+
+.modal-body p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.modal-footer {
+  margin-top: 2rem;
+}

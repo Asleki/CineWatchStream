@@ -1,0 +1,492 @@
+<header class="main-header">
+    <style>
+        /* ==========================================================
+   File: header.css
+   Purpose: Styles the main header component of the CineWatch
+            platform, including navigation, search bar, and
+            action buttons.
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   Header Structure & Layout (Desktop First)
+   ---------------------------------------------------------- */
+.main-header {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 40px;
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.logo-text {
+    color: var(--text-link);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* ----------------------------------------------------------
+   Navigation & Dropdowns
+   ---------------------------------------------------------- */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav li {
+    position: relative;
+    margin: 0 1rem;
+}
+
+.nav-link {
+    color: var(--text-link);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: var(--accent-primary);
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-icon {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    min-width: 180px;
+    list-style: none;
+    box-shadow: 0 4px 12px var(--shadow-primary);
+    z-index: 10;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-link:hover, .dropdown-link:focus {
+    background-color: var(--bg-tertiary);
+    color: var(--text-link);
+}
+
+/* ----------------------------------------------------------
+   Header Actions (Buttons)
+   ---------------------------------------------------------- */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.action-button {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.action-button:hover, .action-button:focus {
+    color: var(--accent-primary);
+}
+
+.account-menu {
+    position: relative;
+}
+
+.account-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    min-width: 180px;
+    box-shadow: 0 4px 12px var(--shadow-primary);
+    z-index: 10;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.account-dropdown-content.show {
+    display: block;
+}
+
+.account-dropdown-content .dropdown-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ----------------------------------------------------------
+   Search Bar
+   ---------------------------------------------------------- */
+.search-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.5rem 2rem;
+    z-index: 999;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.search-bar-container.show {
+    transform: translateY(0);
+}
+
+.search-bar-inner {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-bar-inner input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-secondary);
+    border-right: none;
+    border-radius: 50px 0 0 50px;
+    color: var(--text-primary);
+}
+
+.search-bar-inner button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-primary);
+    color: var(--btn-primary-text);
+    border: 1px solid var(--accent-primary);
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+}
+
+/* ----------------------------------------------------------
+   Mobile Menu
+   ---------------------------------------------------------- */
+.mobile-menu-toggle {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-primary);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+body.mobile-menu-open .main-nav {
+    display: block;
+}
+
+body.mobile-menu-open .mobile-menu-toggle .bar:nth-child(2) {
+    opacity: 0;
+}
+
+body.mobile-menu-open .mobile-menu-toggle .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+body.mobile-menu-open .mobile-menu-toggle .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ----------------------------------------------------------
+   Responsive Design
+   ---------------------------------------------------------- */
+@media (max-width: 992px) {
+    .main-header {
+        padding: 1rem 1.5rem;
+    }
+    .main-nav {
+        display: none; /* Hide navigation by default on mobile */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--bg-primary);
+        display: block;
+        animation: slideInLeft 0.5s forwards;
+        z-index: 998;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5rem;
+    }
+
+    .main-nav li {
+        margin: 1rem 0;
+    }
+
+    .main-nav .nav-link {
+        font-size: 1.5rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .dropdown-menu {
+        position: static;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .mobile-menu-toggle {
+        display: block; /* Show hamburger menu on mobile */
+    }
+}
+
+/* ----------------------------------------------------------
+   Animations
+   ---------------------------------------------------------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+    </style>
+    <div class="logo-container">
+        <a href="CineWatch-index.html" class="logo-link" aria-label="CineWatch Homepage">
+            <img src="images/CineWatch-logo.webp" alt="CineWatch Logo" class="logo-image">
+            <span class="logo-text">CineWatch</span>
+        </a>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="CineWatch-index.html" class="nav-link">Home</a></li>
+            <li><a href="CineWatch-movies.html" class="nav-link">Movies</a></li>
+            <li><a href="CineWatch-tvshows.html" class="nav-link">TV Shows</a></li>
+            <li><a href="CineWatch-tvnetworks.html" class="nav-link">TV Networks</a></li>
+            <li><a href="CineWatch-cinemaguide.html" class="nav-link">Cinemaguide</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="genresDropdownToggle" aria-expanded="false" aria-controls="genresDropdown">
+                    Genres
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </a>
+                <ul class="dropdown-menu" id="genresDropdown" aria-labelledby="genresDropdownToggle">
+                    </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="aboutDropdownToggle" aria-expanded="false" aria-controls="aboutDropdown">
+                    About
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </a>
+                <ul class="dropdown-menu" id="aboutDropdown" aria-labelledby="aboutDropdownToggle">
+                    <li><a href="CineWatch-aboutus.html" class="dropdown-link">About Us</a></li>
+                    <li><a href="CineWatch-contactus.html" class="dropdown-link">Contact Us</a></li>
+                    <li><a href="CineWatch-advertise.html" class="dropdown-link">Advertise</a></li>
+                    <li><a href="CineWatch-privacy.html" class="dropdown-link">Privacy Policy</a></li>
+                    <li><a href="CineWatch-terms.html" class="dropdown-link">Terms of Service</a></li>
+                    <li><a href="CineWatch-infringement.html" class="dropdown-link">Submit Infringement</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="header-actions">
+        <button id="searchToggleButton" class="action-button" aria-label="Toggle search bar">
+            <i class="fas fa-search"></i>
+        </button>
+
+        <button id="darkModeToggle" class="action-button" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <div class="account-menu">
+            <button id="accountButton" class="action-button" aria-label="Account menu">
+                <i class="fas fa-user-circle"></i>
+            </button>
+            <div id="accountDropdown" class="account-dropdown-content">
+                <a href="CineWatch-profile.html" class="dropdown-link"><i class="fas fa-user-cog"></i> Profile</a>
+                <a href="CineWatch-watchlist.html" class="dropdown-link"><i class="fas fa-bookmark"></i> My Watchlist</a>
+                <a href="CineWatch-support.html" class="dropdown-link"><i class="fas fa-headset"></i> Support</a>
+                <a href="CineWatch-signout.html" class="dropdown-link"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+            </div>
+        </div>
+
+        <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+    <script>
+        /* ==========================================================
+   File: header.js
+   Purpose: Manages header functionality, including search toggle,
+            dark mode, dropdowns, and mobile menu.
+   ========================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- 1. Search Bar Toggle ---
+    const searchToggleButton = document.getElementById('searchToggleButton');
+    const searchBarContainer = document.getElementById('search-bar-container');
+    if (searchToggleButton && searchBarContainer) {
+        searchToggleButton.addEventListener('click', () => {
+            searchBarContainer.classList.toggle('show');
+            if (searchBarContainer.classList.contains('show')) {
+                // Focus on the input when the search bar appears
+                document.getElementById('searchInput').focus();
+            }
+        });
+    }
+
+    // --- 2. Dark Mode Toggle ---
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    if (darkModeToggle) {
+        // Load saved preference from local storage
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'light-mode') {
+            document.body.classList.add('light-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            const isLightMode = document.body.classList.toggle('light-mode');
+            if (isLightMode) {
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'light-mode');
+            } else {
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'dark-mode');
+            }
+        });
+    }
+
+    // --- 3. Dropdown Toggles ---
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle, #accountButton');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const dropdownMenu = toggle.nextElementSibling;
+            
+            // Close other open dropdowns
+            document.querySelectorAll('.dropdown-menu.show, .account-dropdown-content.show').forEach(menu => {
+                if (menu !== dropdownMenu) {
+                    menu.classList.remove('show');
+                    const parentLink = menu.previousElementSibling;
+                    if (parentLink && parentLink.hasAttribute('aria-expanded')) {
+                        parentLink.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+            
+            // Toggle the current dropdown
+            dropdownMenu.classList.toggle('show');
+            const isExpanded = dropdownMenu.classList.contains('show');
+            toggle.setAttribute('aria-expanded', isExpanded);
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('.dropdown, .account-menu')) {
+            document.querySelectorAll('.dropdown-menu.show, .account-dropdown-content.show').forEach(menu => {
+                menu.classList.remove('show');
+                const parentLink = menu.previousElementSibling;
+                if (parentLink && parentLink.hasAttribute('aria-expanded')) {
+                    parentLink.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    });
+    
+    // --- 4. Mobile Menu Toggle ---
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mainNav = document.querySelector('.main-nav');
+    if (mobileMenuToggle && mainNav) {
+        mobileMenuToggle.addEventListener('click', () => {
+            document.body.classList.toggle('mobile-menu-open');
+            mainNav.classList.toggle('show');
+        });
+    }
+});
+    </script>
+</header>
+
+<div id="search-bar-container" class="search-bar-container">
+    <div class="search-bar-inner">
+        <input type="text" id="searchInput" placeholder="Search movies, TV shows, and more...">
+        <button id="searchButton" aria-label="Search"><i class="fas fa-search"></i></button>
+    </div>
+</div>
