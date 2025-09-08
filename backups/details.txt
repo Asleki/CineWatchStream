@@ -1,0 +1,75 @@
+Based on the OMDB API response you found, your plan for the `details.html` and `CineWatch-cast.html` pages is even stronger. The OMDB API provides key information, like awards, that the TMDB API lacks, allowing you to create a much more comprehensive and detailed user experience. Here is the updated, unified plan.
+
+***
+
+### Hero Section
+
+The hero section will be the page's main banner, featuring a full-width background image from the **TMDB API's `backdrop_path`**. This section will have a two-column layout: a large show poster on the left and key information on the right.
+
+* **Dual-API Data**: The information displayed here will be sourced from both APIs.
+    * **TMDB API**: Provides the show's title, year, runtime, genres, language, country, synopsis, and network logos.
+    * **OMDB API**: Provides the **`Awards`** field and more detailed **`Ratings`** (including IMDb and Rotten Tomatoes), using the `imdbID` to connect to the TMDB data.
+* **Interactive Buttons**:
+    * **Play Trailer**: Clicking this opens a modal with a carousel of `<iframe>` videos sourced from the TMDB `/videos` API endpoint.
+    * **Watch Now** and **Add to Watchlist**: Placeholder buttons for future functionality.
+
+---
+
+### Main Content Navigation
+
+A horizontal navigation bar will serve as an anchor for the main content sections below. This bar will contain clickable buttons that smoothly scroll the user to the corresponding section without reloading the page. The buttons are:
+
+* **Cast**
+* **Status**
+* **Reviews**
+* **Recommendations**
+* **Awards**
+
+---
+
+### Content Sections
+
+#### **Cast**
+
+* This section will display a grid of cast members from the TMDB API.
+* Each card will show the actor's image, real name, and character name.
+* **Enhancement**: All cast cards are now **clickable**, linking to the new `CineWatch-cast.html` page. The link will pass the actor's ID and the show's backdrop URL as URL parameters.
+
+#### **Status**
+
+* This section's content is conditional, depending on the media type (movie or TV show).
+* **Movies**: Displays the movie's current release status.
+* **TV Shows**: Displays the series status and a "Seasons" button. Clicking this button reveals a new grid of season posters. Clicking a **season poster** will then dynamically load a grid showing all episodes for that season.
+
+#### **Reviews**
+
+* This section will display a review from the TMDB API, along with the total number of reviews.
+* It will initially show a truncated review with a "read the rest" button to expand the text on the same page.
+
+#### **Recommendations**
+
+* This section will contain a carousel of similar shows or movies, fetched from the TMDB `/recommendations` endpoint.
+* Cards will show the show's poster, title, and rating badge, and a hover effect will reveal the release date and language.
+
+#### **Awards**
+
+* This new section will be populated with the **`Awards`** information retrieved directly from the OMDB API call.
+
+---
+
+### New Page: `CineWatch-cast.html`
+
+This page is a brand-new component dedicated to a specific actor.
+
+#### **Hero Section**
+
+* **Background**: The hero will use the show's **backdrop image** passed from the previous page, creating a cohesive visual experience.
+* **Content**: It will display the actor's name and a truncated biography.
+
+#### **Main Content Section**
+
+* **Full Biography**: The main area will feature the complete biography of the actor.
+* **Filmography Grid**: It will display a clickable grid of all the shows the actor has appeared in. These cards will link back to the `details.html` page, completing the site's navigation loop. This grid will use your existing `createShowCard` function to ensure consistent styling.
+
+This video can help you understand how to use the OMDB API to fetch movie data. [OMDB API tutorial](https://www.youtube.com/watch?v=UZtruL7svkc)
+http://googleusercontent.com/youtube_content/51

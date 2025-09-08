@@ -1,0 +1,174 @@
+/* ======================== */
+/* Page Specific Layout */
+/* ======================== */
+
+.category-header {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.category-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+/* ======================== */
+/* Filters Bar */
+/* ======================== */
+
+.filters-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filters-bar label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.filters-bar select,
+.filters-bar input[type="text"] {
+    padding: 8px;
+    border: 1px solid var(--card-border);
+    border-radius: 5px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.filters-bar select:hover,
+.filters-bar input[type="text"]:hover {
+    border-color: var(--accent-primary);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.apply-btn,
+.reset-btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.apply-btn {
+    background-color: var(--accent-primary);
+    color: white;
+}
+
+.apply-btn:hover {
+    background-color: var(--accent-secondary);
+    color: rgb(12, 12, 12);
+}
+
+.reset-btn {
+    background-color: var(--card-border);
+    color: var(--text-primary);
+}
+
+.reset-btn:hover {
+    background-color: var(--accent-secondary);
+    color: rgb(6, 6, 6);
+}
+
+/* ======================== */
+/* Show Grid Layout */
+/* ======================== */
+
+.show-grid {
+    display: grid;
+    /* Use repeat() and minmax() to create a responsive grid that adapts to the viewport size. */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+    justify-items: center;
+    /* Ensures items are centered within their grid cells. */
+}
+
+/* Inherits the card styles from main.css */
+.show-grid .show-card {
+    width: 100%; /* Ensures cards fill the entire grid cell width. */
+    min-width: unset;
+}
+
+/* Overrides for the new grid layout */
+.show-grid .show-card:hover {
+    transform: none; /* No vertical movement on hover for a cleaner grid. */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.load-more-btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+/* ======================== */
+/* Responsive Design */
+/* ======================== */
+
+@media (max-width: 1200px) {
+    .show-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .show-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    .category-header h1 {
+        font-size: 2rem;
+    }
+    .filters-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filter-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .filter-actions {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .show-grid {
+        grid-template-columns: 1fr 1fr; /* Two cards per row on small screens. */
+    }
+    .show-card {
+        margin: 0 5px; /* Adds a small gap between cards on small devices. */
+    }
+    .category-header {
+        padding: 10px;
+    }
+    .category-header h1 {
+        font-size: 1.8rem;
+    }
+}

@@ -1,5 +1,5 @@
 /* ======================== */
-/* Main Body and Layout    */
+/* Main Body and Layout    */
 /* ======================== */
 
 body {
@@ -36,25 +36,25 @@ main {
 }
 
 /* ======================== */
-/* Hero Section             */
+/* Hero Section             */
 /* ======================== */
 
 .hero-section {
-    position: relative; 
-    z-index: 1; 
-    height: 60vh;
-    min-height: 400px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    margin-bottom: 40px;
-    transition: background-image 0.5s ease-in-out;
-    
-    margin-top: 40px; 
+  position: relative; 
+  z-index: 1; 
+  height: 60vh;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 40px;
+  transition: background-image 0.5s ease-in-out;
+  
+  margin-top: 40px; 
 }
 
 .hero-overlay {
@@ -123,42 +123,9 @@ main {
   opacity: 0.8;
   display: none; /* Hidden by default */
 }
-/* Style for the buttons */
-.main-content-nav .nav-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--text-color);
-    padding: 0.5rem 1rem;
-    position: relative; /* Crucial for positioning the animated line */
-    overflow: hidden; /* Hides the line until it's ready to be revealed */
-    transition: color 0.3s ease; /* Smooth transition for text color */
-}
 
-/* Create the animated line using a pseudo-element */
-.main-content-nav .nav-button::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0; /* Starting width of the line */
-    height: 3px;
-    background-color: var(--primary-accent); /* The line's color */
-    transition: width 0.3s ease; /* Animate the width */
-}
-
-/* Change button color and animate the line on hover */
-.main-content-nav .nav-button:hover {
-    color: red; /* Change text color to red */
-}
-
-.main-content-nav .nav-button:hover::after {
-    width: 100%; /* Expand the line to full width on hover */
-}
 /* ======================== */
-/* Carousels               */
+/* Carousels               */
 /* ======================== */
 
 .show-carousel {
@@ -216,75 +183,111 @@ main {
 /* ======================== */
 
 .show-card {
-    position: relative;
-    width: 200px;
-    min-width: 200px;
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-    /* Use flexbox to organize the card's content */
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  width: 200px;
+  min-width: 200px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  /* Use flexbox to organize the card's content */
+  display: flex;
+  flex-direction: column;
 }
 
 .show-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .show-card img {
-    width: 100%;
-    /* Use aspect-ratio for consistent image sizing */
-    aspect-ratio: 2/3; 
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  /* Use aspect-ratio for consistent image sizing */
+  aspect-ratio: 2/3; 
+  object-fit: cover;
+  display: block;
 }
 
 .show-rating,
 .show-year,
 .show-title {
-    /* Set a position context for the rating to be absolute */
-    position: relative; 
-    z-index: 2; 
+  /* Set a position context for the rating to be absolute */
+  position: relative; 
+  z-index: 2; 
 }
 
 .show-rating {
-    /* Position the rating pill on top of the image */
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    /* Updated background color to blue */
-    background-color: #007bff;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    /* New: Added a red border */
-    border: 2px solid #dc3545;
+  /* Position the rating pill on top of the image */
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  /* Updated background color to blue */
+  background-color: #007bff;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  /* New: Added a red border */
+  border: 2px solid #dc3545;
 }
 .show-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 10px 10px 5px 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 10px 10px 5px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-primary);
 }
 
 .show-year {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin: 0 10px 10px 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0 10px 10px 10px;
 }
 
 /* ======================== */
-/* Custom Alert Modal      */
+/* Styling for network badges */
+/* ======================== */
+
+.network-badge-container {
+    /* Positions the container on top of the card */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    /* This allows clicks to pass through to the card's link */
+    pointer-events: none; 
+}
+
+.network-badge-container img.network-logo {
+    /* Styles for the logo image */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    padding: 3px;
+    width: 40px;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.network-badge-container div.network-badge {
+    /* Styles for the text badge fallback */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ======================== */
+/* Custom Alert Modal      */
 /* ======================== */
 
 .custom-alert {
@@ -414,7 +417,7 @@ main {
     background-color: var(--accent-primary);
 }
 /* ======================== */
-/* Responsive Design       */
+/* Responsive Design       */
 /* ======================== */
 @media (max-width: 768px) {
   .hero-content h1 {
@@ -441,7 +444,3 @@ main {
     margin-right: 10px;
   }
 }
-
-
-
-

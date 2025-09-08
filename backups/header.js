@@ -7,8 +7,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const API_KEY = '9c198aabc1df9fa96ea8d65e183cb8a3'; // Your API Key
-
     // --- Step 1: Define a function to load and inject HTML partials ---
     async function loadPartial(filePath, elementId) {
         try {
@@ -46,14 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const mainNav = document.querySelector('.main-nav');
         const darkModeToggle = document.getElementById('darkModeToggle');
         
+        // New elements for search bar functionality
         const searchInput = document.getElementById('searchInput');
         const searchControls = document.querySelector('.input-controls');
         const clearSearchButton = document.getElementById('clearSearchButton');
         const micButton = document.getElementById('micButton');
         const voiceSearchModal = document.getElementById('voiceSearchModal');
         const modalCloseButton = document.getElementById('modalCloseButton');
-        const searchSuggestions = document.getElementById('searchSuggestions');
-        const searchButton = document.getElementById('searchButton');
 
         function toggleDropdown(dropdownMenu, toggleButton) {
             const isActive = dropdownMenu.classList.contains('active');
@@ -100,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             closeAllDropdowns();
         });
 
+        // New functionality for search bar input
         searchInput.addEventListener('input', () => {
             if (searchInput.value.length > 0) {
                 searchControls.classList.add('active');
@@ -111,10 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
         clearSearchButton.addEventListener('click', () => {
             searchInput.value = '';
             searchControls.classList.remove('active');
-            searchSuggestions.innerHTML = '';
-            searchInput.focus();
+            searchInput.focus(); // Keep focus on the input
         });
 
+        // New functionality for voice search modal
         micButton.addEventListener('click', () => {
             voiceSearchModal.classList.add('active');
         });
@@ -146,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
+        // This code displays or hides the button based on the user's scroll position
         window.onscroll = function() {
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
                 scrollToTopBtn.classList.add('show');
@@ -154,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
+        // This code handles the click event to scroll smoothly back to the top
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
@@ -161,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        // --- Step 3.1: New function to fetch and populate genres ---
         async function fetchAndPopulateGenres() {
             const genreList = document.getElementById('genresDropdown');
             const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`;
@@ -173,8 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         const li = document.createElement('li');
                         const a = document.createElement('a');
                         a.textContent = genre.name;
-                        a.href = `genres.html?genreId=${genre.id}`;
-                        a.classList.add('dropdown-link');
+                        a.href = `genres.html?genreId=${genre.id}`; // Optional: link to a search page
+                        a.classList.add('dropdown-link'); // Assuming a class is needed for styling
                         li.appendChild(a);
                         genreList.appendChild(li);
                     });
@@ -184,131 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
+        // Call the new function to populate genres
         fetchAndPopulateGenres();
-
-        // ==========================================================
-        // NEW CODE FOR SEARCH BAR FUNCTIONALITY
-        // ==========================================================
-        let debounceTimeout;
-
-        async function fetchSearchSuggestions(query) {
-            if (query.length < 3) {
-                searchSuggestions.innerHTML = '';
-                return;
-            }
-
-            const url = `https://api.themoviedb.org/3/search/multi?query=${query}&api_key=${API_KEY}`;
-            
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-                
-                // This line will log the API response to the console
-                console.log('API Response:', data);
-
-                searchSuggestions.innerHTML = '';
-                
-                if (data.results && data.results.length > 0) {
-                    data.results.slice(0, 5).forEach(result => {
-                        const li = document.createElement('li');
-                        const a = document.createElement('a');
-                        
-                        let itemName = '';
-                        let mediaType = '';
-
-                        if (result.media_type === 'movie' || result.media_type === 'tv') {
-                            itemName = result.title || result.name;
-                            mediaType = result.media_type;
-                        } else if (result.media_type === 'person') {
-                            itemName = result.name;
-                            mediaType = 'person';
-                        }
-                        
-                        if (itemName) {
-                            a.textContent = itemName;
-                            a.href = `details.html?id=${result.id}&type=${mediaType}`;
-                            a.classList.add('suggestion-item');
-                            li.appendChild(a);
-                            searchSuggestions.appendChild(li);
-                        }
-                    });
-                }
-            } catch (error) {
-                console.error('Error fetching search suggestions:', error);
-            }
-        }
-        
-        // A more robust search function to handle different media types
-async function handleSearchSubmit() {
-    const query = searchInput.value.trim();
-    if (query.length === 0) return;
-
-    const url = `https://api.themoviedb.org/3/search/multi?query=${query}&api_key=${API_KEY}`;
-    
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        
-        if (data.results && data.results.length > 0) {
-            
-            let redirectUrl = '';
-            
-            // First, check if any of the top 5 results is a person
-            const personResult = data.results.find(result => result.media_type === 'person');
-
-            if (personResult) {
-                redirectUrl = `cast.html?id=${personResult.id}`;
-            } else {
-                // If no person is found, fall back to the first result
-                const firstResult = data.results[0];
-                const mediaType = firstResult.media_type;
-
-                if (mediaType === 'movie' || mediaType === 'tv') {
-                    redirectUrl = `details.html?id=${firstResult.id}&type=${mediaType}`;
-                }
-            }
-
-            if (redirectUrl) {
-                window.location.href = redirectUrl;
-            } else {
-                console.log('No relevant search results found for the query:', query);
-            }
-        } else {
-            console.log('No search results found for the query:', query);
-        }
-    } catch (error) {
-        console.error('Error during search:', error);
-    }
-}
-
-        searchInput.addEventListener('keyup', (event) => {
-            const query = event.target.value.trim();
-            if (debounceTimeout) {
-                clearTimeout(debounceTimeout);
-            }
-            debounceTimeout = setTimeout(() => {
-                fetchSearchSuggestions(query);
-            }, 500);
-        });
-
-        searchInput.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                handleSearchSubmit();
-            }
-        });
-
-        searchButton.addEventListener('click', (event) => {
-            event.preventDefault();
-            handleSearchSubmit();
-        });
-        
-        document.addEventListener('click', (event) => {
-            const searchBarContainer = document.querySelector('.search-bar-container');
-            if (!searchBarContainer.contains(event.target)) {
-                searchSuggestions.innerHTML = '';
-            }
-        });
     }
 
     // --- Step 4: Function to handle last modified date ---

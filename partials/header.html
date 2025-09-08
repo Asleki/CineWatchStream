@@ -19,7 +19,21 @@
                     <i class="fas fa-chevron-down dropdown-icon"></i>
                 </a>
                 <ul class="dropdown-menu" id="genresDropdown" aria-labelledby="genresDropdownToggle">
-                    </ul>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="aboutDropdownToggle" aria-expanded="false" aria-controls="aboutDropdown">
+                    About
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </a>
+                <ul class="dropdown-menu" id="aboutDropdown" aria-labelledby="aboutDropdownToggle">
+                    <li><a href="CineWatch-aboutus.html" class="dropdown-link">About Us</a></li>
+                    <li><a href="CineWatch-contactus.html" class="dropdown-link">Contact Us</a></li>
+                    <li><a href="CineWatch-advertise.html" class="dropdown-link">Advertise</a></li>
+                    <li><a href="CineWatch-privacy.html" class="dropdown-link">Privacy Policy</a></li>
+                    <li><a href="CineWatch-terms.html" class="dropdown-link">Terms of Service</a></li>
+                    <li><a href="CineWatch-infringement.html" class="dropdown-link">Submit Infringement</a></li>
+                </ul>
             </li>
         </ul>
     </nav>
@@ -52,22 +66,25 @@
             <span class="bar"></span>
         </button>
     </div>
-</header>
 
-<div id="search-bar-container" class="search-bar-container">
-    <div class="search-bar-inner">
-        <input type="text" id="searchInput" placeholder="Search movies, TV shows, cast...">
-        <div class="input-controls">
-            <button id="clearSearchButton" class="clear-button" aria-label="Clear search input">
-                <i class="fas fa-times"></i>
-            </button>
-            <button id="searchButton" aria-label="Search"><i class="fas fa-search"></i></button>
+    <div id="search-bar-container" class="search-bar-container">
+        <div class="search-bar-inner">
+            <div class="search-bar-wrapper">
+                <input type="text" id="searchInput" placeholder="Search movies, TV shows, cast...">
+                <ul id="searchSuggestions"></ul>
+            </div>
+            <div class="input-controls">
+                <button id="clearSearchButton" class="clear-button" aria-label="Clear search input">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button id="searchButton" aria-label="Search"><i class="fas fa-search"></i></button>
+            </div>
         </div>
+        <button id="micButton" class="action-button mic-button" aria-label="Voice search">
+            <i class="fas fa-microphone"></i>
+        </button>
     </div>
-    <button id="micButton" class="action-button mic-button" aria-label="Voice search">
-        <i class="fas fa-microphone"></i>
-    </button>
-</div>
+</header>
 
 <div id="voiceSearchModal" class="modal">
     <div class="modal-content">

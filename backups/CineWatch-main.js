@@ -1,6 +1,3 @@
-// =====================
-// js/CineWatch-main.js
-// =====================
 // This script is dedicated to fetching and populating movie and TV show data
 // from the TMDb API onto the homepage of the CineWatch website.
 // All UI-related logic (header, search bar, dark mode, etc.) is handled by a separate header.js file.

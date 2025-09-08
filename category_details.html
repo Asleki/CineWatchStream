@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore a comprehensive list of movies and TV shows for this category on CineWatch. Filter by popularity, year, and more to find your next favorite.">
+    <meta name="keywords" content="movies, tv shows, streaming, entertainment, watchlist, popular, trending, CineWatch, category, full list">
+    <meta name="author" content="Alex Malunda">
+
+    <meta property="og:title" content="CineWatch - Category Details">
+    <meta property="og:description" content="Find all the movies and TV shows from a specific category, with options to filter and sort the results.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asleki.github.io/CineWatchStreaming/category_details.html">
+    <meta property="og:image" content="https://asleki.github.io/CineWatchStreaming/images/CineWatch-logo.ico">
+
+    <title id="pageTitle">CineWatch - Category</title>
+
+    <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/category_details.css">
+
+</head>
+<body>
+    <div id="customAlert" class="custom-alert">
+        <div class="alert-content">
+            <i id="alertIcon" class="alert-icon"></i>
+            <p id="alertMessage">This is a custom alert message.</p>
+            <button id="closeAlertBtn">OK</button>
+        </div>
+    </div>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="category-header">
+            <h1 id="category-title">Loading...</h1>
+            <div class="filters-bar" id="filtersBar">
+                <form id="filterForm">
+                    <div class="filter-group">
+                        <label for="popularity-sort">Sort By:</label>
+                        <select id="popularity-sort" name="sort_by">
+                            <option value="popularity.desc" selected>Popularity (Desc)</option>
+                            <option value="popularity.asc">Popularity (Asc)</option>
+                            <option value="vote_average.desc">Rating (Desc)</option>
+                            <option value="vote_average.asc">Rating (Asc)</option>
+                            <option value="primary_release_date.desc">Release Date (Desc)</option>
+                            <option value="primary_release_date.asc">Release Date (Asc)</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="year-filter">Year:</label>
+                        <select id="year-filter" name="primary_release_year">
+                            <option value="">All Years</option>
+                            </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="language-filter">Language:</label>
+                        <select id="language-filter" name="with_original_language">
+                            <option value="">All Languages</option>
+                            </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="country-filter">Country:</label>
+                        <select id="country-filter" name="with_origin_country">
+                            <option value="">All Countries</option>
+                            </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="network-filter">Network:</label>
+                        <select id="network-filter" name="with_networks">
+                            <option value="">All Networks</option>
+                            </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button type="submit" class="apply-btn">Apply Filters</button>
+                        <button type="reset" class="reset-btn">Reset Filters</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+
+        <div class="show-grid" id="show-grid-container">
+            <div class="spinner"></div>
+        </div>
+        
+        <div class="load-more-btn-wrapper">
+            <button class="load-more-btn" id="loadMoreBtn">Load More</button>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <script src="js/header.js"></script>
+    <script src="js/category_details.js"></script>
+</body>
+</html>

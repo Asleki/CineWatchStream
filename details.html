@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title id="pageTitle">CineWatch - Loading Details...</title>
+    <meta name="description" id="metaDescription" content="Discover details about [Show/Movie Title], including cast, awards, ratings, and trailers.">
+    <meta name="keywords" id="metaKeywords" content="[Show/Movie Title], watch, trailer, cast, awards, ratings, synopsis, CineWatch">
+    <meta name="author" content="Alex Malunda">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" id="ogTitle" content="CineWatch - [Show/Movie Title]">
+    <meta property="og:description" id="ogDescription" content="[Show/Movie Title] synopsis, cast, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" id="ogUrl" content="https://asleki.github.io/CineWatchStreaming/details.html?id=[showId]&mediaType=[mediaType]">
+    <meta property="og:image" id="ogImage" content="[Show Poster URL]">
+    <meta property="og:image:alt" id="ogImageAlt" content="[Show/Movie Title] Poster">
+    <meta property="og:site_name" content="CineWatch">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="twitterTitle" content="CineWatch - [Show/Movie Title]">
+    <meta name="twitter:description" id="twitterDescription" content="[Show/Movie Title] synopsis, cast, and more.">
+    <meta name="twitter:image" id="twitterImage" content="[Show Poster URL]">
+
+    <link rel="canonical" id="canonicalUrl" href="https://asleki.github.io/CineWatchStreaming/details.html?id=[showId]&mediaType=[mediaType]">
+
+    <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/details.css"> <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section id="details-page-hero" class="hero-section">
+            <div class="hero-backdrop-overlay"></div>
+            <div class="hero-content-wrapper">
+                <div class="hero-poster-column">
+                    <img id="show-poster" src="" alt="Show poster">
+                </div>
+                <div class="hero-info-column">
+                    <h1 id="show-title"></h1>
+                    <div id="show-details-container" class="details-section">
+                        <div id="show-ratings" class="details-section-row"></div>
+                        <div id="network-logos" class="details-section-row"></div>
+                        <div id="awards-container" class="details-section-row"></div>
+                    </div>
+                    <p id="show-synopsis"></p>
+                    <div class="hero-buttons">
+                        <button id="play-trailer-btn" class="main-btn">
+                            <i class="fas fa-play"></i> Play Trailer
+                        </button>
+                        <button class="main-btn">Watch Now</button>
+                        <button class="main-btn">Add to Watchlist</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="main-content-nav">
+            <button class="nav-button" data-section="cast-section">Cast</button>
+            <button class="nav-button" data-section="status-section">Status</button>
+            <button class="nav-button" data-section="reviews-section">Reviews</button>
+            <button class="nav-button" data-section="recommendations-section">Recommendations</button>
+        </nav>
+
+        <section id="cast-section" class="content-section">
+            <div class="section-header">
+                <h2>Cast</h2>
+                <div class="spinner-small" id="spinnerCast"></div>
+            </div>
+            <div id="cast-container" class="grid-container cast-grid"></div>
+        </section>
+
+        <section id="status-section" class="content-section">
+            <div class="section-header">
+                <h2>Status</h2>
+                <div class="spinner-small" id="spinnerStatus"></div>
+            </div>
+            <div id="status-container">
+                <div id="status-header">
+                    <h3 id="status-text"></h3>
+                </div>
+                <div id="seasons-container" class="grid-container seasons-grid"></div>
+                <div id="season-details" class="details-section">
+                    </div>
+            </div>
+        </section>
+
+        <section id="reviews-section" class="content-section">
+            <div class="section-header">
+                <h2>Reviews <span id="review-count"></span></h2>
+                <div class="spinner-small" id="spinnerReviews"></div>
+            </div>
+            <div id="review-container">
+                </div>
+        </section>
+
+        <section id="recommendations-section" class="content-section">
+            <div class="section-header">
+                <h2>Recommendations</h2>
+                <div class="spinner-small" id="spinnerRecommendations"></div>
+            </div>
+            <div id="recommendations-container" class="carousel-container">
+                <div class="show-carousel-inner" id="recommendations-carousel"></div>
+            </div>
+        </section>
+
+        <div id="trailer-modal" class="modal">
+            <div class="modal-content">
+                <span id="close-modal-btn" class="close-btn">&times;</span>
+                <div id="trailer-carousel" class="carousel">
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+        
+    <script src="js/header.js"></script>
+    <script src="js/details.js"></script> </body>
+</html>

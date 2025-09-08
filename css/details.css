@@ -1,0 +1,450 @@
+/*===================================================================================
+    General & Layout
+===================================================================================*/
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 2rem 1rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-primary);
+}
+
+.spinner-small {
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--accent-secondary);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*===================================================================================
+    Hero Section
+===================================================================================*/
+
+#details-page-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    box-sizing: border-box;
+}
+
+#details-page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-overlay);
+    background: linear-gradient(to top, var(--bg-primary) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.hero-content-wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    z-index: 1;
+}
+
+.hero-poster-column {
+    flex: 0 0 300px;
+    max-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px var(--shadow-primary);
+    transform: translateY(50px);
+}
+
+.hero-poster-column img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-info-column {
+    flex: 1;
+    padding-bottom: 3rem;
+    color: var(--text-primary);
+}
+
+.hero-info-column h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.hero-info-column p {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.details-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.details-section-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.details-section-row i {
+    color: var(--accent-tertiary); /* Using the warm orange for ratings/icons */
+}
+
+.network-badge {
+    display: inline-block;
+    background-color: var(--bg-surface);
+    color: var(--text-secondary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+.network-badge img {
+    height: 20px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.main-btn {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.main-btn:hover {
+    background-color: var(--btn-primary-hover);
+    transform: scale(1.05);
+}
+/* =================================== */
+/* Details Page Hero Light Mode Styles */
+/* =================================== */
+
+body.light-mode #details-page-hero {
+    color: white; /* Sets text to a dark color defined in your light-mode variables */
+    text-shadow: none; /* Removes the text shadow, which is not needed on a light background */
+}
+
+body.light-mode .hero-backdrop-overlay {
+    /* Adjusts the overlay to a bright, semi-transparent gradient */
+    background: linear-gradient(to top, var(--bg-primary) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+body.light-mode .hero-info-column {
+    color: white; /* Ensures the text in this column is the primary dark color */
+}
+
+body.light-mode .hero-info-column h1 {
+    color: white; /* Explicitly sets the main title color for consistency */
+}
+
+body.light-mode .network-badge img {
+    filter: none; /* Resets the image filter to its default state, showing original colors */
+}
+/* Style for the buttons */
+.main-content-nav .nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    position: relative; /* Crucial for positioning the animated line */
+    overflow: hidden; /* Hides the line until it's ready to be revealed */
+    transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+/* Create the animated line using a pseudo-element */
+.main-content-nav .nav-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Starting width of the line */
+    height: 3px;
+    background-color: var(--primary-accent); /* The line's color */
+    transition: width 0.3s ease; /* Animate the width */
+}
+
+/* Change button color and animate the line on hover */
+.main-content-nav .nav-button:hover {
+    color: red; /* Change text color to red */
+}
+
+.main-content-nav .nav-button:hover::after {
+    width: 100%; /* Expand the line to full width on hover */
+}
+/*===================================================================================
+    Content Sections & Grids
+===================================================================================*/
+
+.content-section {
+    padding: 2rem 1rem;
+}
+
+.content-section h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.cast-grid .card {
+    text-align: center;
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    padding: 1rem 0.5rem;
+    transition: transform 0.3s ease;
+    border: 1px solid var(--border-card);
+}
+
+.cast-grid .card:hover {
+    transform: translateY(-5px);
+    background-color: var(--card-hover-bg);
+}
+
+.cast-grid .card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+}
+
+.cast-grid .card h4 {
+    font-size: 0.9rem;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text-primary);
+}
+
+.cast-grid .card p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.seasons-grid .card {
+    position: relative;
+    cursor: pointer;
+}
+
+.seasons-grid .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.seasons-grid .card .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-overlay);
+    color: var(--text-primary);
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/*===================================================================================
+    Reviews
+===================================================================================*/
+
+#review-container {
+    padding: 1rem;
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    border: 1px solid var(--border-card);
+}
+
+.review-summary h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: var(--text-primary);
+}
+
+.review-summary .review-meta {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    margin-bottom: 1rem;
+}
+
+.review-summary p {
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: var(--text-link-hover);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/*===================================================================================
+    Modals
+===================================================================================*/
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-overlay);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--bg-primary);
+    width: 80%;
+    max-width: 900px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-primary);
+}
+
+.close-btn {
+    color: var(--text-tertiary);
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--text-primary);
+}
+
+/*===================================================================================
+    Responsiveness
+===================================================================================*/
+
+@media (max-width: 768px) {
+    #details-page-hero {
+        height: auto;
+        min-height: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 100px; /* Adjust for header */
+    }
+
+    .hero-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .hero-poster-column {
+        transform: none;
+        max-width: 200px;
+    }
+
+    .hero-info-column {
+        padding-bottom: 1rem;
+    }
+
+    .details-section {
+        justify-content: center;
+    }
+
+    .main-content-nav {
+        justify-content: flex-start;
+    }
+
+    .main-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}

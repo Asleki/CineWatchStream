@@ -96,134 +96,89 @@
  * Search Bar
  * ---------------------------------------------------------- */
 .search-bar-container {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-primary);
-    box-shadow: 0 4px 6px var(--shadow-secondary);
-    max-height: 0;
-    overflow: hidden;
-    /* Use Grid for the main layout */
-    display: grid; 
-    grid-template-columns: 1fr max-content; /* One column for the search inner, one for the mic button */
-    gap: 1rem;
-    padding: 0 2rem;
-    align-items: center;
-    transition: max-height 0.5s ease-in-out, padding 0.5s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-primary);
+  box-shadow: 0 4px 6px var(--shadow-secondary);
+  max-height: 0; /* Changed from display: none for animation */
+  overflow: hidden;
+  display: flex; /* Changed from display: none to allow flexbox behavior */
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 2rem; /* Initial padding is 0 */
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease;
 }
 
 .search-bar-container.active {
-    max-height: 200px;
-    padding: 1rem 2rem;
+  max-height: 200px; /* A large enough value to show content */
+  padding: 1rem 2rem;
 }
 
 .search-bar-inner {
-    /* Use Grid inside the search bar as well */
-    display: grid;
-    grid-template-columns: 1fr max-content; /* One column for the input, one for controls */
-    gap: 0.5rem;
-    background-color: var(--bg-surface);
-    border-radius: 5px;
-    border: 1px solid var(--border-secondary);
-    padding: 0.5rem;
-}
-
-.search-bar-wrapper {
-    position: relative;
-    /* The input will now take up the remaining space from the grid */
+  display: flex;
+  flex-grow: 1;
+  max-width: 800px;
+  background-color: var(--bg-surface);
+  border-radius: 5px;
+  border: 1px solid var(--border-secondary);
+  padding: 0.5rem;
 }
 
 #searchInput {
-    /* Remove flex properties as we are using grid now */
-    border: none;
-    background: none;
-    color: var(--text-primary);
-    font-size: 1rem;
-    padding-right: 0.5rem;
-    /* Explicitly make the placeholder text wrap if needed, and visible */
-    white-space: nowrap;
-    overflow: visible;
+  flex-grow: 1;
+  border: none;
+  background: none;
+  color: var(--text-primary);
+  font-size: 1rem;
+  padding-right: 0.5rem;
 }
 
 #searchInput:focus {
-    outline: none;
+  outline: none;
 }
 
 #searchInput::placeholder {
-    color: var(--text-placeholder);
+  color: var(--text-placeholder);
 }
 
 .input-controls {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0.3s, opacity 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
 }
 
 .input-controls.active {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 .clear-button, #searchButton {
-    background: none;
-    border: none;
-    color: var(--text-tertiary);
-    cursor: pointer;
-    font-size: 1.1em;
-    padding: 0.25rem;
+  background: none;
+  border: none;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  font-size: 1.1em;
+  padding: 0.25rem;
 }
 
 .mic-button {
-    background-color: var(--bg-surface);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--border-secondary);
+  background-color: var(--bg-surface);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border-secondary);
 }
 
-/* ----------------------------------------------------------
- * Search Suggestions
- * ---------------------------------------------------------- */
-#searchSuggestions {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: fixed;
-    z-index: 9999;
-    background-color: var(--bg-card);
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    max-height: 250px;
-    overflow-y: auto;
-    border: 1px solid var(--border-primary);
-    border-top: none;
-}
-
-#searchSuggestions li {
-    padding: 0;
-}
-
-#searchSuggestions a {
-    display: block;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: var(--text-primary);
-    transition: background-color 0.2s ease;
-}
-
-#searchSuggestions a:hover,
-#searchSuggestions a:focus {
-    background-color: var(--bg-secondary);
-    color: var(--accent-primary);
-}
 /* ----------------------------------------------------------
 * Dropdown Menus (Genres, About, Account) - With Animation
 * ---------------------------------------------------------- */

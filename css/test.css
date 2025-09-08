@@ -1,0 +1,161 @@
+/* General Body and Main Container Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+.main-header {
+    background-color: #333;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Search Bar Styling */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #555;
+    border-radius: 25px;
+    background-color: #444;
+    color: #f0f0f0;
+    font-size: 1rem;
+    transition: width 0.3s ease-in-out;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #00aaff;
+    width: 400px; /* Animated expansion on focus */
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    color: #aaa;
+}
+
+.search-icon:hover {
+    color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* Suggestions List Styling */
+.suggestions-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: calc(100% + 100px); /* Adjust to match animated width */
+    max-height: 200px; /* Enables scroll feature */
+    overflow-y: auto;
+    background-color: #333;
+    border: 1px solid #555;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: none; /* Initially hidden */
+}
+
+.suggestions-list li {
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.suggestions-list li:hover {
+    background-color: #555;
+}
+
+/* Hero Section Styling */
+.hero-placeholder {
+    height: 400px;
+    background: url('https://placehold.co/1200x400/333/666?text=Hero+Image+Placeholder') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+/* TV Show Details and Cast Details Styling */
+.details-container {
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.show-card, .cast-card {
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.2s;
+}
+
+.show-card:hover, .cast-card:hover {
+    transform: translateY(-5px);
+}
+
+.show-poster, .cast-photo {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.cast-photo {
+    height: 300px; /* Adjusted size for cast photos */
+}
+
+.show-info, .cast-info {
+    padding: 20px;
+}
+
+.show-info h3, .cast-info h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.show-info p, .cast-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #ccc;
+}
