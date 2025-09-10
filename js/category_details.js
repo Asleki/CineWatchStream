@@ -16,13 +16,13 @@ document.getElementById('closeAlertBtn').addEventListener('click', () => {
 const API_KEY = '9c198aabc1df9fa96ea8d65e183cb8a3';
 
 // Function to create and return a single show card element
-const createShowCard = (show) => {
+const createShowCard = (show, type) => {
     if (!show.poster_path) {
         return null;
     }
 
     const card = document.createElement('a');
-    card.href = `details.html?id=${show.id}&mediaType=${show.media_type}`;
+    card.href = `details.html?id=${show.id}&mediaType=${type}`;
     card.classList.add('show-card');
     
     const poster = document.createElement('img');
@@ -69,7 +69,9 @@ let totalPages = 1;
 const urlParams = new URLSearchParams(window.location.search);
 const categoryEndpoint = urlParams.get('endpoint');
 const categoryName = urlParams.get('categoryName');
-const mediaType = urlParams.get('mediaType');
+
+// New: Extract mediaType from the categoryEndpoint
+const mediaType = categoryEndpoint.includes('movie') ? 'movie' : 'tv';
 
 // Function to fetch and display shows based on current filters
 const fetchAndDisplayShows = async (page = 1) => {
@@ -122,10 +124,7 @@ const fetchAndDisplayShows = async (page = 1) => {
 
         if (shows && shows.length > 0) {
             shows.forEach(show => {
-                if (!show.media_type) {
-                    show.media_type = mediaType;
-                }
-                const card = createShowCard(show);
+                const card = createShowCard(show, mediaType);
                 if (card) {
                     showGridContainer.appendChild(card);
                 }

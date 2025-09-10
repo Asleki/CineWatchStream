@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse movies by genre. Filter and sort by popularity, year, country, and language.">
+    <title>Genres - Browse Movies</title>
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/genres.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
+     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="genre-hero">
+            <div class="container">
+                <h1 id="genreTitle"></h1>
+            </div>
+        </section>
+
+        <section class="controls-and-shows">
+            <div class="container">
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <span class="filter-label">Sort by:</span>
+                        <div class="dropdown">
+                            <button class="dropdown-toggle" id="sort-toggle">Popularity</button>
+                            <ul class="dropdown-menu" id="sort-menu">
+                                <li><a href="#" data-sort="popularity.desc" class="filter-link active">Most Popular</a></li>
+                                <li><a href="#" data-sort="popularity.asc" class="filter-link">Least Popular</a></li>
+                                <li><a href="#" data-sort="vote_average.desc" class="filter-link">Highest Rated</a></li>
+                                <li><a href="#" data-sort="vote_average.asc" class="filter-link">Lowest Rated</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <span class="filter-label">Year:</span>
+                        <div class="dropdown">
+                            <button class="dropdown-toggle" id="year-toggle">All Years</button>
+                            <ul class="dropdown-menu" id="year-menu"></ul>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <span class="filter-label">Country:</span>
+                        <div class="dropdown">
+                            <button class="dropdown-toggle" id="country-toggle">All Countries</button>
+                            <ul class="dropdown-menu" id="country-menu"></ul>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <span class="filter-label">Language:</span>
+                        <div class="dropdown">
+                            <button class="dropdown-toggle" id="language-toggle">All Languages</button>
+                            <ul class="dropdown-menu" id="language-menu"></ul>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group reset-group">
+                        <button class="apply-btn" id="applyFiltersBtn">Apply Filters</button>
+                        <button class="reset-btn" id="resetFiltersBtn">Reset Filters</button>
+                    </div>
+                </div>
+
+                <div class="spinner" id="loadingSpinner"></div>
+                
+                <div class="shows-container" id="showsContainer"></div>
+                
+                <div class="load-more-btn-wrapper">
+                    <button id="loadMoreBtn" class="load-more-btn" style="display: none;">Load More</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <script src="js/header.js"></script>
+    <script src="js/genres.js" defer></script>
+</body>
+</html>

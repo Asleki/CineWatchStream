@@ -1,0 +1,234 @@
+/* ==========================================================
+   File: genres.css
+   Purpose: Styles for the genres page.
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   Genre Hero Header
+   ---------------------------------------------------------- */
+.genre-hero {
+    background-color: var(--bg-card);
+    padding: 60px 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#genreTitle {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+/* ----------------------------------------------------------
+   Filter Bar
+   ---------------------------------------------------------- */
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 0;
+    margin-top: 20px;
+    background-color: var(--bg-card);
+    border-radius: 8px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    min-width: 150px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    background-color: var(--bg-hover);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    padding: 5px 0;
+    margin: 5px 0 0 0;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a.active {
+    background-color: var(--accent-primary);
+    color: white;
+}
+
+/* In your genres.css file, under the Filter Bar section */
+.reset-group {
+    display: flex;
+    gap: 10px;
+}
+.apply-btn {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.apply-btn:hover {
+    /* This will be your secondary accent color on hover */
+    background-color: var(--accent-secondary); 
+}
+
+.reset-btn {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.reset-btn:hover {
+    /* This will be a dark red on hover */
+    background-color: var(--accent-secondary);
+}
+/* ----------------------------------------------------------
+   Show Cards - Grid View
+   ---------------------------------------------------------- */
+.shows-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding-top: 30px;
+}
+
+.show-card {
+    text-align: center;
+    position: relative;
+    padding: 0;
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.show-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.show-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.show-card .show-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 10px 0 5px;
+}
+
+.show-card .show-year {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.show-card .show-rating {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--accent-primary);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 2px solid var(--accent-primary);
+}
+
+/* ----------------------------------------------------------
+   Load More Button
+   ---------------------------------------------------------- */
+.load-more-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.load-more-btn {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background-color: var(--accent-secondary);
+}
+
+/* ----------------------------------------------------------
+   Responsive Design
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+    .filter-bar {
+        flex-direction: column;
+    }
+}

@@ -259,6 +259,7 @@ async function populateCast(mediaType, showId, backdropPath) {
 
 /**
  * Populates the status section based on media type.
+ * For TV shows, it provides a link to a separate seasons page.
  * @param {object} tmdbData - The TMDB show data.
  * @param {string} mediaType - The media type from the URL.
  */
@@ -266,33 +267,30 @@ function populateStatus(tmdbData, mediaType) {
     const statusHeader = document.getElementById('status-header');
     const statusText = document.getElementById('status-text');
     const seasonsContainer = document.getElementById('seasons-container');
+    const spinnerStatus = document.getElementById('spinnerStatus');
 
     statusText.textContent = tmdbData.status || 'N/A';
     if (mediaType === 'movie') {
         // Movies just need the status
         seasonsContainer.style.display = 'none';
     } else if (mediaType === 'tv' && tmdbData.seasons) {
-        // TV shows need seasons
-        statusHeader.innerHTML += `<button id="seasons-btn" class="main-btn">Seasons</button>`;
-        const seasonsBtn = document.getElementById('seasons-btn');
-        seasonsBtn.addEventListener('click', () => {
-            seasonsContainer.innerHTML = '';
-            tmdbData.seasons.forEach(season => {
-                if (!season.poster_path) return;
-                const card = document.createElement('div');
-                card.classList.add('card');
-                card.innerHTML = `
-                    <img src="${TMDB_IMAGE_URL}${season.poster_path}" alt="${season.name}">
-                    <div class="overlay">${season.name}</div>
-                `;
-                seasonsContainer.appendChild(card);
-                // Add event listener to dynamically load episodes
-                card.addEventListener('click', () => loadEpisodes(tmdbData.id, season.season_number));
-            });
-        });
+        // For TV shows, create a link to the seasons page
+        const seasonsLink = document.createElement('a');
+        seasonsLink.id = 'seasons-btn';
+        seasonsLink.classList.add('main-btn');
+        seasonsLink.textContent = 'Seasons';
+        seasonsLink.href = `CineWatch-seasons.html?id=${tmdbData.id}&type=${mediaType}`;
+        statusHeader.appendChild(seasonsLink);
+
+        // Hide the seasons grid as it is no longer used
+        seasonsContainer.style.display = 'none';
+    }
+
+    // Hide the spinner once the status has been populated
+    if (spinnerStatus) {
+        spinnerStatus.style.display = 'none';
     }
 }
-
 /**
  * Loads and displays episodes for a selected season.
  * @param {number} showId - The TV show ID.
@@ -345,7 +343,7 @@ async function populateReviews(mediaType, showId) {
     if (reviewsData && reviewsData.results && reviewsData.results.length > 0) {
         const review = reviewsData.results[0]; // Display the first review
         const content = review.content;
-        const truncatedContent = content.length > 300 ? `${content.substring(0, 300)}...` : content;
+        const truncatedContent = content.length > 300 ? `${content.substring(0, 0)}...` : content;
         
         const reviewHtml = `
             <div class="review-summary">
@@ -362,13 +360,32 @@ async function populateReviews(mediaType, showId) {
 
         const readMoreBtn = document.getElementById('read-more-btn');
         if (readMoreBtn) {
+            const reviewTextElement = document.getElementById('review-text');
+
             readMoreBtn.addEventListener('click', () => {
-                document.getElementById('review-text').textContent = content;
-                readMoreBtn.style.display = 'none';
+                if (reviewTextElement.textContent.includes('...')) {
+                    // Expand the text
+                    reviewTextElement.textContent = content;
+                    readMoreBtn.textContent = 'Read less';
+                } else {
+                    // Truncate the text
+                    reviewTextElement.textContent = `${content.substring(0, 300)}...`;
+                    readMoreBtn.textContent = 'Read the rest';
+                }
             });
         }
     } else {
         reviewContainer.innerHTML = '<p class="error-message">No reviews available.</p>';
+    }
+
+    // Add "Read All Reviews" button if there's more than one review
+    if (reviewsData && reviewsData.total_results > 1) {
+        const readAllBtn = document.createElement('a');
+        readAllBtn.id = 'read-all-reviews-btn';
+        readAllBtn.classList.add('main-btn');
+        readAllBtn.textContent = 'Read All Reviews';
+        readAllBtn.href = `CineWatch-reviews.html?id=${showId}&type=${mediaType}`;
+        reviewContainer.appendChild(readAllBtn);
     }
 }
 
@@ -378,20 +395,112 @@ async function populateReviews(mediaType, showId) {
  * @param {string} showId - The show ID.
  */
 async function populateRecommendations(mediaType, showId) {
+    // Correctly reference the HTML elements
     const spinner = document.getElementById('spinnerRecommendations');
+    const recommendationsContainer = document.getElementById('recommendations-container');
+    const recommendationsCarousel = document.getElementById('recommendations-carousel');
+
     if (spinner) spinner.style.display = 'block';
 
     const recommendationsData = await fetchData('tmdb', `/${mediaType}/${showId}/recommendations`);
+
+    // Fix: Hide the spinner regardless of the outcome
     if (spinner) spinner.style.display = 'none';
 
     if (recommendationsData && recommendationsData.results && recommendationsData.results.length > 0) {
         recommendationsData.results.slice(0, 10).forEach(show => {
             show.media_type = mediaType;
-            createRecommendationCard(show, recommendationsContainer);
+            createRecommendationCard(show, recommendationsCarousel);
         });
     } else {
         recommendationsContainer.innerHTML = '<p class="error-message">No recommendations available.</p>';
     }
+}
+/**
+ * Populates the recommendations section.
+ * @param {string} mediaType - 'movie' or 'tv'.
+ * @param {string} showId - The show ID.
+ */
+async function populateRecommendations(mediaType, showId) {
+    const spinner = document.getElementById('spinnerRecommendations');
+    const recommendationsContainer = document.getElementById('recommendations-container');
+    const recommendationsCarousel = document.getElementById('recommendations-carousel');
+    
+    if (spinner) spinner.style.display = 'block';
+
+    const recommendationsData = await fetchData('tmdb', `/${mediaType}/${showId}/recommendations`);
+
+    if (spinner) spinner.style.display = 'none';
+
+    if (recommendationsData && recommendationsData.results && recommendationsData.results.length > 0) {
+        recommendationsData.results.slice(0, 10).forEach(show => {
+            show.media_type = mediaType;
+            createRecommendationCard(show, recommendationsCarousel);
+        });
+        
+        // After populating, set up the navigation buttons
+        setupCarouselNavigation();
+    } else {
+        recommendationsContainer.innerHTML = '<p class="error-message">No recommendations available.</p>';
+    }
+}
+
+// Sets up the functionality for the carousel navigation buttons
+function setupCarouselNavigation() {
+    const carousel = document.getElementById('recommendations-container');
+    const prevBtn = document.getElementById('prev-recommendations');
+    const nextBtn = document.getElementById('next-recommendations');
+
+    if (carousel && prevBtn && nextBtn) {
+        // Scroll the carousel to the left
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({
+                left: -200, // You can adjust this value
+                behavior: 'smooth'
+            });
+        });
+
+        // Scroll the carousel to the right
+        nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({
+                left: 200, // You can adjust this value
+                behavior: 'smooth'
+            });
+        });
+    }
+}
+
+/**
+ * Creates and appends a single recommendation card to the carousel.
+ * @param {object} show - The show data.
+ * @param {HTMLElement} container - The carousel container element.
+ */
+function createRecommendationCard(show, container) {
+    const card = document.createElement('a');
+    card.classList.add('show-card');
+    card.href = `details.html?id=${show.id}&type=${show.media_type}`;
+    
+    // Check for a valid poster image
+    const posterUrl = show.poster_path 
+        ? `${TMDB_IMAGE_URL}${show.poster_path}` 
+        : 'https://via.placeholder.com/300x450.png?text=No+Image';
+
+    // Get the title and year
+    const title = show.title || show.name;
+    const year = show.release_date || show.first_air_date ? new Date(show.release_date || show.first_air_date).getFullYear() : null;
+
+    // Conditionally display the year if it exists and is not NaN
+    const yearHtml = year && !isNaN(year) ? `<p>${year}</p>` : '';
+
+    card.innerHTML = `
+        <img src="${posterUrl}" alt="${title}" onerror="this.src='https://via.placeholder.com/300x450.png?text=Image+Error';">
+        <div class="card-info">
+            <h4>${title}</h4>
+            ${yearHtml}
+        </div>
+    `;
+
+    container.appendChild(card);
 }
 
 /**
@@ -406,22 +515,109 @@ async function openTrailerModal(mediaType, showId) {
 
     const videosData = await fetchData('tmdb', `/${mediaType}/${showId}/videos`);
     
+    // Clear the spinner
+    trailerCarousel.innerHTML = '';
+    
     if (videosData && videosData.results && videosData.results.length > 0) {
-        trailerCarousel.innerHTML = '';
-        videosData.results.forEach(video => {
-            if (video.site === 'YouTube') {
-                const iframe = document.createElement('iframe');
-                iframe.src = `https://www.youtube.com/embed/${video.key}`;
-                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-                iframe.allowFullscreen = true;
-                trailerCarousel.appendChild(iframe);
-            }
-        });
+        // Filter for YouTube trailers and other clips
+        const trailers = videosData.results.filter(video => video.type === 'Trailer' && video.site === 'YouTube');
+        const clips = videosData.results.filter(video => video.type !== 'Trailer' && video.site === 'YouTube');
+        const allVideos = [...trailers, ...clips];
+        
+        // Logic for single trailer vs. multiple videos
+        if (allVideos.length === 1) {
+            // If only one video, embed it directly
+            const video = allVideos[0];
+            trailerCarousel.innerHTML = `
+                <div class="video-player-single">
+                    <iframe 
+                        src="https://www.youtube.com/embed/${video.key}?autoplay=1" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                        title="${video.name}"
+                    ></iframe>
+                </div>
+            `;
+        } else if (allVideos.length > 1) {
+            // If multiple videos, create a scrollable grid
+            allVideos.forEach(video => {
+                createVideoCard(video, trailerCarousel);
+            });
+        }
     } else {
         trailerCarousel.innerHTML = '<p class="error-message">No trailers or videos available.</p>';
     }
 }
 
+/**
+ * Creates a video card for a modal carousel.
+ * @param {object} video - The video data from TMDB.
+ * @param {HTMLElement} container - The container to append the card to.
+ */
+function createVideoCard(video, container) {
+    const videoCard = document.createElement('div');
+    videoCard.classList.add('video-card');
+    
+    videoCard.innerHTML = `
+        <div class="thumbnail-wrapper">
+            <img src="https://img.youtube.com/vi/${video.key}/mqdefault.jpg" alt="${video.name}" class="video-thumbnail">
+            <i class="fas fa-play-circle play-icon"></i>
+        </div>
+        <div class="video-info">
+            <h4>${video.name}</h4>
+            <p>${video.type}</p>
+        </div>
+    `;
+
+    // Add click event to play the video in the modal
+    videoCard.addEventListener('click', () => {
+        container.innerHTML = `
+            <div class="video-player">
+                <iframe 
+                    src="https://www.youtube.com/embed/${video.key}?autoplay=1" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    title="${video.name}"
+                ></iframe>
+            </div>
+        `;
+    });
+    
+    container.appendChild(videoCard);
+}
+
+// Event listeners to handle the modal's open and close states
+if (playTrailerBtn) {
+    playTrailerBtn.addEventListener('click', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const mediaType = urlParams.get('type');
+        const showId = urlParams.get('id');
+        openTrailerModal(mediaType, showId);
+    });
+}
+
+if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
+        trailerModal.style.display = 'none';
+        const iframe = trailerModal.querySelector('iframe');
+        if (iframe) {
+            iframe.src = ''; // Stop the video from playing in the background
+        }
+    });
+}
+
+// Close the modal when clicking outside the modal content
+window.addEventListener('click', (event) => {
+    if (event.target === trailerModal) {
+        trailerModal.style.display = 'none';
+        const iframe = trailerModal.querySelector('iframe');
+        if (iframe) {
+            iframe.src = '';
+        }
+    }
+});
 
 // =====================
 // Main Execution
@@ -476,25 +672,29 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     // Inside the DOMContentLoaded event listener, after your other code...
 
-const navButtons = document.querySelectorAll('.nav-button');
+    const navButtons = document.querySelectorAll('.nav-button');
 
-navButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        // Prevent default button behavior
-        e.preventDefault();
+    navButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            // Prevent default button behavior
+            e.preventDefault();
 
-        // Get the ID of the section to scroll to from the data attribute
-        const sectionId = button.dataset.section;
-        const targetSection = document.getElementById(sectionId);
+            // Get the ID of the section to scroll to from the data attribute
+            const sectionId = button.dataset.section;
+            const targetSection = document.getElementById(sectionId);
 
-        if (targetSection) {
-            // Scroll to the target section smoothly
-            targetSection.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
+            if (targetSection) {
+                // Scroll to the target section smoothly
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-});
+    const spinnerStatus = document.getElementById('spinnerStatus');
+    if (spinnerStatus) {
+        spinnerStatus.style.display = 'none';
+    }
 
     // Scroll-to-top button functionality (if you choose to keep it)
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');

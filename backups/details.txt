@@ -1,75 +1,1099 @@
-Based on the OMDB API response you found, your plan for the `details.html` and `CineWatch-cast.html` pages is even stronger. The OMDB API provides key information, like awards, that the TMDB API lacks, allowing you to create a much more comprehensive and detailed user experience. Here is the updated, unified plan.
+the page will will have a hero section, showing the first second and third shows info as slide, each hero will have, a show poster on the left, and the show quote eg
 
-***
+Nobody 2
 
-### Hero Section
+Nobody ruins his vacation.
 
-The hero section will be the page's main banner, featuring a full-width background image from the **TMDB API's `backdrop_path`**. This section will have a two-column layout: a large show poster on the left and key information on the right.
+Highest 2 Lowest
 
-* **Dual-API Data**: The information displayed here will be sourced from both APIs.
-    * **TMDB API**: Provides the show's title, year, runtime, genres, language, country, synopsis, and network logos.
-    * **OMDB API**: Provides the **`Awards`** field and more detailed **`Ratings`** (including IMDb and Rotten Tomatoes), using the `imdbID` to connect to the TMDB data.
-* **Interactive Buttons**:
-    * **Play Trailer**: Clicking this opens a modal with a carousel of `<iframe>` videos sourced from the TMDB `/videos` API endpoint.
-    * **Watch Now** and **Add to Watchlist**: Placeholder buttons for future functionality.
+All $$ ain't good $$.
 
----
+The Blacklist
 
-### Main Content Navigation
+Never trust a criminal... Until you have to.
 
-A horizontal navigation bar will serve as an anchor for the main content sections below. This bar will contain clickable buttons that smoothly scroll the user to the corresponding section without reloading the page. The buttons are:
+on the right, with a network logo, only three elements with a view show info if it is a show or View More if not a show,then a unified tagline in the bottom right hero coner "Every story leaves a mark." the three hero slides will be picked randomly from the category, below the hero we will have a dynamically loaded category header,
 
-* **Cast**
-* **Status**
-* **Reviews**
-* **Recommendations**
-* **Awards**
+then a horizontal filters
 
----
 
-### Content Sections
 
-#### **Cast**
+           Sort by Popularity
 
-* This section will display a grid of cast members from the TMDB API.
-* Each card will show the actor's image, real name, and character name.
-* **Enhancement**: All cast cards are now **clickable**, linking to the new `CineWatch-cast.html` page. The link will pass the actor's ID and the show's backdrop URL as URL parameters.
+           Most Popular
 
-#### **Status**
+           Least Popular
 
-* This section's content is conditional, depending on the media type (movie or TV show).
-* **Movies**: Displays the movie's current release status.
-* **TV Shows**: Displays the series status and a "Seasons" button. Clicking this button reveals a new grid of season posters. Clicking a **season poster** will then dynamically load a grid showing all episodes for that season.
+                    Sort by Year
 
-#### **Reviews**
+           Newest First
 
-* This section will display a review from the TMDB API, along with the total number of reviews.
-* It will initially show a truncated review with a "read the rest" button to expand the text on the same page.
+           Oldest First
 
-#### **Recommendations**
+         2025
 
-* This section will contain a carousel of similar shows or movies, fetched from the TMDB `/recommendations` endpoint.
-* Cards will show the show's poster, title, and rating badge, and a hover effect will reveal the release date and language.
+2024
 
-#### **Awards**
+2023
 
-* This new section will be populated with the **`Awards`** information retrieved directly from the OMDB API call.
+2022
 
----
+2021
 
-### New Page: `CineWatch-cast.html`
+2020
 
-This page is a brand-new component dedicated to a specific actor.
+2019
 
-#### **Hero Section**
+2018
 
-* **Background**: The hero will use the show's **backdrop image** passed from the previous page, creating a cohesive visual experience.
-* **Content**: It will display the actor's name and a truncated biography.
+2017
 
-#### **Main Content Section**
+2016
 
-* **Full Biography**: The main area will feature the complete biography of the actor.
-* **Filmography Grid**: It will display a clickable grid of all the shows the actor has appeared in. These cards will link back to the `details.html` page, completing the site's navigation loop. This grid will use your existing `createShowCard` function to ensure consistent styling.
+2015
 
-This video can help you understand how to use the OMDB API to fetch movie data. [OMDB API tutorial](https://www.youtube.com/watch?v=UZtruL7svkc)
-http://googleusercontent.com/youtube_content/51
+2014
+
+2013
+
+2012
+
+2011
+
+2010
+
+2009
+
+2008
+
+2007
+
+2006
+
+2005
+
+2004
+
+2003
+
+2002
+
+2001
+
+2000
+
+1999
+
+1998
+
+1997
+
+1996
+
+1995
+
+1994
+
+1993
+
+1992
+
+1991
+
+1990
+
+1989
+
+1988
+
+1987
+
+1986
+
+1985
+
+1984
+
+1983
+
+1982
+
+1981
+
+1980
+
+1979
+
+1978
+
+1977
+
+1976
+
+1975
+
+1974
+
+1973
+
+1972
+
+1971
+
+1970
+
+1969
+
+1968
+
+1967
+
+1966
+
+1965
+
+1964
+
+1963
+
+1962
+
+1961
+
+1960
+
+1959
+
+1958
+
+1957
+
+1956
+
+1955
+
+1954
+
+1953
+
+1952
+
+1951
+
+1950
+
+All countrys
+
+Afghanistan
+
+Albania
+
+Algeria
+
+American Samoa
+
+Andorra
+
+Angola
+
+Anguilla
+
+Antarctica
+
+Antigua and Barbuda
+
+Argentina
+
+Armenia
+
+Aruba
+
+Australia
+
+Austria
+
+Azerbaijan
+
+Bahamas
+
+Bahrain
+
+Bangladesh
+
+Barbados
+
+Belarus
+
+Belgium
+
+Belize
+
+Benin
+
+Bermuda
+
+Bhutan
+
+Bolivia
+
+Bosnia and Herzegovina
+
+Botswana
+
+Bouvet Island
+
+Brazil
+
+British Indian Ocean Territory
+
+British Virgin Islands
+
+Brunei Darussalam
+
+Bulgaria
+
+Burkina Faso
+
+Burma
+
+Burundi
+
+Cambodia
+
+Cameroon
+
+Canada
+
+Cape Verde
+
+Cayman Islands
+
+Central African Republic
+
+Chad
+
+Chile
+
+China
+
+Christmas Island
+
+Cocos  Islands
+
+Colombia
+
+Comoros
+
+Congo
+
+Congo
+
+Cook Islands
+
+Costa Rica
+
+Cote D'Ivoire
+
+Croatia
+
+Cuba
+
+Cyprus
+
+Czech Republic
+
+Czechoslovakia
+
+Denmark
+
+Djibouti
+
+Dominica
+
+Dominican Republic
+
+East Germany
+
+East Timor
+
+Ecuador
+
+Egypt
+
+El Salvador
+
+Equatorial Guinea
+
+Eritrea
+
+Estonia
+
+Ethiopia
+
+Faeroe Islands
+
+Falkland Islands
+
+Fiji
+
+Finland
+
+France
+
+French Guiana
+
+French Polynesia
+
+French Southern Territories
+
+Gabon
+
+Gambia
+
+Georgia
+
+Germany
+
+Ghana
+
+Gibraltar
+
+Greece
+
+Greenland
+
+Grenada
+
+Guadaloupe
+
+Guam
+
+Guatemala
+
+Guinea
+
+Guinea-Bissau
+
+Guyana
+
+Haiti
+
+Heard and McDonald Islands
+
+Holy See
+
+Honduras
+
+Hong Kong
+
+Hungary
+
+Iceland
+
+India
+
+Indonesia
+
+Iran
+
+Iraq
+
+Ireland
+
+Israel
+
+Italy
+
+Jamaica
+
+Japan
+
+Jordan
+
+Kazakhstan
+
+Kenya
+
+Kiribati
+
+Kosovo
+
+Kuwait
+
+Kyrgyz Republic
+
+Lao People's Democratic Republic
+
+Latvia
+
+Lebanon
+
+Lesotho
+
+Liberia
+
+Libyan Arab Jamahiriya
+
+Liechtenstein
+
+Lithuania
+
+Luxembourg
+
+Macao
+
+Macedonia
+
+Madagascar
+
+Malawi
+
+Malaysia
+
+Maldives
+
+Mali
+
+Malta
+
+Marshall Islands
+
+Martinique
+
+Mauritania
+
+Mauritius
+
+Mayotte
+
+Mexico
+
+Micronesia
+
+Moldova
+
+Monaco
+
+Mongolia
+
+Montenegro
+
+Montserrat
+
+Morocco
+
+Mozambique
+
+Myanmar
+
+Namibia
+
+Nauru
+
+Nepal
+
+Netherlands
+
+Netherlands Antilles
+
+New Caledonia
+
+New Zealand
+
+Nicaragua
+
+Niger
+
+Nigeria
+
+Niue
+
+Norfolk Island
+
+North Korea
+
+Northern Ireland
+
+Northern Mariana Islands
+
+Norway
+
+Oman
+
+Pakistan
+
+Palau
+
+Palestinian Territory
+
+Panama
+
+Papua New Guinea
+
+Paraguay
+
+Peru
+
+Philippines
+
+Pitcairn Island
+
+Poland
+
+Portugal
+
+Puerto Rico
+
+Qatar
+
+Reunion
+
+Romania
+
+Russia
+
+Rwanda
+
+Samoa
+
+San Marino
+
+Sao Tome and Principe
+
+Saudi Arabia
+
+Senegal
+
+Serbia
+
+Serbia and Montenegro
+
+Seychelles
+
+Sierra Leone
+
+Singapore
+
+Slovakia
+
+Slovenia
+
+Solomon Islands
+
+Somalia
+
+South Africa
+
+South Georgia and the South Sandwich Islands
+
+South Korea
+
+South Sudan
+
+Soviet Union
+
+Spain
+
+Sri Lanka
+
+St. Helena
+
+St. Kitts and Nevis
+
+St. Lucia
+
+St. Pierre and Miquelon
+
+St. Vincent and the Grenadines
+
+Sudan
+
+Suriname
+
+Svalbard & Jan Mayen Islands
+
+Swaziland
+
+Sweden
+
+Switzerland
+
+Syrian Arab Republic
+
+Taiwan
+
+Tajikistan
+
+Tanzania
+
+Thailand
+
+Timor-Leste
+
+Togo
+
+Tokelau
+
+Tonga
+
+Trinidad and Tobago
+
+Tunisia
+
+Turkey
+
+Turkmenistan
+
+Turks and Caicos Islands
+
+Tuvalu
+
+Uganda
+
+Ukraine
+
+United Arab Emirates
+
+United Kingdom
+
+United States Minor Outlying Islands
+
+United States of America
+
+Uruguay
+
+US Virgin Islands
+
+Uzbekistan
+
+Vanuatu
+
+Venezuela
+
+Vietnam
+
+Wallis and Futuna Islands
+
+Western Sahara
+
+Yemen
+
+Yugoslavia
+
+Zaire
+
+Zambia
+
+Zimbabwe
+
+All languages
+
+Abkhazian
+
+Afar
+
+Afrikaans
+
+Akan
+
+Albanian
+
+Amharic
+
+Arabic
+
+Aragonese
+
+Armenian
+
+Assamese
+
+Avaric
+
+Avestan
+
+Aymara
+
+Azerbaijani
+
+Bambara
+
+Bashkir
+
+Basque
+
+Belarusian
+
+Bengali
+
+Bislama
+
+Bosnian
+
+Breton
+
+Bulgarian
+
+Burmese
+
+Cantonese
+
+Catalan
+
+Chamorro
+
+Chechen
+
+Chichewa; Nyanja
+
+Chuvash
+
+Cornish
+
+Corsican
+
+Cree
+
+Croatian
+
+Czech
+
+Danish
+
+Divehi
+
+Dutch
+
+Dzongkha
+
+English
+
+Esperanto
+
+Estonian
+
+Ewe
+
+Faroese
+
+Fijian
+
+Finnish
+
+French
+
+Frisian
+
+Fulah
+
+Gaelic
+
+Galician
+
+Ganda
+
+Georgian
+
+German
+
+Greek
+
+Guarani
+
+Gujarati
+
+Haitian; Haitian Creole
+
+Hausa
+
+Hebrew
+
+Herero
+
+Hindi
+
+Hiri Motu
+
+Hungarian
+
+Icelandic
+
+Ido
+
+Igbo
+
+Indonesian
+
+Interlingua
+
+Interlingue
+
+Inuktitut
+
+Inupiaq
+
+Irish
+
+Italian
+
+Japanese
+
+Javanese
+
+Kalaallisut
+
+Kannada
+
+Kanuri
+
+Kashmiri
+
+Kazakh
+
+Khmer
+
+Kikuyu
+
+Kinyarwanda
+
+Kirghiz
+
+Komi
+
+Kongo
+
+Korean
+
+Kuanyama
+
+Kurdish
+
+Lao
+
+Latin
+
+Latvian
+
+Letzeburgesch
+
+Limburgish
+
+Lingala
+
+Lithuanian
+
+Luba-Katanga
+
+Macedonian
+
+Malagasy
+
+Malay
+
+Malayalam
+
+Maltese
+
+Mandarin
+
+Manx
+
+Maori
+
+Marathi
+
+Marshall
+
+Moldavian
+
+Mongolian
+
+Nauru
+
+Navajo
+
+Ndebele
+
+Ndebele
+
+Ndonga
+
+Nepali
+
+No Language
+
+Northern Sami
+
+Norwegian
+
+Norwegian Bokmål
+
+Norwegian Nynorsk
+
+Occitan
+
+Ojibwa
+
+Oriya
+
+Oromo
+
+Ossetian; Ossetic
+
+Pali
+
+Persian
+
+Polish
+
+Portuguese
+
+Punjabi
+
+Pushto
+
+Quechua
+
+Raeto-Romance
+
+Romanian
+
+Rundi
+
+Russian
+
+Samoan
+
+Sango
+
+Sanskrit
+
+Sardinian
+
+Serbian
+
+Serbo-Croatian
+
+Shona
+
+Sindhi
+
+Sinhalese
+
+Slavic
+
+Slovak
+
+Slovenian
+
+Somali
+
+Sotho
+
+Spanish
+
+Sundanese
+
+Swahili
+
+Swati
+
+Swedish
+
+Tagalog
+
+Tahitian
+
+Tajik
+
+Tamil
+
+Tatar
+
+Telugu
+
+Thai
+
+Tibetan
+
+Tigrinya
+
+Tonga
+
+Tsonga
+
+Tswana
+
+Turkish
+
+Turkmen
+
+Twi
+
+Uighur
+
+Ukrainian
+
+Urdu
+
+Uzbek
+
+Venda
+
+Vietnamese
+
+Volapük
+
+Walloon
+
+Welsh
+
+Wolof
+
+Xhosa
+
+Yi
+
+Yiddish
+
+Yoruba
+
+Zhuang
+
+Zulu
+
+Apply FiltersReset Filters
+
+all dropdowns are dynamically populated from tmdb
+
+with shows cards grids, but on category page they will be more details, e.g
+
+8.4(in a badge just as seen on homepage use same class )
+
+
+
+Wednesday
+
+ Type: TV Show
+
+ First Air: 2022
+
+ Lang: EN
+
+ Country: US
+
+Netflix
+
+use rich icons for Type: TV Show
+
+ First Air: 2022
+
+ Lang: EN
+
+ Country: US
+
+if the network name isn'nt availavble, dont dispalay Network text
+
+a centered load more button at bottom of the category's cards grid.
+
+Each card is clickable where it links it to deals.html will parsing all the required urls for the details page eg 127.0.0.1:5500/details.html?id=119051&type=tv

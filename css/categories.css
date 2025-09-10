@@ -1,0 +1,67 @@
+/* ==========================================================
+   File: categories.css
+   Purpose: Styles for the dynamic category pages.
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   Category Header & Title
+   ---------------------------------------------------------- */
+.category-header {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.category-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+/* ----------------------------------------------------------
+   Dynamic Grid for Show Cards
+   ---------------------------------------------------------- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+    justify-items: center;
+}
+.load-more-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+/* ----------------------------------------------------------
+   Responsive Design for Grid
+   ---------------------------------------------------------- */
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-header h1 {
+        font-size: 2rem;
+    }
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .show-card {
+        width: 100%;
+        min-width: unset;
+    }
+}

@@ -1,0 +1,166 @@
+/* ==========================================================
+   File: tvshows.css
+   Purpose: Styles for the TV Shows page, including filters.
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   TV Shows Header & Filters
+   ---------------------------------------------------------- */
+.tv-shows-header {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.tv-shows-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.filter-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    border: 2px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--bg-highlight);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    border-color: var(--accent-primary);
+    font-weight: 600;
+}
+
+/* ----------------------------------------------------------
+   Dynamic Grid & Show Cards
+   ---------------------------------------------------------- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+    justify-items: center;
+}
+
+.show-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.show-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.show-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.show-rating {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #007bff;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 2px solid var(--accent-primary);
+}
+
+.show-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text-primary);
+}
+
+.show-year {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+/* ----------------------------------------------------------
+   Load More Button
+   ---------------------------------------------------------- */
+.load-more-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.load-more-btn {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: none; /* This will be controlled by JavaScript */
+}
+
+.load-more-btn:hover {
+    background-color: var(--accent-secondary);
+}
+/* ----------------------------------------------------------
+   Responsive Design
+   ---------------------------------------------------------- */
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-controls {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .show-card {
+        width: 100%;
+    }
+}

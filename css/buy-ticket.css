@@ -1,0 +1,429 @@
+/* --- Stepper Component --- */
+.stepper-container {
+    padding: 2rem 0;
+}
+
+.stepper-progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.step-line {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-tertiary);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.step {
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-surface);
+    color: var(--text-secondary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    border: 3px solid var(--text-tertiary);
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.step.active {
+    background-color: var(--accent-primary);
+    color: var(--text-link);
+    border-color: var(--accent-primary);
+}
+
+/* --- Section & Content Styles --- */
+.booking-section {
+    padding: 2rem;
+    background-color: var(--bg-card);
+    border-radius: 1rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    box-shadow: var(--shadow-secondary);
+}
+
+.step-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.step-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Movie Info Card --- */
+.movie-info-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-primary);
+}
+
+.movie-poster {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.movie-info-card .info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.movie-info-card .info p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.primary-btn, .secondary-btn {
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.primary-btn {
+    background-color: var(--accent-primary);
+    color: var(--btn-primary-text);
+}
+
+.primary-btn:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+.secondary-btn {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    border: 1px solid var(--border-primary);
+}
+
+.secondary-btn:hover {
+    background-color: var(--btn-secondary-hover);
+}
+
+.buttons-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+/* --- Showtime, Seating, Snacks, Transport & Payment Sections --- */
+.showtime-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.showtime-btn {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.showtime-btn:hover {
+    background-color: var(--bg-secondary);
+}
+
+.showtime-btn.active {
+    background-color: var(--accent-primary);
+    color: var(--btn-primary-text);
+    border-color: var(--accent-primary);
+}
+
+.screen {
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.seat-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0.5rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.seat.available {
+    background-color: var(--text-tertiary);
+}
+
+.seat.available:hover {
+    background-color: var(--accent-primary);
+    transform: scale(1.1);
+}
+
+.seat.occupied {
+    background-color: var(--bg-surface);
+    color: var(--text-tertiary);
+    cursor: not-allowed;
+}
+
+.seat.selected {
+    background-color: var(--accent-secondary);
+    color: var(--text-link);
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.legend-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 0.25rem;
+}
+
+.legend-box.available { background-color: var(--text-tertiary); }
+.legend-box.selected { background-color: var(--accent-secondary); }
+.legend-box.occupied { background-color: var(--bg-surface); }
+
+.snacks-container,
+.transport-container,
+.payment-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.snack-card,
+.transport-card,
+.payment-card {
+    background-color: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: var(--shadow-secondary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.snack-card:hover, .transport-card:hover, .payment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.snack-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.snack-card .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.quantity-btn {
+    background-color: var(--accent-secondary);
+    color: var(--text-link);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.transport-option,
+.payment-option {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.transport-option input, .payment-option input {
+    display: none;
+}
+
+.transport-option .transport-card,
+.payment-option .payment-card {
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.transport-option input:checked + .transport-card,
+.payment-option input:checked + .payment-card {
+    border-color: var(--accent-primary);
+    background-color: var(--bg-tertiary);
+}
+
+.transport-card i, .payment-card i, .payment-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-tertiary);
+}
+
+.payment-icon {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.transport-card span, .payment-card span {
+    font-weight: 500;
+}
+
+.order-summary-card {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-primary);
+}
+
+.order-summary-card p {
+    margin: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+.summary-total {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* --- Modals --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    text-align: center;
+    animation: scaleIn 0.3s ease-in-out;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    color: var(--text-tertiary);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--text-primary);
+}
+
+#mapImageContainer {
+    width: 100%;
+    height: auto;
+}
+
+#mapImageContainer img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.confirmation-icon {
+    font-size: 4rem;
+    color: var(--state-success);
+    margin-bottom: 1rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .booking-section {
+        padding: 1rem;
+    }
+
+    .movie-info-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}

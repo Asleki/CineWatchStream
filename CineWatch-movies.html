@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">CineWatch - Movies</title>
+    
+    <meta name="description" content="Explore a wide range of popular and top-rated movies.">
+    <meta name="keywords" content="movies, streaming, popular, top-rated">
+    <link rel="canonical" href="https://asleki.github.io/CineWatchStreaming/movies.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" id="ogUrl" content="https://asleki.github.io/CineWatchStreaming/movies.html">
+    <meta property="og:title" id="ogTitle" content="CineWatch - Movies">
+    <meta property="og:description" id="ogDescription" content="Discover and stream the latest popular and top-rated movies.">
+    <meta property="og:image" id="ogImage" content="https://asleki.github.io/CineWatchStreaming/images/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" id="twitterUrl" content="https://asleki.github.io/CineWatchStreaming/movies.html">
+    <meta name="twitter:title" id="twitterTitle" content="CineWatch - Movies">
+    <meta name="twitter:description" id="twitterDescription" content="Discover and stream the latest popular and top-rated movies.">
+    <meta name="twitter:image" id="twitterImage" content="https://asleki.github.io/CineWatchStreaming/images/og-image.jpg">
+    <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/movies.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="movies-header">
+            <h1 id="pageHeading">Popular Movies</h1>
+            <div class="filter-controls">
+                <button class="filter-btn active" data-endpoint="popular">Popular</button>
+                <button class="filter-btn" data-endpoint="top_rated">Top Rated</button>
+            </div>
+            <div class="spinner" id="loadingSpinner"></div>
+        </div>
+
+        <section class="grid-container" id="moviesGrid">
+            </section>
+
+        <div class="load-more-btn-wrapper">
+            <button id="loadMoreBtn" class="load-more-btn">Load More</button>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/header.js"></script>
+    <script src="js/movies.js"></script>
+</body>
+</html>

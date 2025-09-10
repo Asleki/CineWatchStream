@@ -1,0 +1,2514 @@
+[
+  {
+    "country": "Kenya",
+    "code": "KE",
+    "language": "en",
+    "cities": [
+      {
+        "name": "Nairobi",
+        "cinemaHalls": [
+          {
+            "id": "nai-1",
+            "name": "Imax Nairobi 20th Century",
+            "welcomeMessage": "Welcome to Imax Nairobi! Experience the magic of the big screen with us. Enjoy our cutting-edge sound and visuals, and grab some of our freshly made snacks. Enjoy the movie!",
+            "contact": "+254 712 345 678",
+            "mapUrl": "https://maps.app.goo.gl/9r8f5g7h1j3k2l4m5",
+            "transportServices": ["Uber", "Bolt", "Bus", "Tuk-tuk"],
+            "paymentMethods": ["M-Pesa", "Cash", "Visa", "Mastercard"],
+            "snacks": [
+              {
+                "name": "Large Popcorn & Soda",
+                "price": 600,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Hot Dog",
+                "price": 450,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+              },
+              {
+                "name": "Nachos & Cheese",
+                "price": 550,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              },
+              {
+                "name": "Chocolate Bar",
+                "price": 200,
+                "image": "https://placehold.co/100x100/7F3E00/white?text=Chocolate"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "nai-2",
+            "name": "Prestige Plaza Cinema",
+            "welcomeMessage": "Your ultimate cinematic destination at Prestige Plaza! Offering a mix of local and international hits with superb comfort.",
+            "contact": "+254 798 765 432",
+            "mapUrl": "https://maps.app.goo.gl/p2o1i4u5y7t6r8e9q",
+            "transportServices": ["Bolt", "Bus", "Cab"],
+            "paymentMethods": ["M-Pesa", "Visa", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn Combo",
+                "price": 500,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Soda",
+                "price": 250,
+                "image": "https://placehold.co/100x100/007bff/white?text=Soda"
+              },
+              {
+                "name": "Gourmet Popcorn",
+                "price": 400,
+                "image": "https://placehold.co/100x100/D0A91D/white?text=Popcorn"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "nai-3",
+            "name": "Garden City Cinemas",
+            "welcomeMessage": "Welcome to a world of entertainment at Garden City Cinemas! We're showing a great selection of movies and TV shows.",
+            "contact": "+254 754 321 987",
+            "mapUrl": "https://maps.app.goo.gl/c8v9b1n2m3l4k5j6h",
+            "transportServices": ["Uber", "Bolt", "Bus"],
+            "paymentMethods": ["M-Pesa", "Visa", "Mastercard"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 350,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Soda",
+                "price": 200,
+                "image": "https://placehold.co/100x100/007bff/white?text=Soda"
+              },
+              {
+                "name": "Ice Cream",
+                "price": 300,
+                "image": "https://placehold.co/100x100/F06292/white?text=Ice+Cream"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "nai-4",
+            "name": "The Hub Karen",
+            "welcomeMessage": "The Hub Karen offers an unparalleled cinematic journey. We have a variety of snacks and a comfortable setting for your movie night.",
+            "contact": "+254 789 123 456",
+            "mapUrl": "https://maps.app.goo.gl/z9x8c7v6b5n4m3l2k",
+            "transportServices": ["Uber", "Bolt", "Taxi"],
+            "paymentMethods": ["M-Pesa", "Cash", "Visa"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda Combo",
+                "price": 550,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Pretzels",
+                "price": 300,
+                "image": "https://placehold.co/100x100/8B4513/white?text=Pretzels"
+              },
+              {
+                "name": "Candy",
+                "price": 250,
+                "image": "https://placehold.co/100x100/FF69B4/white?text=Candy"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Mombasa",
+        "cinemaHalls": [
+          {
+            "id": "mom-1",
+            "name": "Nyali Centre Cinema",
+            "welcomeMessage": "Welcome to Nyali Centre! We are thrilled to show you the latest blockbusters and series.",
+            "contact": "+254 701 234 567",
+            "mapUrl": "https://maps.app.goo.gl/y2t1e4r3w5q6p7a8s",
+            "transportServices": ["Tuk-tuk", "Bus", "Cab"],
+            "paymentMethods": ["M-Pesa", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 300,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Soda",
+                "price": 200,
+                "image": "https://placehold.co/100x100/007bff/white?text=Soda"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "mom-2",
+            "name": "City Mall Cinema",
+            "welcomeMessage": "Enjoy an exciting movie experience at City Mall! Our cinemas offer the best comfort for your viewing pleasure.",
+            "contact": "+254 723 456 789",
+            "mapUrl": "https://maps.app.goo.gl/f1e2c3b4a5z6x7c8v",
+            "transportServices": ["Uber", "Bolt", "Bus"],
+            "paymentMethods": ["M-Pesa", "Visa", "Mastercard"],
+            "snacks": [
+              {
+                "name": "Popcorn Combo",
+                "price": 550,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Nachos",
+                "price": 400,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              },
+              {
+                "name": "Ice Cream",
+                "price": 300,
+                "image": "https://placehold.co/100x100/F06292/white?text=Ice+Cream"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "mom-3",
+            "name": "Likoni Cinemax",
+            "welcomeMessage": "Likoni Cinemax brings you the latest from Hollywood and beyond. Enjoy a show with friends and family.",
+            "contact": "+254 745 678 901",
+            "mapUrl": "https://maps.app.goo.gl/j9h8g7f6d5s4a3d2",
+            "transportServices": ["Ferry", "Bus", "Tuk-tuk"],
+            "paymentMethods": ["M-Pesa", "Cash"],
+            "snacks": [
+              {
+                "name": "Soda",
+                "price": 200,
+                "image": "https://placehold.co/100x100/007bff/white?text=Soda"
+              },
+              {
+                "name": "Popcorn",
+                "price": 300,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "mom-4",
+            "name": "Bamburi Cinemas",
+            "welcomeMessage": "Your coastal cinematic experience awaits at Bamburi Cinemas. Perfect for a day out at the beach.",
+            "contact": "+254 767 890 123",
+            "mapUrl": "https://maps.app.goo.gl/g7f6d5s4a3q2w1e0r",
+            "transportServices": ["Uber", "Bolt", "Bus"],
+            "paymentMethods": ["M-Pesa", "Visa", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda",
+                "price": 500,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Hot Dog",
+                "price": 450,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Kisumu",
+        "cinemaHalls": [
+          {
+            "id": "kis-1",
+            "name": "Kisumu Cinema Hall",
+            "welcomeMessage": "Welcome to Kisumu Cinema Hall! Enjoy our selection of local and international films.",
+            "contact": "+254 721 212 121",
+            "mapUrl": "https://maps.app.goo.gl/s1d2f3g4h5j6k7l8",
+            "transportServices": ["Tuk-tuk", "Matatu", "Motorbike"],
+            "paymentMethods": ["M-Pesa", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 300,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Soda",
+                "price": 200,
+                "image": "https://placehold.co/100x100/007bff/white?text=Soda"
+              },
+              {
+                "name": "Samosa",
+                "price": 100,
+                "image": "https://placehold.co/100x100/8B4513/white?text=Samosa"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "kis-2",
+            "name": "Mega City Cinemas",
+            "welcomeMessage": "Experience great entertainment at Mega City Cinemas, a modern hall with a comfortable atmosphere.",
+            "contact": "+254 734 343 434",
+            "mapUrl": "https://maps.app.goo.gl/o9p8i7u6y5t4r3e2",
+            "transportServices": ["Uber", "Bolt", "Bus"],
+            "paymentMethods": ["M-Pesa", "Visa", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda Combo",
+                "price": 500,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Ice Cream",
+                "price": 300,
+                "image": "https://placehold.co/100x100/F06292/white?text=Ice+Cream"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "kis-3",
+            "name": "Acacia Mall Cinema",
+            "welcomeMessage": "Acacia Mall Cinema offers a convenient and fun movie-going experience for everyone.",
+            "contact": "+254 745 454 545",
+            "mapUrl": "https://maps.app.goo.gl/e2w3q4e5r6t7y8u9",
+            "transportServices": ["Matatu", "Motorbike"],
+            "paymentMethods": ["M-Pesa", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 350,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Juice",
+                "price": 250,
+                "image": "https://placehold.co/100x100/FFA500/white?text=Juice"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "kis-4",
+            "name": "West End Cinema",
+            "welcomeMessage": "Discover a new cinematic dimension at West End Cinema. We have the best visuals and sound systems.",
+            "contact": "+254 767 676 767",
+            "mapUrl": "https://maps.app.goo.gl/a1z2x3c4v5b6n7m8",
+            "transportServices": ["Uber", "Bolt", "Taxi"],
+            "paymentMethods": ["M-Pesa", "Visa"],
+            "snacks": [
+              {
+                "name": "Large Soda",
+                "price": 300,
+                "image": "https://placehold.co/100x100/007bff/white?text=Soda"
+              },
+              {
+                "name": "Popcorn",
+                "price": 400,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Eldoret",
+        "cinemaHalls": [
+          {
+            "id": "eld-1",
+            "name": "Eldoret Cinema",
+            "welcomeMessage": "Welcome to Eldoret Cinema! A classic spot for movie lovers in the city.",
+            "contact": "+254 711 111 111",
+            "mapUrl": "https://maps.app.goo.gl/q9w8e7r6t5y4u3i2",
+            "transportServices": ["Matatu", "Taxi", "Motorbike"],
+            "paymentMethods": ["M-Pesa", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn & Drink",
+                "price": 450,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Samosa",
+                "price": 100,
+                "image": "https://placehold.co/100x100/8B4513/white?text=Samosa"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "eld-2",
+            "name": "Zion Mall Cinema",
+            "welcomeMessage": "Your ultimate movie experience starts here at Zion Mall! We bring you the latest films.",
+            "contact": "+254 722 222 222",
+            "mapUrl": "https://maps.app.goo.gl/z9x8c7v6b5n4m3l2",
+            "transportServices": ["Uber", "Bolt", "Bus"],
+            "paymentMethods": ["M-Pesa", "Visa"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 350,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Soda",
+                "price": 200,
+                "image": "https://placehold.co/100x100/007bff/white?text=Soda"
+              },
+              {
+                "name": "Fries",
+                "price": 300,
+                "image": "https://placehold.co/100x100/E8C940/white?text=Fries"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "eld-3",
+            "name": "Rupa Mall Cinema",
+            "welcomeMessage": "Rupa Mall Cinema is the perfect place to unwind and catch a great film.",
+            "contact": "+254 733 333 333",
+            "mapUrl": "https://maps.app.goo.gl/g7f6d5s4a3z2x1c0",
+            "transportServices": ["Matatu", "Taxi"],
+            "paymentMethods": ["M-Pesa", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda",
+                "price": 500,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Ice Cream",
+                "price": 300,
+                "image": "https://placehold.co/100x100/F06292/white?text=Ice+Cream"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "eld-4",
+            "name": "Westgate Cinemas Eldoret",
+            "welcomeMessage": "Discover cinematic excellence at Westgate Cinemas. We have a great selection for the whole family.",
+            "contact": "+254 744 444 444",
+            "mapUrl": "https://maps.app.goo.gl/m9n8b7v6c5x4z3a2",
+            "transportServices": ["Uber", "Bolt", "Bus"],
+            "paymentMethods": ["M-Pesa", "Visa", "Mastercard"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 350,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Hot Dog",
+                "price": 450,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Nakuru",
+        "cinemaHalls": [
+          {
+            "id": "nak-1",
+            "name": "Nakuru Cinema",
+            "welcomeMessage": "Nakuru Cinema is the city's premier entertainment spot. Enjoy a relaxing time with our wide range of movies.",
+            "contact": "+254 755 555 555",
+            "mapUrl": "https://maps.app.goo.gl/l3k4j5h6g7f8d9s0",
+            "transportServices": ["Uber", "Bolt", "Matatu"],
+            "paymentMethods": ["M-Pesa", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda",
+                "price": 500,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Juice",
+                "price": 250,
+                "image": "https://placehold.co/100x100/FFA500/white?text=Juice"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "nak-2",
+            "name": "West Side Cinema",
+            "welcomeMessage": "Your movie escape awaits at West Side Cinema. Enjoy the latest releases in comfort.",
+            "contact": "+254 766 666 666",
+            "mapUrl": "https://maps.app.goo.gl/p0o9i8u7y6t5r4e3",
+            "transportServices": ["Uber", "Bolt", "Taxi"],
+            "paymentMethods": ["M-Pesa", "Visa"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 350,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Hot Dog",
+                "price": 450,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "nak-3",
+            "name": "Nakuru Mega Cinema",
+            "welcomeMessage": "The new Nakuru Mega Cinema brings you the biggest screens and best sounds in the city.",
+            "contact": "+254 777 777 777",
+            "mapUrl": "https://maps.app.goo.gl/e4w3q2w1r5t6y7u8",
+            "transportServices": ["Matatu", "Motorbike"],
+            "paymentMethods": ["M-Pesa", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda Combo",
+                "price": 600,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Chocolate Bar",
+                "price": 200,
+                "image": "https://placehold.co/100x100/7F3E00/white?text=Chocolate"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "nak-4",
+            "name": "Rift Valley Cinemas",
+            "welcomeMessage": "Join us at Rift Valley Cinemas for a premium movie experience. We have a great range of snacks!",
+            "contact": "+254 788 888 888",
+            "mapUrl": "https://maps.app.goo.gl/t2y3u4i5o6p7a8s9",
+            "transportServices": ["Uber", "Bolt", "Bus"],
+            "paymentMethods": ["M-Pesa", "Visa", "Mastercard"],
+            "snacks": [
+              {
+                "name": "Nachos",
+                "price": 550,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              },
+              {
+                "name": "Popcorn",
+                "price": 400,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Ice Cream",
+                "price": 300,
+                "image": "https://placehold.co/100x100/F06292/white?text=Ice+Cream"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Nigeria",
+    "code": "NG",
+    "language": "en",
+    "cities": [
+      {
+        "name": "Lagos",
+        "cinemaHalls": [
+          {
+            "id": "lag-1",
+            "name": "Filmhouse Cinemas Lekki",
+            "welcomeMessage": "Experience cinematic perfection at Filmhouse Cinemas in Lekki. We have all the latest blockbusters for you.",
+            "contact": "+234 801 123 4567",
+            "mapUrl": "https://maps.app.goo.gl/y2t1e4r3w5q6p7a8s",
+            "transportServices": ["Uber", "Bolt", "Bus"],
+            "paymentMethods": ["Card", "Cash", "Bank Transfer"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda Combo",
+                "price": 2500,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Chicken & Chips",
+                "price": 3500,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Chicken"
+              },
+              {
+                "name": "Nachos",
+                "price": 2000,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "lag-2",
+            "name": "Genesis Cinemas City Hall",
+            "welcomeMessage": "Genesis Cinemas brings you the best of Nollywood and Hollywood. Enjoy a premium movie experience.",
+            "contact": "+234 802 234 5678",
+            "mapUrl": "https://maps.app.goo.gl/p2o1i4u5y7t6r8e9q",
+            "transportServices": ["Ride-Hailing", "Taxi"],
+            "paymentMethods": ["Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Large Popcorn",
+                "price": 1500,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Soda",
+                "price": 800,
+                "image": "https://placehold.co/100x100/007bff/white?text=Soda"
+              },
+              {
+                "name": "Juice",
+                "price": 1000,
+                "image": "https://placehold.co/100x100/FFA500/white?text=Juice"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "lag-3",
+            "name": "Silverbird Galleria VI",
+            "welcomeMessage": "Silverbird Galleria is your one-stop-shop for entertainment. Get your tickets and enjoy the show.",
+            "contact": "+234 803 345 6789",
+            "mapUrl": "https://maps.app.goo.gl/c8v9b1n2m3l4k5j6h",
+            "transportServices": ["Uber", "Bolt", "Bus"],
+            "paymentMethods": ["Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Nachos",
+                "price": 2000,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              },
+              {
+                "name": "Hot Dog",
+                "price": 2500,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+              },
+              {
+                "name": "Popcorn",
+                "price": 1800,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "lag-4",
+            "name": "Ozone Cinemas Yaba",
+            "welcomeMessage": "Catch the latest movies at Ozone Cinemas! We offer a fun and comfortable environment for all movie lovers.",
+            "contact": "+234 804 456 7890",
+            "mapUrl": "https://maps.app.goo.gl/z9x8c7v6b5n4m3l2k",
+            "transportServices": ["Cab", "Bus"],
+            "paymentMethods": ["Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda",
+                "price": 2800,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Candy",
+                "price": 1200,
+                "image": "https://placehold.co/100x100/FF69B4/white?text=Candy"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Abuja",
+        "cinemaHalls": [
+          {
+            "id": "abu-1",
+            "name": "Filmhouse Cinemas Garki",
+            "welcomeMessage": "Enjoy the best of cinema at Filmhouse Garki! We offer an exclusive experience for every movie buff.",
+            "contact": "+234 805 567 8901",
+            "mapUrl": "https://maps.app.goo.gl/g7f6d5s4a3z2x1c0",
+            "transportServices": ["Uber", "Bolt", "Bus"],
+            "paymentMethods": ["Card", "Cash", "Bank Transfer"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 1500,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Hot Dog",
+                "price": 2000,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "abu-2",
+            "name": "Silverbird Cinemas Jabi",
+            "welcomeMessage": "Your entertainment hub in Abuja! Silverbird Cinemas Jabi offers a wide array of movies and shows.",
+            "contact": "+234 806 678 9012",
+            "mapUrl": "https://maps.app.goo.gl/s1d2f3g4h5j6k7l8",
+            "transportServices": ["Taxi", "Ride-Hailing"],
+            "paymentMethods": ["Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda Combo",
+                "price": 2800,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Nachos",
+                "price": 2000,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "abu-3",
+            "name": "Jabi Lake Mall Cinema",
+            "welcomeMessage": "Jabi Lake Mall Cinema is the perfect spot for a weekend movie outing with friends and family.",
+            "contact": "+234 807 789 0123",
+            "mapUrl": "https://maps.app.goo.gl/t2y3u4i5o6p7a8s9",
+            "transportServices": ["Bus", "Cab"],
+            "paymentMethods": ["Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Large Popcorn",
+                "price": 1700,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Soda",
+                "price": 800,
+                "image": "https://placehold.co/100x100/007bff/white?text=Soda"
+              },
+              {
+                "name": "Ice Cream",
+                "price": 1500,
+                "image": "https://placehold.co/100x100/F06292/white?text=Ice+Cream"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "abu-4",
+            "name": "Ceddi Plaza Cinema",
+            "welcomeMessage": "Experience great movies and comfort at Ceddi Plaza Cinema.",
+            "contact": "+234 808 890 1234",
+            "mapUrl": "https://maps.app.goo.gl/o9p8i7u6y5t4r3e2",
+            "transportServices": ["Uber", "Bolt", "Taxi"],
+            "paymentMethods": ["Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda",
+                "price": 2500,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Candy",
+                "price": 1000,
+                "image": "https://placehold.co/100x100/FF69B4/white?text=Candy"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Ibadan",
+        "cinemaHalls": [
+          {
+            "id": "iba-1",
+            "name": "Filmhouse Cinemas Samonda",
+            "welcomeMessage": "Filmhouse Cinemas Samonda is your number one choice for a thrilling cinematic journey.",
+            "contact": "+234 809 901 2345",
+            "mapUrl": "https://maps.app.goo.gl/y2x1c4v3b5n6m7l8k",
+            "transportServices": ["Cab", "Bus"],
+            "paymentMethods": ["Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 1500,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Soda",
+                "price": 800,
+                "image": "https://placehold.co/100x100/007bff/white?text=Soda"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "iba-2",
+            "name": "Ventura Mall Cinema",
+            "welcomeMessage": "Ventura Mall Cinema offers a great selection of movies and a comfortable atmosphere for all.",
+            "contact": "+234 810 012 3456",
+            "mapUrl": "https://maps.app.goo.gl/f1e2c3b4a5z6x7c8v",
+            "transportServices": ["Uber", "Bolt", "Taxi"],
+            "paymentMethods": ["Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda Combo",
+                "price": 2500,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Nachos",
+                "price": 2000,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "iba-3",
+            "name": "Heritage Mall Cinema",
+            "welcomeMessage": "Enjoy the best of cinema at Heritage Mall! We have a great range of snacks and drinks.",
+            "contact": "+234 811 123 4567",
+            "mapUrl": "https://maps.app.goo.gl/g9h8j7k6l5m4n3b2v",
+            "transportServices": ["Cab", "Bus"],
+            "paymentMethods": ["Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Hot Dog",
+                "price": 2000,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+              },
+              {
+                "name": "Popcorn",
+                "price": 1500,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "iba-4",
+            "name": "Dugbe Cinema Hall",
+            "welcomeMessage": "Your local movie hall in Dugbe. We bring you great entertainment in a friendly setting.",
+            "contact": "+234 812 234 5678",
+            "mapUrl": "https://maps.app.goo.gl/p0o9i8u7y6t5r4e3",
+            "transportServices": ["Bus", "Motorbike"],
+            "paymentMethods": ["Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda",
+                "price": 2200,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Candy",
+                "price": 1000,
+                "image": "https://placehold.co/100x100/FF69B4/white?text=Candy"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Port Harcourt",
+        "cinemaHalls": [
+          {
+            "id": "por-1",
+            "name": "Silverbird Cinemas Port Harcourt",
+            "welcomeMessage": "Silverbird Cinemas brings you the best movies in Port Harcourt. Relax and enjoy the show.",
+            "contact": "+234 813 345 6789",
+            "mapUrl": "https://maps.app.goo.gl/e2w3q4e5r6t7y8u9",
+            "transportServices": ["Uber", "Bolt", "Taxi"],
+            "paymentMethods": ["Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 1600,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Soda",
+                "price": 900,
+                "image": "https://placehold.co/100x100/007bff/white?text=Soda"
+              },
+              {
+                "name": "Hot Dog",
+                "price": 2000,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "por-2",
+            "name": "Genesis Cinemas City Hall",
+            "welcomeMessage": "Genesis Cinemas is your top destination for entertainment. Enjoy great movies and snacks.",
+            "contact": "+234 814 456 7890",
+            "mapUrl": "https://maps.app.goo.gl/a1z2x3c4v5b6n7m8",
+            "transportServices": ["Bus", "Cab"],
+            "paymentMethods": ["Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Nachos",
+                "price": 2100,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              },
+              {
+                "name": "Popcorn & Soda Combo",
+                "price": 3000,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "por-3",
+            "name": "Everyday Cinemas",
+            "welcomeMessage": "Everyday Cinemas offers a fantastic movie-going experience for the whole family.",
+            "contact": "+234 815 567 8901",
+            "mapUrl": "https://maps.app.goo.gl/l3k4j5h6g7f8d9s0",
+            "transportServices": ["Uber", "Bolt", "Taxi"],
+            "paymentMethods": ["Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 1800,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Candy",
+                "price": 1000,
+                "image": "https://placehold.co/100x100/FF69B4/white?text=Candy"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "por-4",
+            "name": "Riviera Cinema",
+            "welcomeMessage": "Join us at Riviera Cinema for a relaxing movie night. We have the best visuals and sound.",
+            "contact": "+234 816 678 9012",
+            "mapUrl": "https://maps.app.goo.gl/m9n8b7v6c5x4z3a2",
+            "transportServices": ["Bus", "Cab"],
+            "paymentMethods": ["Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda",
+                "price": 2800,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Fries",
+                "price": 1500,
+                "image": "https://placehold.co/100x100/E8C940/white?text=Fries"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Spain",
+    "code": "ES",
+    "language": "es",
+    "cities": [
+      {
+        "name": "Madrid",
+        "cinemaHalls": [
+          {
+            "id": "mad-1",
+            "name": "Cines Yelmo Islazul",
+            "welcomeMessage": "¡Bienvenido a Cines Yelmo Islazul! Disfruta de la mejor cartelera con la máxima comodidad. ¡Te esperamos!",
+            "contact": "+34 91 511 40 18",
+            "mapUrl": "https://maps.app.goo.gl/y2t1e4r3w5q6p7a8s",
+            "transportServices": ["Metro", "Bus", "Taxi"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Palomitas",
+                "price": 8.50,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Palomitas"
+              },
+              {
+                "name": "Refresco",
+                "price": 4.00,
+                "image": "https://placehold.co/100x100/007bff/white?text=Refresco"
+              },
+              {
+                "name": "Nachos",
+                "price": 7.00,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              },
+              {
+                "name": "Hot Dog",
+                "price": 6.50,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "mad-2",
+            "name": "Cinesa Proyecciones",
+            "welcomeMessage": "¡Disfruta del cine en Cinesa Proyecciones! Tenemos una amplia variedad de películas para todos los gustos.",
+            "contact": "+34 91 594 20 20",
+            "mapUrl": "https://maps.app.goo.gl/p2o1i4u5y7t6r8e9q",
+            "transportServices": ["Metro", "Bus"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Combo de Palomitas y Refresco",
+                "price": 12.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Patatas Fritas",
+                "price": 5.00,
+                "image": "https://placehold.co/100x100/E8C940/white?text=Patatas"
+              },
+              {
+                "name": "Chocolate",
+                "price": 3.00,
+                "image": "https://placehold.co/100x100/7F3E00/white?text=Chocolate"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "mad-3",
+            "name": "Cines Embajadores",
+            "welcomeMessage": "Ven a Cines Embajadores y vive una experiencia cinematográfica única. ¡Te esperamos!",
+            "contact": "+34 91 530 08 24",
+            "mapUrl": "https://maps.app.goo.gl/z9x8c7v6b5n4m3l2k",
+            "transportServices": ["Metro", "Bus", "Bicicleta"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Palomitas",
+                "price": 7.50,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Palomitas"
+              },
+              {
+                "name": "Refresco",
+                "price": 4.00,
+                "image": "https://placehold.co/100x100/007bff/white?text=Refresco"
+              },
+              {
+                "name": "Helado",
+                "price": 4.50,
+                "image": "https://placehold.co/100x100/F06292/white?text=Helado"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "mad-4",
+            "name": "Cine Paz",
+            "welcomeMessage": "El Cine Paz es el lugar ideal para los amantes del cine. Disfruta de nuestra selección con la mejor calidad.",
+            "contact": "+34 91 445 42 36",
+            "mapUrl": "https://maps.app.goo.gl/j9h8g7f6d5s4a3d2",
+            "transportServices": ["Metro", "Bus"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Combo Grande",
+                "price": 14.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Nachos con Guacamole",
+                "price": 8.00,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Barcelona",
+        "cinemaHalls": [
+          {
+            "id": "bar-1",
+            "name": "Cinesa Diagonal Mar",
+            "welcomeMessage": "¡Hola Barcelona! Cinesa Diagonal Mar te trae las mejores películas en un ambiente increíble. ¡Compra tus entradas ya!",
+            "contact": "+34 93 490 85 91",
+            "mapUrl": "https://maps.app.goo.gl/y2x1c4v3b5n6m7l8k",
+            "transportServices": ["Metro", "Tranvía", "Bus"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Palomitas",
+                "price": 9.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Palomitas"
+              },
+              {
+                "name": "Refresco",
+                "price": 4.50,
+                "image": "https://placehold.co/100x100/007bff/white?text=Refresco"
+              },
+              {
+                "name": "Churros",
+                "price": 6.00,
+                "image": "https://placehold.co/100x100/8B4513/white?text=Churros"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "bar-2",
+            "name": "Cine Verdi",
+            "welcomeMessage": "El Cine Verdi es famoso por su selección de cine independiente y de autor. ¡Ven y descubre grandes historias!",
+            "contact": "+34 93 238 79 90",
+            "mapUrl": "https://maps.app.goo.gl/f1e2c3b4a5z6x7c8v",
+            "transportServices": ["Metro", "Bus"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Tostadas",
+                "price": 3.00,
+                "image": "https://placehold.co/100x100/D2B48C/white?text=Tostadas"
+              },
+              {
+                "name": "Café",
+                "price": 2.00,
+                "image": "https://placehold.co/100x100/6F4E37/white?text=Cafe"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "bar-3",
+            "name": "Cinesa Diagonal",
+            "welcomeMessage": "Sumérgete en el mundo del cine en Cinesa Diagonal. Proyectamos las últimas novedades en salas de alta calidad.",
+            "contact": "+34 93 444 87 23",
+            "mapUrl": "https://maps.app.goo.gl/g9h8j7k6l5m4n3b2v",
+            "transportServices": ["Metro", "Bus", "Taxi"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Popcorn & Refresco",
+                "price": 10.50,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Nachos & Queso",
+                "price": 8.00,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "bar-4",
+            "name": "Balmes Multicines",
+            "welcomeMessage": "En Balmes Multicines, cada película es una experiencia inolvidable. ¡Disfruta de la mejor selección de cine!",
+            "contact": "+34 93 456 78 90",
+            "mapUrl": "https://maps.app.goo.gl/p0o9i8u7y6t5r4e3",
+            "transportServices": ["Metro", "Bus"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Palomitas",
+                "price": 8.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Palomitas"
+              },
+              {
+                "name": "Refresco",
+                "price": 4.00,
+                "image": "https://placehold.co/100x100/007bff/white?text=Refresco"
+              },
+              {
+                "name": "Patatas Fritas",
+                "price": 5.00,
+                "image": "https://placehold.co/100x100/E8C940/white?text=Patatas"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Valencia",
+        "cinemaHalls": [
+          {
+            "id": "val-1",
+            "name": "Cines Babel",
+            "welcomeMessage": "Bienvenido a Cines Babel! Somos el punto de encuentro para los amantes del cine de autor y películas en versión original.",
+            "contact": "+34 96 361 58 43",
+            "mapUrl": "https://maps.app.goo.gl/e2w3q4e5r6t7y8u9",
+            "transportServices": ["Metro", "Bus", "Taxi"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Palomitas",
+                "price": 7.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Palomitas"
+              },
+              {
+                "name": "Refresco",
+                "price": 3.50,
+                "image": "https://placehold.co/100x100/007bff/white?text=Refresco"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "val-2",
+            "name": "Kinema Centre",
+            "welcomeMessage": "En Kinema Centre, cada película es una nueva aventura. Ven y disfruta de nuestra variada cartelera.",
+            "contact": "+34 96 361 58 44",
+            "mapUrl": "https://maps.app.goo.gl/a1z2x3c4v5b6n7m8",
+            "transportServices": ["Bus", "Metro"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Combo Cine",
+                "price": 10.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Nachos",
+                "price": 6.00,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "val-3",
+            "name": "Cines Yelmo MN4",
+            "welcomeMessage": "Ven a Cines Yelmo MN4 y vive la magia del cine en pantallas grandes. ¡Te esperamos con los mejores estrenos!",
+            "contact": "+34 96 361 58 45",
+            "mapUrl": "https://maps.app.goo.gl/l3k4j5h6g7f8d9s0",
+            "transportServices": ["Bus", "Taxi"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Popcorn & Refresco",
+                "price": 11.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Hot Dog",
+                "price": 6.50,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "val-4",
+            "name": "ABC Park",
+            "welcomeMessage": "Disfruta de las últimas películas en ABC Park. Ofrecemos una experiencia cómoda y entretenida.",
+            "contact": "+34 96 361 58 46",
+            "mapUrl": "https://maps.app.goo.gl/p0o9i8u7y6t5r4e3",
+            "transportServices": ["Metro", "Bus"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Palomitas",
+                "price": 7.50,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Palomitas"
+              },
+              {
+                "name": "Refresco",
+                "price": 4.00,
+                "image": "https://placehold.co/100x100/007bff/white?text=Refresco"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Seville",
+        "cinemaHalls": [
+          {
+            "id": "sev-1",
+            "name": "Cinesur Los Arcos",
+            "welcomeMessage": "¡Bienvenido a Cinesur Los Arcos! Tu cine de confianza con las mejores películas del momento.",
+            "contact": "+34 95 442 34 56",
+            "mapUrl": "https://maps.app.goo.gl/t2y3u4i5o6p7a8s9",
+            "transportServices": ["Metro", "Bus", "Taxi"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Palomitas & Refresco",
+                "price": 10.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Nachos",
+                "price": 7.00,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "sev-2",
+            "name": "Cines Nervión Plaza",
+            "welcomeMessage": "En Cines Nervión Plaza, cada película es un evento. Disfruta de una experiencia única con nosotros.",
+            "contact": "+34 95 458 90 12",
+            "mapUrl": "https://maps.app.goo.gl/o9p8i7u6y5t4r3e2",
+            "transportServices": ["Metro", "Bus"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Palomitas",
+                "price": 8.50,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Palomitas"
+              },
+              {
+                "name": "Refresco",
+                "price": 4.50,
+                "image": "https://placehold.co/100x100/007bff/white?text=Refresco"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "sev-3",
+            "name": "Cine Zona Este",
+            "welcomeMessage": "Cine Zona Este es tu cine ideal para ver los últimos estrenos en un ambiente familiar y divertido.",
+            "contact": "+34 95 461 78 90",
+            "mapUrl": "https://maps.app.goo.gl/e4w3q2w1r5t6y7u8",
+            "transportServices": ["Bus", "Taxi"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Hot Dog",
+                "price": 6.50,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+              },
+              {
+                "name": "Nachos",
+                "price": 7.00,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "sev-4",
+            "name": "MK2 Cine Sur",
+            "welcomeMessage": "Vive la mejor experiencia de cine en MK2 Cine Sur. Ofrecemos la mejor calidad en sonido y imagen.",
+            "contact": "+34 95 472 56 78",
+            "mapUrl": "https://maps.app.goo.gl/a1z2x3c4v5b6n7m8",
+            "transportServices": ["Bus", "Metro"],
+            "paymentMethods": ["Tarjeta", "Efectivo"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 8.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Refresco",
+                "price": 4.00,
+                "image": "https://placehold.co/100x100/007bff/white?text=Refresco"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "USA",
+    "code": "US",
+    "language": "en",
+    "cities": [
+      {
+        "name": "New York",
+        "cinemaHalls": [
+          {
+            "id": "ny-1",
+            "name": "AMC Lincoln Square 13",
+            "welcomeMessage": "Welcome to AMC Lincoln Square 13! Home to NYC's biggest IMAX screen. Enjoy the latest blockbusters with us.",
+            "contact": "+1 212-336-5020",
+            "mapUrl": "https://maps.app.goo.gl/y2t1e4r3w5q6p7a8s",
+            "transportServices": ["Subway", "Taxi", "Bus", "Ride-Share"],
+            "paymentMethods": ["Credit Card", "Cash", "Apple Pay", "Google Pay"],
+            "snacks": [
+              {
+                "name": "Large Popcorn & Soda",
+                "price": 18.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Nachos",
+                "price": 12.00,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              },
+              {
+                "name": "Candy",
+                "price": 7.00,
+                "image": "https://placehold.co/100x100/FF69B4/white?text=Candy"
+              },
+              {
+                "name": "Hot Dog",
+                "price": 9.00,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "ny-2",
+            "name": "Angelika Film Center",
+            "welcomeMessage": "Angelika Film Center is a true cinema lover's paradise. We specialize in independent and foreign films.",
+            "contact": "+1 212-995-2570",
+            "mapUrl": "https://maps.app.goo.gl/p2o1i4u5y7t6r8e9q",
+            "transportServices": ["Subway", "Bus", "Taxi"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Organic Popcorn",
+                "price": 10.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Gourmet Coffee",
+                "price": 6.00,
+                "image": "https://placehold.co/100x100/6F4E37/white?text=Coffee"
+              },
+              {
+                "name": "Cookie",
+                "price": 4.50,
+                "image": "https://placehold.co/100x100/D2B48C/white?text=Cookie"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "ny-3",
+            "name": "Regal Union Square",
+            "welcomeMessage": "Regal Union Square is your go-to for a great movie night. Enjoy our spacious auditoriums and comfortable seating.",
+            "contact": "+1 844-462-7342",
+            "mapUrl": "https://maps.app.goo.gl/c8v9b1n2m3l4k5j6h",
+            "transportServices": ["Subway", "Bus"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda Combo",
+                "price": 20.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Nachos",
+                "price": 13.00,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "ny-4",
+            "name": "IFC Center",
+            "welcomeMessage": "IFC Center is the place for indie films and cult classics. A unique cinema experience awaits you.",
+            "contact": "+1 212-924-7771",
+            "mapUrl": "https://maps.app.goo.gl/z9x8c7v6b5n4m3l2k",
+            "transportServices": ["Subway", "Taxi"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 9.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Snack Mix",
+                "price": 6.00,
+                "image": "https://placehold.co/100x100/946300/white?text=Snack+Mix"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Los Angeles",
+        "cinemaHalls": [
+          {
+            "id": "la-1",
+            "name": "TCL Chinese Theatre",
+            "welcomeMessage": "Welcome to the world-famous TCL Chinese Theatre! Walk in the footsteps of legends and enjoy the latest movies.",
+            "contact": "+1 323-461-3331",
+            "mapUrl": "https://maps.app.goo.gl/y2x1c4v3b5n6m7l8k",
+            "transportServices": ["Metro", "Bus", "Taxi"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Large Popcorn & Soda",
+                "price": 20.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Hot Dog",
+                "price": 10.00,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "la-2",
+            "name": "Arclight Cinemas Hollywood",
+            "welcomeMessage": "The best movie experience awaits at Arclight Cinemas! We provide a luxurious and immersive atmosphere.",
+            "contact": "+1 323-464-4226",
+            "mapUrl": "https://maps.app.goo.gl/f1e2c3b4a5z6x7c8v",
+            "transportServices": ["Ride-Share", "Metro"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Caramel Popcorn",
+                "price": 12.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Caramel+Popcorn"
+              },
+              {
+                "name": "Gourmet Soda",
+                "price": 7.00,
+                "image": "https://placehold.co/100x100/007bff/white?text=Soda"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "la-3",
+            "name": "Regal L.A. LIVE",
+            "welcomeMessage": "Regal L.A. LIVE is your premiere destination for movies and entertainment in downtown LA.",
+            "contact": "+1 844-462-7342",
+            "mapUrl": "https://maps.app.goo.gl/g9h8j7k6l5m4n3b2v",
+            "transportServices": ["Metro", "Bus", "Taxi"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Nachos Supreme",
+                "price": 15.00,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              },
+              {
+                "name": "Pretzels",
+                "price": 8.00,
+                "image": "https://placehold.co/100x100/8B4513/white?text=Pretzels"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "la-4",
+            "name": "The Egyptian Theatre",
+            "welcomeMessage": "Step back in time at The Egyptian Theatre. We specialize in classic films and special events.",
+            "contact": "+1 323-461-4567",
+            "mapUrl": "https://maps.app.goo.gl/p0o9i8u7y6t5r4e3",
+            "transportServices": ["Metro", "Bus"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 8.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Assorted Candy",
+                "price": 6.00,
+                "image": "https://placehold.co/100x100/FF69B4/white?text=Candy"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Chicago",
+        "cinemaHalls": [
+          {
+            "id": "chi-1",
+            "name": "AMC River East 21",
+            "welcomeMessage": "Welcome to AMC River East! We have 21 screens to bring you all the movies you want to see.",
+            "contact": "+1 312-596-0120",
+            "mapUrl": "https://maps.app.goo.gl/e2w3q4e5r6t7y8u9",
+            "transportServices": ["L Train", "Bus", "Taxi"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Large Popcorn & Soda",
+                "price": 19.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Hot Dog",
+                "price": 9.50,
+                "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "chi-2",
+            "name": "Music Box Theatre",
+            "welcomeMessage": "Music Box Theatre is a historic landmark for independent and foreign film. Join us for a unique experience.",
+            "contact": "+1 773-871-6604",
+            "mapUrl": "https://maps.app.goo.gl/a1z2x3c4v5b6n7m8",
+            "transportServices": ["L Train", "Bus"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Gourmet Popcorn",
+                "price": 10.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Craft Beer",
+                "price": 12.00,
+                "image": "https://placehold.co/100x100/D4AF37/white?text=Beer"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "chi-3",
+            "name": "Davis Theater",
+            "welcomeMessage": "Davis Theater is a newly renovated cinema bringing you comfort and class. Come enjoy a show!",
+            "contact": "+1 773-771-4648",
+            "mapUrl": "https://maps.app.goo.gl/l3k4j5h6g7f8d9s0",
+            "transportServices": ["L Train", "Bus", "Ride-Share"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn & Soda",
+                "price": 15.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Nachos",
+                "price": 11.00,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "chi-4",
+            "name": "Logan Theatre",
+            "welcomeMessage": "Logan Theatre is a historic art deco movie palace with a great selection of films and a full bar.",
+            "contact": "+1 773-342-5555",
+            "mapUrl": "https://maps.app.goo.gl/p0o9i8u7y6t5r4e3",
+            "transportServices": ["L Train", "Bus"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Pretzels",
+                "price": 7.00,
+                "image": "https://placehold.co/100x100/8B4513/white?text=Pretzels"
+              },
+              {
+                "name": "Popcorn",
+                "price": 9.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Miami",
+        "cinemaHalls": [
+          {
+            "id": "mia-1",
+            "name": "Silverspot Cinema",
+            "welcomeMessage": "Silverspot Cinema offers a premium cinematic experience with plush seating and gourmet dining options.",
+            "contact": "+1 305-534-9988",
+            "mapUrl": "https://maps.app.goo.gl/t2y3u4i5o6p7a8s9",
+            "transportServices": ["Ride-Share", "Taxi", "Bus"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 12.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Gourmet Pizza",
+                "price": 25.00,
+                "image": "https://placehold.co/100x100/E8C940/white?text=Pizza"
+              },
+              {
+                "name": "Wine",
+                "price": 15.00,
+                "image": "https://placehold.co/100x100/8B0000/white?text=Wine"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "mia-2",
+            "name": "AMC Sunset Place 24",
+            "welcomeMessage": "AMC Sunset Place 24 is a great place to watch the latest movies with friends and family.",
+            "contact": "+1 305-667-8901",
+            "mapUrl": "https://maps.app.goo.gl/o9p8i7u6y5t4r3e2",
+            "transportServices": ["Bus", "Ride-Share"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Large Popcorn & Soda",
+                "price": 18.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Nachos",
+                "price": 12.00,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "mia-3",
+            "name": "Coral Gables Art Cinema",
+            "welcomeMessage": "Coral Gables Art Cinema is a non-profit art house cinema for independent and foreign films.",
+            "contact": "+1 786-385-9689",
+            "mapUrl": "https://maps.app.goo.gl/e4w3q2w1r5t6y7u8",
+            "transportServices": ["Bus", "Taxi"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 8.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Candy",
+                "price": 5.00,
+                "image": "https://placehold.co/100x100/FF69B4/white?text=Candy"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "mia-4",
+            "name": "South Beach Cinematheque",
+            "welcomeMessage": "South Beach Cinematheque offers a unique experience with classic and independent films. Come and enjoy!",
+            "contact": "+1 305-673-4567",
+            "mapUrl": "https://maps.app.goo.gl/a1z2x3c4v5b6n7m8",
+            "transportServices": ["Taxi", "Bus"],
+            "paymentMethods": ["Credit Card", "Cash"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 9.00,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Gourmet Soda",
+                "price": 6.00,
+                "image": "https://placehold.co/100x100/007bff/white?text=Soda"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "China",
+    "code": "CN",
+    "language": "zh",
+    "cities": [
+      {
+        "name": "Beijing",
+        "cinemaHalls": [
+          {
+            "id": "bei-1",
+            "name": "Beijing Capital Cinema",
+            "welcomeMessage": "欢迎来到北京首都影院！我们为您提供最先进的观影技术和舒适的观影环境。",
+            "contact": "+86 10 6555 1234",
+            "mapUrl": "https://maps.app.goo.gl/y2t1e4r3w5q6p7a8s",
+            "transportServices": ["地铁", "公交", "出租车"],
+            "paymentMethods": ["支付宝", "微信支付", "现金"],
+            "snacks": [
+              {
+                "name": "爆米花",
+                "price": 30,
+                "image": "https://placehold.co/100x100/A87D00/white?text=爆米花"
+              },
+              {
+                "name": "可乐",
+                "price": 15,
+                "image": "https://placehold.co/100x100/007bff/white?text=可乐"
+              },
+              {
+                "name": "热狗",
+                "price": 25,
+                "image": "https://placehold.co/100x100/C85A17/white?text=热狗"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "bei-2",
+            "name": "Wanda International Cinema",
+            "welcomeMessage": "万达国际影城欢迎您！我们为您带来最新的大片和最顶级的视听享受。",
+            "contact": "+86 10 6555 5678",
+            "mapUrl": "https://maps.app.goo.gl/p2o1i4u5y7t6r8e9q",
+            "transportServices": ["地铁", "公交"],
+            "paymentMethods": ["支付宝", "微信支付"],
+            "snacks": [
+              {
+                "name": "爆米花套餐",
+                "price": 45,
+                "image": "https://placehold.co/100x100/A87D00/white?text=套餐"
+              },
+              {
+                "name": "玉米片",
+                "price": 30,
+                "image": "https://placehold.co/100x100/946300/white?text=玉米片"
+              },
+              {
+                "name": "冰淇淋",
+                "price": 20,
+                "image": "https://placehold.co/100x100/F06292/white?text=冰淇淋"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "bei-3",
+            "name": "China Film Museum Cinema",
+            "welcomeMessage": "在中国电影博物馆影院，您可以一边了解电影历史，一边欣赏最新的电影。",
+            "contact": "+86 10 6555 9012",
+            "mapUrl": "https://maps.app.goo.gl/c8v9b1n2m3l4k5j6h",
+            "transportServices": ["公交", "出租车"],
+            "paymentMethods": ["支付宝", "微信支付", "现金"],
+            "snacks": [
+              {
+                "name": "爆米花",
+                "price": 28,
+                "image": "https://placehold.co/100x100/A87D00/white?text=爆米花"
+              },
+              {
+                "name": "果汁",
+                "price": 18,
+                "image": "https://placehold.co/100x100/FFA500/white?text=果汁"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "bei-4",
+            "name": "UME International Cineplex",
+            "welcomeMessage": "UME国际影城为您提供高品质的观影体验，是我们对您的承诺。",
+            "contact": "+86 10 6555 3456",
+            "mapUrl": "https://maps.app.goo.gl/z9x8c7v6b5n4m3l2k",
+            "transportServices": ["地铁", "出租车"],
+            "paymentMethods": ["支付宝", "微信支付"],
+            "snacks": [
+              {
+                "name": "大桶爆米花",
+                "price": 35,
+                "image": "https://placehold.co/100x100/A87D00/white?text=爆米花"
+              },
+              {
+                "name": "可乐",
+                "price": 15,
+                "image": "https://placehold.co/100x100/007bff/white?text=可乐"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Shanghai",
+        "cinemaHalls": [
+          {
+            "id": "sha-1",
+            "name": "Shanghai Peace Cinema",
+            "welcomeMessage": "欢迎来到上海和平影都！我们提供一流的影音设备和舒适的观影环境。",
+            "contact": "+86 21 6355 1234",
+            "mapUrl": "https://maps.app.goo.gl/g7f6d5s4a3z2x1c0",
+            "transportServices": ["地铁", "公交", "出租车"],
+            "paymentMethods": ["支付宝", "微信支付", "现金"],
+            "snacks": [
+              {
+                "name": "爆米花",
+                "price": 25,
+                "image": "https://placehold.co/100x100/A87D00/white?text=爆米花"
+              },
+              {
+                "name": "可乐",
+                "price": 12,
+                "image": "https://placehold.co/100x100/007bff/white?text=可乐"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "sha-2",
+            "name": "SFC International Cinema",
+            "welcomeMessage": "SFC国际影城，您在上海的电影首选。享受我们提供的顶级视听盛宴。",
+            "contact": "+86 21 6355 5678",
+            "mapUrl": "https://maps.app.goo.gl/s1d2f3g4h5j6k7l8",
+            "transportServices": ["地铁", "公交"],
+            "paymentMethods": ["支付宝", "微信支付"],
+            "snacks": [
+              {
+                "name": "爆米花套餐",
+                "price": 40,
+                "image": "https://placehold.co/100x100/A87D00/white?text=套餐"
+              },
+              {
+                "name": "玉米片",
+                "price": 28,
+                "image": "https://placehold.co/100x100/946300/white?text=玉米片"
+              },
+              {
+                "name": "热狗",
+                "price": 22,
+                "image": "https://placehold.co/100x100/C85A17/white?text=热狗"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "sha-3",
+            "name": "Shanghai UME Cinema",
+            "welcomeMessage": "UME影城为您带来最新的电影，还有最棒的零食选择。",
+            "contact": "+86 21 6355 9012",
+            "mapUrl": "https://maps.app.goo.gl/t2y3u4i5o6p7a8s9",
+            "transportServices": ["出租车", "地铁"],
+            "paymentMethods": ["支付宝", "微信支付", "现金"],
+            "snacks": [
+              {
+                "name": "爆米花",
+                "price": 30,
+                "image": "https://placehold.co/100x100/A87D00/white?text=爆米花"
+              },
+              {
+                "name": "可乐",
+                "price": 15,
+                "image": "https://placehold.co/100x100/007bff/white?text=可乐"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "sha-4",
+            "name": "CGV Cinemas",
+            "welcomeMessage": "CGV影城，享受韩国风味的电影院体验。我们有独特的零食和电影。",
+            "contact": "+86 21 6355 3456",
+            "mapUrl": "https://maps.app.goo.gl/o9p8i7u6y5t4r3e2",
+            "transportServices": ["地铁", "公交"],
+            "paymentMethods": ["支付宝", "微信支付"],
+            "snacks": [
+              {
+                "name": "韩式炒年糕",
+                "price": 35,
+                "image": "https://placehold.co/100x100/A52A2A/white?text=年糕"
+              },
+              {
+                "name": "柠檬茶",
+                "price": 18,
+                "image": "https://placehold.co/100x100/F0E68C/white?text=柠檬茶"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Guangzhou",
+        "cinemaHalls": [
+          {
+            "id": "gua-1",
+            "name": "Guangzhou Grand Theatre",
+            "welcomeMessage": "欢迎来到广州大剧院！除了演出，我们还有电影院为您提供丰富的文化体验。",
+            "contact": "+86 20 8765 4321",
+            "mapUrl": "https://maps.app.goo.gl/m9n8b7v6c5x4z3a2",
+            "transportServices": ["地铁", "公交", "出租车"],
+            "paymentMethods": ["支付宝", "微信支付", "现金"],
+            "snacks": [
+              {
+                "name": "爆米花",
+                "price": 28,
+                "image": "https://placehold.co/100x100/A87D00/white?text=爆米花"
+              },
+              {
+                "name": "可乐",
+                "price": 15,
+                "image": "https://placehold.co/100x100/007bff/white?text=可乐"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "gua-2",
+            "name": "Jinyi International Cinema",
+            "welcomeMessage": "金逸国际影城是您在广州的首选。我们有最先进的杜比全景声影厅。",
+            "contact": "+86 20 8765 9876",
+            "mapUrl": "https://maps.app.goo.gl/t2y3u4i5o6p7a8s9",
+            "transportServices": ["地铁", "公交"],
+            "paymentMethods": ["支付宝", "微信支付"],
+            "snacks": [
+              {
+                "name": "爆米花套餐",
+                "price": 45,
+                "image": "https://placehold.co/100x100/A87D00/white?text=套餐"
+              },
+              {
+                "name": "玉米片",
+                "price": 30,
+                "image": "https://placehold.co/100x100/946300/white?text=玉米片"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "gua-3",
+            "name": "Guangdong Provincial Cinema",
+            "welcomeMessage": "广东省电影院，一个充满文化气息的观影圣地。为您带来精彩的电影。",
+            "contact": "+86 20 8765 1234",
+            "mapUrl": "https://maps.app.goo.gl/p0o9i8u7y6t5r4e3",
+            "transportServices": ["公交", "出租车"],
+            "paymentMethods": ["支付宝", "微信支付", "现金"],
+            "snacks": [
+              {
+                "name": "爆米花",
+                "price": 25,
+                "image": "https://placehold.co/100x100/A87D00/white?text=爆米花"
+              },
+              {
+                "name": "汽水",
+                "price": 12,
+                "image": "https://placehold.co/100x100/007bff/white?text=汽水"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "gua-4",
+            "name": "Hengdian International Cinema",
+            "welcomeMessage": "横店国际影城，让您在家门口就能看到最热门的电影。",
+            "contact": "+86 20 8765 5678",
+            "mapUrl": "https://maps.app.goo.gl/e4w3q2w1r5t6y7u8",
+            "transportServices": ["地铁", "出租车"],
+            "paymentMethods": ["支付宝", "微信支付"],
+            "snacks": [
+              {
+                "name": "热狗",
+                "price": 20,
+                "image": "https://placehold.co/100x100/C85A17/white?text=热狗"
+              },
+              {
+                "name": "可乐",
+                "price": 10,
+                "image": "https://placehold.co/100x100/007bff/white?text=可乐"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Chengdu",
+        "cinemaHalls": [
+          {
+            "id": "che-1",
+            "name": "SFC International Cinema",
+            "welcomeMessage": "成都SFC国际影城，为您带来独特的川味电影体验。我们有最好的观影设备。",
+            "contact": "+86 28 8666 1234",
+            "mapUrl": "https://maps.app.goo.gl/y2t1e4r3w5q6p7a8s",
+            "transportServices": ["地铁", "公交", "出租车"],
+            "paymentMethods": ["支付宝", "微信支付", "现金"],
+            "snacks": [
+              {
+                "name": "爆米花",
+                "price": 26,
+                "image": "https://placehold.co/100x100/A87D00/white?text=爆米花"
+              },
+              {
+                "name": "酸梅汤",
+                "price": 18,
+                "image": "https://placehold.co/100x100/946300/white?text=酸梅汤"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "che-2",
+            "name": "Chengdu Grand Cinema",
+            "welcomeMessage": "成都大影城，我们提供超大荧幕和舒适的座椅，让您沉浸在电影世界中。",
+            "contact": "+86 28 8666 5678",
+            "mapUrl": "https://maps.app.goo.gl/p2o1i4u5y7t6r8e9q",
+            "transportServices": ["地铁", "公交"],
+            "paymentMethods": ["支付宝", "微信支付"],
+            "snacks": [
+              {
+                "name": "爆米花套餐",
+                "price": 42,
+                "image": "https://placehold.co/100x100/A87D00/white?text=套餐"
+              },
+              {
+                "name": "薯条",
+                "price": 20,
+                "image": "https://placehold.co/100x100/E8C940/white?text=薯条"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "che-3",
+            "name": "Wanda International Cinema",
+            "welcomeMessage": "万达国际影城，您的电影首选。享受最棒的观影体验。",
+            "contact": "+86 28 8666 9012",
+            "mapUrl": "https://maps.app.goo.gl/c8v9b1n2m3l4k5j6h",
+            "transportServices": ["公交", "出租车"],
+            "paymentMethods": ["支付宝", "微信支付", "现金"],
+            "snacks": [
+              {
+                "name": "爆米花",
+                "price": 28,
+                "image": "https://placehold.co/100x100/A87D00/white?text=爆米花"
+              },
+              {
+                "name": "冰淇淋",
+                "price": 18,
+                "image": "https://placehold.co/100x100/F06292/white?text=冰淇淋"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "che-4",
+            "name": "Sichuan Film Studio Cinema",
+            "welcomeMessage": "四川电影制片厂影院，一个有故事的电影院。为您带来独特的电影之旅。",
+            "contact": "+86 28 8666 3456",
+            "mapUrl": "https://maps.app.goo.gl/z9x8c7v6b5n4m3l2k",
+            "transportServices": ["地铁", "出租车"],
+            "paymentMethods": ["支付宝", "微信支付"],
+            "snacks": [
+              {
+                "name": "冒菜",
+                "price": 30,
+                "image": "https://placehold.co/100x100/8B0000/white?text=冒菜"
+              },
+              {
+                "name": "奶茶",
+                "price": 15,
+                "image": "https://placehold.co/100x100/D2B48C/white?text=奶茶"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "country": "India",
+    "code": "IN",
+    "language": "hi",
+    "cities": [
+      {
+        "name": "Mumbai",
+        "cinemaHalls": [
+          {
+            "id": "mum-1",
+            "name": "PVR Cinemas, Phoenix Mills",
+            "welcomeMessage": "PVR Cinemas में आपका स्वागत है! नवीनतम ब्लॉकबस्टर और शानदार फिल्मों का आनंद लें।",
+            "contact": "+91 22 4333 1234",
+            "mapUrl": "https://maps.app.goo.gl/y2t1e4r3w5q6p7a8s",
+            "transportServices": ["Train", "Bus", "Taxi", "Uber"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 250,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Samosa",
+                "price": 150,
+                "image": "https://placehold.co/100x100/8B4513/white?text=Samosa"
+              },
+              {
+                "name": "Cold Drink",
+                "price": 120,
+                "image": "https://placehold.co/100x100/007bff/white?text=Drink"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "mum-2",
+            "name": "INOX Cinemas, Nariman Point",
+            "welcomeMessage": "आईनॉक्स सिनेमा में आपका स्वागत है! सबसे आरामदायक सीटों और सबसे अच्छी स्क्रीन का अनुभव लें।",
+            "contact": "+91 22 4333 5678",
+            "mapUrl": "https://maps.app.goo.gl/p2o1i4u5y7t6r8e9q",
+            "transportServices": ["Bus", "Taxi"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Popcorn & Cola Combo",
+                "price": 400,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Nachos",
+                "price": 300,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "mum-3",
+            "name": "Cinepolis, Fun Republic",
+            "welcomeMessage": "सिनेपोलिस में आपका स्वागत है! बॉलीवुड और हॉलीवुड फिल्मों का सबसे अच्छा चयन यहाँ पर है।",
+            "contact": "+91 22 4333 9012",
+            "mapUrl": "https://maps.app.goo.gl/c8v9b1n2m3l4k5j6h",
+            "transportServices": ["Auto", "Bus", "Uber"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Chai & Samosa",
+                "price": 200,
+                "image": "https://placehold.co/100x100/8B4513/white?text=Chai"
+              },
+              {
+                "name": "Popcorn",
+                "price": 220,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "mum-4",
+            "name": "G7 Multiplex, Bandra",
+            "welcomeMessage": "जी7 मल्टीप्लेक्स में आपका स्वागत है! एक शानदार और यादगार अनुभव के लिए हमसे जुड़ें।",
+            "contact": "+91 22 4333 3456",
+            "mapUrl": "https://maps.app.goo.gl/z9x8c7v6b5n4m3l2k",
+            "transportServices": ["Auto", "Train", "Taxi"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Popcorn & Cold Drink",
+                "price": 350,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Nachos",
+                "price": 280,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Delhi",
+        "cinemaHalls": [
+          {
+            "id": "del-1",
+            "name": "PVR Anupam, Saket",
+            "welcomeMessage": "पीवीआर अनुपम में आपका स्वागत है! यहाँ पर आप बॉलीवुड की सबसे बड़ी फिल्में देख सकते हैं।",
+            "contact": "+91 11 4123 4567",
+            "mapUrl": "https://maps.app.goo.gl/g7f6d5s4a3z2x1c0",
+            "transportServices": ["Metro", "Bus", "Auto", "Uber"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 240,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Samosa",
+                "price": 140,
+                "image": "https://placehold.co/100x100/8B4513/white?text=Samosa"
+              },
+              {
+                "name": "Cold Drink",
+                "price": 110,
+                "image": "https://placehold.co/100x100/007bff/white?text=Drink"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "del-2",
+            "name": "INOX, Nehru Place",
+            "welcomeMessage": "आईनॉक्स नेहरू प्लेस में आपका स्वागत है! हमारे पास सबसे आरामदायक सीटें और अत्याधुनिक तकनीक है।",
+            "contact": "+91 11 4123 5678",
+            "mapUrl": "https://maps.app.goo.gl/s1d2f3g4h5j6k7l8",
+            "transportServices": ["Metro", "Bus", "Auto"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Popcorn & Cola Combo",
+                "price": 380,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Nachos",
+                "price": 290,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "del-3",
+            "name": "PVR Director's Cut, Vasant Kunj",
+            "welcomeMessage": "पीवीआर डायरेक्टर's कट, विलासिता और फिल्मों का एक अनूठा संगम।",
+            "contact": "+91 11 4123 9012",
+            "mapUrl": "https://maps.app.goo.gl/t2y3u4i5o6p7a8s9",
+            "transportServices": ["Metro", "Uber", "Auto"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Gourmet Popcorn",
+                "price": 500,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Pizza Slice",
+                "price": 350,
+                "image": "https://placehold.co/100x100/E8C940/white?text=Pizza"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "del-4",
+            "name": "Delite Cinema, Daryaganj",
+            "welcomeMessage": "डिलाइट सिनेमा, एक ऐतिहासिक सिनेमा हॉल जो आपको एक अद्भुत अनुभव देगा।",
+            "contact": "+91 11 4123 3456",
+            "mapUrl": "https://maps.app.goo.gl/o9p8i7u6y5t4r3e2",
+            "transportServices": ["Bus", "Auto", "Metro"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Popcorn & Cold Drink",
+                "price": 300,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Samosa",
+                "price": 100,
+                "image": "https://placehold.co/100x100/8B4513/white?text=Samosa"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Bangalore",
+        "cinemaHalls": [
+          {
+            "id": "ban-1",
+            "name": "PVR Cinemas, Koramangala",
+            "welcomeMessage": "पीवीआर सिनेमा में आपका स्वागत है! नवीनतम फिल्में और शानदार मनोरंजन का अनुभव लें।",
+            "contact": "+91 80 4123 4567",
+            "mapUrl": "https://maps.app.goo.gl/m9n8b7v6c5x4z3a2",
+            "transportServices": ["Bus", "Taxi", "Uber", "Metro"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Popcorn & Cold Drink",
+                "price": 380,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Nachos",
+                "price": 280,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "ban-2",
+            "name": "INOX, Garuda Mall",
+            "welcomeMessage": "आईनॉक्स, गरुड़ मॉल में आपका स्वागत है! हमारे पास सबसे अच्छी सीटें और सबसे बड़ी स्क्रीन हैं।",
+            "contact": "+91 80 4123 5678",
+            "mapUrl": "https://maps.app.goo.gl/t2y3u4i5o6p7a8s9",
+            "transportServices": ["Bus", "Uber", "Auto"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 250,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Samosa",
+                "price": 150,
+                "image": "https://placehold.co/100x100/8B4513/white?text=Samosa"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "ban-3",
+            "name": "Gopalan Cinemas, Arch",
+            "welcomeMessage": "गोपालन सिनेमा में आपका स्वागत है! एक शानदार और यादगार अनुभव के लिए हमसे जुड़ें।",
+            "contact": "+91 80 4123 9012",
+            "mapUrl": "https://maps.app.goo.gl/p0o9i8u7y6t5r4e3",
+            "transportServices": ["Bus", "Auto"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Combo",
+                "price": 400,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Vada Pav",
+                "price": 100,
+                "image": "https://placehold.co/100x100/D2B48C/white?text=Vada+Pav"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "ban-4",
+            "name": "PVR IMAX, Forum Mall",
+            "welcomeMessage": "पीवीआर आईमैक्स में आपका स्वागत है! यहाँ आप सबसे बड़े स्क्रीन पर फिल्में देख सकते हैं।",
+            "contact": "+91 80 4123 3456",
+            "mapUrl": "https://maps.app.goo.gl/e4w3q2w1r5t6y7u8",
+            "transportServices": ["Metro", "Uber", "Bus"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 300,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Nachos",
+                "price": 250,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      },
+      {
+        "name": "Chennai",
+        "cinemaHalls": [
+          {
+            "id": "che-1",
+            "name": "SPI Cinemas, Sathyam",
+            "welcomeMessage": "சத்யம் சினிமாவில் உங்களை வரவேற்கிறோம்! சிறந்த ஒலி மற்றும் காட்சி அனுபவத்தை அனுபவிக்கவும்.",
+            "contact": "+91 44 4224 4567",
+            "mapUrl": "https://maps.app.goo.gl/a1z2x3c4v5b6n7m8",
+            "transportServices": ["Bus", "Auto", "Uber"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 280,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Samosa",
+                "price": 150,
+                "image": "https://placehold.co/100x100/8B4513/white?text=Samosa"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "che-2",
+            "name": "PVR Cinemas, Grand Mall",
+            "welcomeMessage": "பிவிஆர் சினிமாவில் உங்களை வரவேற்கிறோம்! இங்கே நீங்கள் சமீபத்திய திரைப்படங்களை ரசிக்கலாம்.",
+            "contact": "+91 44 4224 5678",
+            "mapUrl": "https://maps.app.goo.gl/l3k4j5h6g7f8d9s0",
+            "transportServices": ["Bus", "Auto"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Popcorn & Drink",
+                "price": 400,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Nachos",
+                "price": 300,
+                "image": "https://placehold.co/100x100/946300/white?text=Nachos"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "che-3",
+            "name": "AGS Cinemas, OMR",
+            "welcomeMessage": "ஏஜிஎஸ் சினிமாவில் உங்களை வரவேற்கிறோம்! இங்கு நீங்கள் குடும்பத்துடன் மகிழ்ச்சியாக திரைப்படங்களை பார்க்கலாம்.",
+            "contact": "+91 44 4224 9012",
+            "mapUrl": "https://maps.app.goo.gl/p0o9i8u7y6t5r4e3",
+            "transportServices": ["Bus", "Uber"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Popcorn",
+                "price": 250,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+              },
+              {
+                "name": "Vada",
+                "price": 80,
+                "image": "https://placehold.co/100x100/8B4513/white?text=Vada"
+              }
+            ],
+            "showingNow": []
+          },
+          {
+            "id": "che-4",
+            "name": "PVR Luxe, Velachery",
+            "welcomeMessage": "பிவிஆர் லக்ஸில் உங்களை வரவேற்கிறோம்! எங்கள் பிரீமியம் அனுபவத்தை நீங்கள் அனுபவிக்கலாம்.",
+            "contact": "+91 44 4224 3456",
+            "mapUrl": "https://maps.app.goo.gl/t2y3u4i5o6p7a8s9",
+            "transportServices": ["Bus", "Auto"],
+            "paymentMethods": ["Card", "Cash", "UPI"],
+            "snacks": [
+              {
+                "name": "Gourmet Combo",
+                "price": 600,
+                "image": "https://placehold.co/100x100/A87D00/white?text=Combo"
+              },
+              {
+                "name": "Juice",
+                "price": 180,
+                "image": "https://placehold.co/100x100/FFA500/white?text=Juice"
+              }
+            ],
+            "showingNow": []
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,14 +1,15 @@
 // ==========================================================
 // File: header.js
 // Purpose: Consolidates all header-related functionality:
-//          dynamically loading HTML partials and managing
-//          all interactive features.
+//           dynamically loading HTML partials and managing
+//           all interactive features.
 // ==========================================================
 
 document.addEventListener('DOMContentLoaded', () => {
 
     const API_KEY = '9c198aabc1df9fa96ea8d65e183cb8a3'; // Your API Key
-
+    const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
+    
     // --- Step 1: Define a function to load and inject HTML partials ---
     async function loadPartial(filePath, elementId) {
         try {
@@ -23,8 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             // --- Step 2: After loading, initialize interactive features ---
-            // THIS IS THE CRITICAL PART: This function is called ONLY AFTER
-            // the header content has been inserted into the DOM.
             if (elementId === 'header-placeholder') {
                 initializeHeaderFeatures();
             }
@@ -163,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         async function fetchAndPopulateGenres() {
             const genreList = document.getElementById('genresDropdown');
-            const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`;
+            const url = `${TMDB_BASE_URL}/genre/movie/list?api_key=${API_KEY}`;
             try {
                 const response = await fetch(url);
                 const data = await response.json();
@@ -187,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchAndPopulateGenres();
 
         // ==========================================================
-        // NEW CODE FOR SEARCH BAR FUNCTIONALITY
+        // ENHANCED CODE FOR SEARCH BAR FUNCTIONALITY
         // ==========================================================
         let debounceTimeout;
 
@@ -197,15 +196,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const url = `https://api.themoviedb.org/3/search/multi?query=${query}&api_key=${API_KEY}`;
+            const url = `${TMDB_BASE_URL}/search/multi?query=${query}&api_key=${API_KEY}`;
             
             try {
                 const response = await fetch(url);
                 const data = await response.json();
                 
-                // This line will log the API response to the console
-                console.log('API Response:', data);
-
                 searchSuggestions.innerHTML = '';
                 
                 if (data.results && data.results.length > 0) {
@@ -214,19 +210,20 @@ document.addEventListener('DOMContentLoaded', () => {
                         const a = document.createElement('a');
                         
                         let itemName = '';
-                        let mediaType = '';
+                        let mediaType = result.media_type;
+                        let href = '#'; // Default href
 
-                        if (result.media_type === 'movie' || result.media_type === 'tv') {
+                        if (mediaType === 'movie' || mediaType === 'tv') {
                             itemName = result.title || result.name;
-                            mediaType = result.media_type;
-                        } else if (result.media_type === 'person') {
+                            href = `details.html?id=${result.id}&type=${mediaType}`;
+                        } else if (mediaType === 'person') {
                             itemName = result.name;
-                            mediaType = 'person';
+                            href = `cast.html?actorId=${result.id}`; // Correct URL for cast page
                         }
                         
                         if (itemName) {
                             a.textContent = itemName;
-                            a.href = `details.html?id=${result.id}&type=${mediaType}`;
+                            a.href = href;
                             a.classList.add('suggestion-item');
                             li.appendChild(a);
                             searchSuggestions.appendChild(li);
@@ -238,48 +235,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-        // A more robust search function to handle different media types
-async function handleSearchSubmit() {
-    const query = searchInput.value.trim();
-    if (query.length === 0) return;
+        async function handleSearchSubmit() {
+            const query = searchInput.value.trim();
+            if (query.length === 0) return;
 
-    const url = `https://api.themoviedb.org/3/search/multi?query=${query}&api_key=${API_KEY}`;
-    
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        
-        if (data.results && data.results.length > 0) {
+            const url = `${TMDB_BASE_URL}/search/multi?query=${query}&api_key=${API_KEY}`;
             
-            let redirectUrl = '';
-            
-            // First, check if any of the top 5 results is a person
-            const personResult = data.results.find(result => result.media_type === 'person');
-
-            if (personResult) {
-                redirectUrl = `cast.html?id=${personResult.id}`;
-            } else {
-                // If no person is found, fall back to the first result
-                const firstResult = data.results[0];
-                const mediaType = firstResult.media_type;
-
-                if (mediaType === 'movie' || mediaType === 'tv') {
-                    redirectUrl = `details.html?id=${firstResult.id}&type=${mediaType}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.results && data.results.length > 0) {
+                    const firstResult = data.results[0];
+                    let redirectUrl = '';
+                    
+                    if (firstResult.media_type === 'person') {
+                        // Redirect to cast.html with only the actorId
+                        redirectUrl = `cast.html?actorId=${firstResult.id}`;
+                    } else if (firstResult.media_type === 'movie' || firstResult.media_type === 'tv') {
+                        // Redirect to details.html for movies and TV shows
+                        redirectUrl = `details.html?id=${firstResult.id}&type=${firstResult.media_type}`;
+                    }
+                    
+                    if (redirectUrl) {
+                        window.location.href = redirectUrl;
+                    } else {
+                        console.log('No relevant search results found for the query:', query);
+                    }
+                } else {
+                    console.log('No search results found for the query:', query);
                 }
+            } catch (error) {
+                console.error('Error during search:', error);
             }
-
-            if (redirectUrl) {
-                window.location.href = redirectUrl;
-            } else {
-                console.log('No relevant search results found for the query:', query);
-            }
-        } else {
-            console.log('No search results found for the query:', query);
         }
-    } catch (error) {
-        console.error('Error during search:', error);
-    }
-}
 
         searchInput.addEventListener('keyup', (event) => {
             const query = event.target.value.trim();

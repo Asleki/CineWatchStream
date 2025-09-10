@@ -31,7 +31,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/colors.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/details.css"> <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/details.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     
@@ -108,6 +110,10 @@
                 <h2>Recommendations</h2>
                 <div class="spinner-small" id="spinnerRecommendations"></div>
             </div>
+            <div class="carousel-nav">
+                <button id="prev-recommendations" class="carousel-btn"><i class="fas fa-chevron-left"></i></button>
+                <button id="next-recommendations" class="carousel-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
             <div id="recommendations-container" class="carousel-container">
                 <div class="show-carousel-inner" id="recommendations-carousel"></div>
             </div>
@@ -125,7 +131,7 @@
     <div id="footer-placeholder"></div>
     <button id="scrollToTopBtn" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
-  </button>
+    </button>
         
     <script src="js/header.js"></script>
     <script src="js/details.js"></script> </body>

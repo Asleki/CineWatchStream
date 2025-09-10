@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the biography and filmography of your favorite actors and actresses on CineWatch. Explore their roles, awards, and the movies and TV shows they've starred in.">
+    <meta name="keywords" content="cast, crew, actor, actress, biography, filmography, movies, tv shows, CineWatch">
+    <meta name="author" content="Alex Malunda">
+
+    <meta property="og:title" content="CineWatch - Cast & Crew Details">
+    <meta property="og:description" content="Explore detailed profiles of actors, including their filmography and personal biography, on CineWatch.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asleki.github.io/CineWatchStreaming/CineWatch-cast.html">
+    <meta property="og:image" content="https://asleki.github.io/CineWatchStreaming/images/CineWatch-logo.ico">
+    <link rel="canonical" href="https://asleki.github.io/CineWatchStreaming/CineWatch-cast.html">
+
+    <title>CineWatch - Cast & Crew</title>
+
+    <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cast.css">
+</head>
+<body>
+    <div id="customAlert" class="custom-alert">
+        <div class="alert-content">
+            <i id="alertIcon" class="alert-icon"></i>
+            <p id="alertMessage">This is a custom alert message.</p>
+            <button id="closeAlertBtn">OK</button>
+        </div>
+    </div>
+    
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Back Button -->
+        <button id="backButton" class="back-button">
+            <i class="fas fa-arrow-left mr-2"></i>Back
+        </button>
+
+        <!-- Hero Section Placeholder -->
+        <section id="heroSection" class="hero-section hidden"></section>
+
+        <!-- Main Content Section -->
+        <section id="mainContent" class="main-content">
+            <div id="actorProfile" class="profile-section">
+                <!-- Actor profile content will be loaded here dynamically -->
+                <div class="spinner" id="profileSpinner"></div>
+                <!-- These elements are added to be targeted by JS -->
+                <img src="" alt="" id="profileImage" class="profile-image hidden">
+                <div class="profile-info">
+                    <h1 id="actorName"></h1>
+                    <h3 id="actorKnownFor"></h3>
+                    <p id="actorBio"></p>
+                    <p id="actorBorn"></p>
+                </div>
+            </div>
+
+            <!-- Filmography Section -->
+            <div class="filmography-section">
+                <h2>Filmography</h2>
+                <div id="filmographyContainer" class="film-grid">
+                    <!-- Film cards will be populated here -->
+                    <div class="spinner" id="filmographySpinner"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <div id="footer-placeholder"></div>
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <script src="js/header.js"></script>
+    <script src="js/cast.js"></script>
+</body>
+</html>

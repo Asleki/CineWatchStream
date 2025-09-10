@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="networkTitle">CineWatch - Network Details</title>
+    
+    <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
+
+    <meta name="description" id="pageDescription" content="Explore a comprehensive list of TV shows from this network.">
+    <meta name="keywords" id="pageKeywords" content="TV shows, network, streaming, television">
+    <link rel="canonical" id="pageCanonical" href="#">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/network-details.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+    <section class="hero-section" id="heroSection">
+        <div class="hero-content">
+            <div class="left-column">
+                <img id="heroPoster" src="" alt="Show poster">
+                <div class="network-info-wrapper">
+                    <p class="network-info-name" id="heroNetworkName"></p>
+                </div>
+            </div>
+            <div class="right-column">
+                <h1 id="heroShowName"></h1>
+                <div class="network-logo-wrapper">
+                    <img id="heroNetworkLogo" src="" alt="Network logo">
+                </div>
+                <div class="visit-btn-wrapper">
+                    <a id="heroVisitNetworkBtn" href="#" target="_blank" rel="noopener noreferrer">Visit Network</a>
+                </div>
+                <div class="show-count-wrapper">
+                    <p id="heroTotalShows"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="controls-and-shows">
+        <div class="spinner" id="loadingSpinner"></div>
+        <div class="shows-container" id="showsContainer"></div>
+        <div class="load-more-btn-wrapper">
+            <button id="loadMoreBtn" class="load-more-btn" style="display: none;">Load More</button>
+        </div>
+    </section>
+</main>
+
+    <div id="footer-placeholder"></div>
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+    </button>
+
+
+    <script src="js/header.js"></script>
+    <script src="js/network-details.js"></script>
+</body>
+</html>

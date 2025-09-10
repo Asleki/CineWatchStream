@@ -200,6 +200,39 @@ body.light-mode .hero-info-column h1 {
 body.light-mode .network-badge img {
     filter: none; /* Resets the image filter to its default state, showing original colors */
 }
+
+/* =================================== */
+/* Details Page Hero Light Mode Styles */
+/* =================================== */
+
+body.light-mode #details-page-hero {
+    color: white; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+body.light-mode .hero-backdrop-overlay {
+    background: linear-gradient(to top, var(--bg-primary) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+body.light-mode .hero-info-column,
+body.light-mode .hero-info-column p,
+body.light-mode .hero-info-column h1 {
+    color: white;
+}
+
+/* This rule makes the metadata text white */
+body.light-mode .details-section-row {
+    color: white;
+}
+
+/* This new, separate rule targets the icons and makes them blue */
+body.light-mode .details-section-row i {
+    color: gold;
+}
+
+body.light-mode .network-badge img {
+    filter: none;
+}
 /* Style for the buttons */
 .main-content-nav .nav-button {
     background: none;
@@ -276,15 +309,49 @@ body.light-mode .network-badge img {
     margin-bottom: 0.5rem;
 }
 
+/* Style for the individual cast card link */
+.cast-grid .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none; /* Removes underline from links */
+    background-color: var(--secondary-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    padding: 10px;
+    height: 100%; /* Ensures cards have a consistent height */
+}
+
+/* Hover effect for the entire card */
+.cast-grid .card:hover {
+    transform: translateY(-5px); /* Lifts the card slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cast-grid .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
 .cast-grid .card h4 {
     font-size: 0.9rem;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--text-primary);
+    color: var(--accent-primary);
+    transition: color 0.2s ease-in-out; /* Adds a smooth color transition */
 }
-
+body.light-mode .cast-grid .card:hover h4 {
+    color: var(--primary-accent);
+}
+.cast-grid .card:hover h4 {
+    color: white;
+}
 .cast-grid .card p {
     font-size: 0.8rem;
     color: var(--text-secondary);
@@ -353,13 +420,136 @@ body.light-mode .network-badge img {
     cursor: pointer;
     font-size: 0.9rem;
 }
+/* =================================== */
+/* Reviews Section Button Styles */
+/* =================================== */
 
+#read-all-reviews-btn {
+    margin-top: 1.5rem; /* Pushes the button away from the review card */
+    width: fit-content; /* Makes the button only as wide as its text */
+    margin-left: auto; /* Used with margin-right: auto to center the button */
+    margin-right: auto;
+    display: block; /* Ensures the button takes up its own line and can be centered */
+}
+
+/* =================================== */
+/* Recommendations Carousel Styles */
+/* =================================== */
+
+.carousel-container {
+    overflow-x: auto; /* Enables horizontal scrolling when content exceeds the container width */
+    -webkit-overflow-scrolling: touch; /* Improves scrolling performance on iOS devices */
+    white-space: nowrap; /* Prevents items from wrapping to the next line */
+    padding-bottom: 1rem; /* Adds some space for the scrollbar */
+}
+
+/* Hide the default scrollbar */
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.show-carousel-inner {
+    display: flex; /* Arranges the recommendation cards in a horizontal line */
+    gap: 1.5rem; /* Adds space between each card */
+}
+
+.show-card {
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-primary);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    padding: 10px;
+    min-width: 150px;
+    height: fit-content;
+}
+
+.show-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-primary);
+}
+
+.show-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    object-fit: cover;
+}
+
+.show-card .card-info {
+    white-space: normal;
+    text-align: center;
+}
+
+.show-card .card-info h4 {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.show-card .card-info p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* =================================== */
+/* Carousel Navigation Button Styles */
+/* =================================== */
+#recommendations-section {
+    position: relative; /* This is the fix for the button positioning */
+    padding-bottom: 2rem; /* Add some space below the section */
+}
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    left: 0; /* Aligns the navigation with the left edge of the parent */
+    right: 0; /* Aligns the navigation with the right edge of the parent */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(-50%);
+    padding: 0 1rem; /* Add padding to push the buttons away from the edges */
+    z-index: 10;
+    pointer-events: none;
+}
+
+.carousel-btn {
+    pointer-events: auto; /* Makes the buttons themselves clickable */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.carousel-btn i {
+    pointer-events: none; /* Ensures the icon doesn't block clicks */
+}
 /*===================================================================================
     Modals
 ===================================================================================*/
 
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 100;
     left: 0;
@@ -371,16 +561,21 @@ body.light-mode .network-badge img {
     align-items: center;
     padding: 2rem;
     box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
 }
 
 .modal-content {
     position: relative;
     background-color: var(--bg-primary);
-    width: 80%;
-    max-width: 900px;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh; /* Set a fixed height for a better scrolling experience */
+    max-height: 800px;
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid var(--border-primary);
+    display: flex; /* Flex container for the content inside */
+    flex-direction: column;
 }
 
 .close-btn {
@@ -390,7 +585,7 @@ body.light-mode .network-badge img {
     position: absolute;
     top: 10px;
     right: 20px;
-    z-index: 1;
+    z-index: 200; /* Higher z-index to be on top of video players */
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
@@ -406,6 +601,123 @@ body.light-mode .network-badge img {
     color: var(--text-primary);
 }
 
+.video-player-single {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background: black;
+}
+
+.video-player-single iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* --- Video Grid Styles for Multiple Trailers --- */
+
+#trailer-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    overflow-y: auto; /* Allows the content to scroll vertically if needed */
+}
+
+.video-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px var(--shadow-primary);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-card .thumbnail-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.video-card .video-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-card .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.video-card:hover .play-icon {
+    opacity: 1;
+}
+
+.video-card .video-info {
+    padding: 1rem;
+    white-space: normal;
+}
+
+.video-card h4 {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem;
+}
+
+.video-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+/* ======================== */
+/* Scroll to Top Button */
+/* ======================== */
+
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99; /* Higher z-index to be on top of other elements */
+    font-size: 1.5rem;
+    background-color: var(--accent-secondary);
+    color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 50%; /* Makes it a circle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+#scrollToTopBtn.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#scrollToTopBtn:hover {
+    background-color: var(--accent-primary);
+}
 /*===================================================================================
     Responsiveness
 ===================================================================================*/
@@ -448,3 +760,5 @@ body.light-mode .network-badge img {
         font-size: 0.9rem;
     }
 }
+
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore and watch all episodes from a specific season of a TV show on CineWatch. Find episode details, release dates, and summaries.">
+    <meta name="keywords" content="episodes, tv shows, seasons, streaming, details, CineWatch">
+    <meta name="author" content="Alex Malunda">
+
+    <meta property="og:title" content="Episodes - CineWatch">
+    <meta property="og:description" content="Discover detailed information for every episode of your favorite TV shows.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asleki.github.io/CineWatchStreaming/CineWatch-episodes.html">
+    <meta property="og:image" content="https://asleki.github.io/CineWatchStreaming/images/CineWatch-logo.ico">
+
+    <link rel="canonical" href="https://asleki.github.io/CineWatchStreaming/CineWatch-episodes.html">
+
+    <title>Episodes - CineWatch</title>
+
+    <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Site-wide CSS -->
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/episodes.css">
+</head>
+<body>
+    <div id="customAlert" class="custom-alert">
+        <div class="alert-content">
+            <i id="alertIcon" class="alert-icon"></i>
+            <p id="alertMessage">This is a custom alert message.</p>
+            <button id="closeAlertBtn">OK</button>
+        </div>
+    </div>
+    
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section id="minimalHeroSection" class="minimal-hero" style="background-color: var(--bg-primary);">
+            <div id="heroBackdrop" class="hero-backdrop"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="back-nav">
+                    <button id="backToSeasonsBtn" class="back-button"><i class="fas fa-chevron-left"></i> Back to season list</button>
+                    <button id="backToPreviousSeasonBtn" class="back-button previous-season-btn" style="display: none;"><i class="fas fa-chevron-left"></i></button>
+                </div>
+                <div class="show-info">
+                    <div id="heroPoster" class="hero-poster"></div>
+                    <div>
+                        <h1 id="heroTitle"></h1>
+                        <p id="heroYear"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="episodes-section">
+            <h2 id="episodesCount"></h2>
+            <div id="episodesContainer" class="episodes-container">
+                <div class="spinner" id="spinnerEpisodes"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <script src="js/header.js"></script>
+    <script src="js/episodes.js"></script>
+</body>
+</html>

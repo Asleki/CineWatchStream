@@ -290,6 +290,7 @@ function populateStatus(tmdbData) {
             });
         });
     }
+    document.getElementById('spinnerStatus').style.display = 'none';
 }
 
 /**
@@ -473,19 +474,5 @@ document.addEventListener('DOMContentLoaded', async () => {
         showTitle.textContent = 'Error: Failed to load content.';
     }
 
-    // Scroll-to-top button functionality (if you choose to keep it)
-    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-    window.onscroll = function() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            scrollToTopBtn.style.display = "block";
-        } else {
-            scrollToTopBtn.style.display = "none";
-        }
-    };
-    if (scrollToTopBtn) {
-        scrollToTopBtn.addEventListener('click', () => {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-        });
-    }
+    
 });

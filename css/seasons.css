@@ -1,0 +1,220 @@
+/* ==========================================================
+   File: seasons.css
+   Purpose: Defines all styles specific to the TV show seasons page.
+   ========================================================== */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 2rem 5%;
+}
+
+/* --- Back Button --- */
+.back-button {
+    background-color: var(--bg-transparent);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: var(--btn-secondary-hover);
+    transform: scale(1.05);
+}
+
+/* --- Minimal Hero Section --- */
+.minimal-hero {
+    position: relative;
+    width: 100%;
+    height: 30vh; /* Reduced height for the hero section */
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+.hero-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    opacity: 0.3;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--bg-primary) 0%, transparent 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.show-info h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.show-info p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* --- Seasons Container --- */
+.seasons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* --- Season Card --- */
+.season-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow-secondary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.season-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 6px 20px var(--shadow-primary);
+}
+
+.season-poster {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.season-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.season-info h3 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.season-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+}
+
+.season-rating {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: var(--rating-star-filled);
+}
+
+.season-rating .fa-star {
+    margin-right: 0.25rem;
+}
+
+.season-overview {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* --- View All Episodes Button --- */
+.view-episodes-btn {
+    display: inline-block;
+    background-color: var(--accent-primary);
+    color: var(--btn-primary-text);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.view-episodes-btn:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+/* --- Responsive Design --- */
+@media (min-width: 640px) {
+    .season-card {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .season-poster {
+        width: 200px;
+        height: auto;
+    }
+
+    .season-info {
+        flex: 1;
+        padding-left: 2rem;
+    }
+}
+
+/* --- Spinners --- */
+.spinner {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--border-primary);
+    border-top: 5px solid var(--accent-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
