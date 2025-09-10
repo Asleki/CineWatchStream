@@ -1,0 +1,125 @@
+/* =====================
+   css/faq.css
+   ===================== */
+
+/* FAQ Hero Section */
+.faq-hero {
+    position: relative;
+    height: 250px;
+    background-image: url('https://placehold.co/1920x400/282828/f0f0f0?text=FAQ');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.faq-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-overlay);
+}
+
+.faq-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.faq-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+}
+
+.faq-hero p {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 2rem 0;
+}
+
+.faq-section h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.faq-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px var(--shadow-secondary);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: var(--card-hover-bg);
+}
+
+.faq-question h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.faq-question .toggle-icon {
+    font-size: 1.2rem;
+    color: var(--accent-primary);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.faq-answer p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 1.5rem;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px; /* A large value to ensure content fits */
+    padding: 0 2rem 2rem;
+}
+
+.inline-link {
+    color: var(--text-link);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.inline-link:hover {
+    color: var(--text-link-hover);
+}

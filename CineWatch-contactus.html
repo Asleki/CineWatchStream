@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact CineWatch for support, inquiries, or feedback. We are here to help you with your questions about movies, TV shows, and our services.">
+    <meta name="keywords" content="contact, CineWatch, support, feedback, inquiries, email, phone number, get in touch">
+    <meta name="author" content="Alex Malunda">
+
+    <meta property="og:title" content="Contact CineWatch - Get in Touch">
+    <meta property="og:description" content="Reach out to the CineWatch team for assistance or to provide feedback.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asleki.github.io/CineWatchStreaming/CineWatch-contactus.html">
+    <meta property="og:image" content="https://asleki.github.io/CineWatchStreaming/images/CineWatch-logo.webp">
+
+    <link rel="canonical" href="https://asleki.github.io/CineWatchStreaming/CineWatch-contactus.html">
+
+    <title>Contact Us - CineWatch</title>
+
+    <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+</head>
+<body>
+    <div id="customAlert" class="custom-alert">
+        <div class="alert-content">
+            <i id="alertIcon" class="alert-icon"></i>
+            <p id="alertMessage">This is a custom alert message.</p>
+            <button id="closeAlertBtn">OK</button>
+        </div>
+    </div>
+    
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="contact-hero">
+            <div class="contact-hero-overlay"></div>
+            <div class="contact-hero-content">
+                <h1>Get In Touch</h1>
+                <p>We'd love to hear from you.</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="section-container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Contact Information</h2>
+                        <p>Feel free to reach out to us with any questions or concerns. Our team is ready to assist you.</p>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:support@cinewatch.com">support@cinewatch.com</a>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+1234567890">+1 (234) 567-890</a>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>123 Movie Lane, Hollywood, CA 90210</p>
+                        </div>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="map-placeholder">
+                            <img src="https://placehold.co/600x400/282828/f0f0f0?text=Map+Coming+Soon" alt="Map Location">
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h2>Send Us a Message</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/header.js"></script>
+    <script src="js/CineWatch-main.js"></script>
+</body>
+</html>
