@@ -12,7 +12,7 @@
             "name": "Imax Nairobi 20th Century",
             "welcomeMessage": "Welcome to Imax Nairobi! Experience the magic of the big screen with us. Enjoy our cutting-edge sound and visuals, and grab some of our freshly made snacks. Enjoy the movie!",
             "contact": "+254 712 345 678",
-            "mapUrl": "https://maps.app.goo.gl/9r8f5g7h1j3k2l4m5",
+            "mapUrl": "https://placehold.co/800x600/6A89CC/white?text=Map+Coming+Soon",
             "transportServices": ["Uber", "Bolt", "Bus", "Tuk-tuk"],
             "paymentMethods": ["M-Pesa", "Cash", "Visa", "Mastercard"],
             "snacks": [
@@ -37,6 +37,7 @@
                 "image": "https://placehold.co/100x100/7F3E00/white?text=Chocolate"
               }
             ],
+            
             "showingNow": []
           },
           {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,148 +9,1133 @@
     <meta name="keywords" content="cinema, movie guide, showtimes, movie tickets, cinema halls, CineWatch cinema guide, new releases, popular movies, trending shows">
     <meta name="author" content="Alex Malunda">
 
-    <meta property="og:title" content="CineWatch - Buy Tickets">
-    <meta property="og:description" content="Secure your tickets and seats for the best movies in town with CineWatch.">
+    <meta property="og:title" content="CineWatch - Cinema Guide">
+    <meta property="og:description" content="Find what's showing in cinemas and book your tickets with ease.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://asleki.github.io/CineWatchStreaming/buy-ticket.html">
+    <meta property="og:url" content="https://asleki.github.io/CineWatchStreaming/CineWatch-cinemaguide.html">
     <meta property="og:image" content="https://asleki.github.io/CineWatchStreaming/images/CineWatch-logo.ico">
 
-    <link rel="canonical" href="https://asleki.github.io/CineWatchStreaming/buy-ticket.html">
+    <link rel="canonical" href="https://asleki.github.io/CineWatchStreaming/CineWatch-cinemaguide.html">
+    <link rel="icon" type="image/x-icon" href="https://asleki.github.io/CineWatchStreaming/images/CineWatch-logo.ico">
 
-    <title>CineWatch - Buy Tickets</title>
+    <title>CineWatch - Cinema Guide</title>
 
-    <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/colors.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/buy-ticket.css">
+    <!-- Tailwind CSS and Font Awesome for icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Combined and embedded CSS styles -->
+    <style>
+        /* ==========================================================
+           SUPER RICH COLOR PALETTE
+           File: colors.css
+           Purpose: Defines all site-wide color variables for the CineWatch
+                    streaming platform.
+           ========================================================== */
+        :root {
+            /* --- Global & Background Colors --- */
+            --bg-primary: #121212;
+            --bg-secondary: #181818;
+            --bg-tertiary: #202020;
+            --bg-surface: #262626;
+            --bg-card: #2c2c2c;
+            --bg-overlay: rgba(0, 0, 0, 0.7);
+            --bg-transparent: rgba(18, 18, 18, 0.85);
+
+            /* --- Text Colors --- */
+            --text-primary: #e0e0e0;
+            --text-secondary: #b3b3b3;
+            --text-tertiary: #8c8c8c;
+            --text-link: #ffffff;
+            --text-link-hover: #e50914;
+            --text-placeholder: #666666;
+
+            /* --- Accent Colors (Thematic) --- */
+            --accent-primary: #e50914; /* Red accent */
+            --accent-secondary: #007bff; /* Blue accent */
+
+            /* --- Border & Shadow Colors --- */
+            --border-primary: #333333;
+            --border-secondary: #444444;
+            --border-card: #3c3c3c;
+            --shadow-primary: rgba(0, 0, 0, 0.5);
+            --shadow-secondary: rgba(0, 0, 0, 0.2);
+            --shadow-tertiary: rgba(0, 0, 0, 0.05);
+
+            /* --- State Colors (Semantic) --- */
+            --state-success: #28a745;
+            --state-info: #17a2b8;
+            --state-warning: #ffc107;
+            --state-error: #dc3545;
+            --state-disabled: #bbbbbb;
+
+            /* --- Button Colors --- */
+            --btn-primary-bg: var(--accent-primary);
+            --btn-primary-text: #ffffff;
+            --btn-primary-hover: #0627fa;
+            --btn-secondary-bg: var(--bg-card);
+            --btn-secondary-text: var(--text-primary);
+            --btn-secondary-hover: #e6e6e6;
+            --btn-outline-border: var(--border-primary);
+            --btn-outline-text: var(--text-primary);
+            --btn-outline-hover-bg: var(--border-primary);
+
+            /* --- Card Colors --- */
+            --card-bg: var(--bg-card);
+            --card-hover-bg: #f5f5f5;
+            --card-shadow: var(--shadow-secondary);
+            --card-border: var(--border-card);
+
+            /* --- Rating Colors --- */
+            --rating-star-filled: #ffc107;
+            --rating-star-empty: #aaaaaa;
+
+            /* --- Badge Colors --- */
+            --badge-bg: var(--accent-primary);
+            --badge-text: #ffffff;
+        }
+
+        /* ----------------------------------------------------------
+           Light Mode
+           ---------------------------------------------------------- */
+        [data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f0f2f5;
+            --bg-tertiary: #e1e4e8;
+            --bg-surface: #dce0e6;
+            --bg-card: #f9f9f9;
+            --bg-overlay: rgba(255, 255, 255, 0.7);
+            --bg-transparent: rgba(255, 255, 255, 0.85);
+            --text-primary: #121212;
+            --text-secondary: #4a4a4a;
+            --text-tertiary: #6c757d;
+            --text-link: #e50914;
+            --text-link-hover: #ff0000;
+            --text-placeholder: #adb5bd;
+            --accent-primary: #e50914;
+            --accent-secondary: #007bff;
+            --border-primary: #dcdcdc;
+            --border-secondary: #e5e5e5;
+            --border-card: #e5e5e5;
+            --shadow-primary: rgba(0, 0, 0, 0.1);
+            --shadow-secondary: rgba(0, 0, 0, 0.05);
+            --shadow-tertiary: rgba(0, 0, 0, 0.02);
+            --btn-primary-bg: var(--accent-primary);
+            --btn-primary-text: #ffffff;
+            --btn-primary-hover: #ff0000;
+            --btn-secondary-bg: #e9ecef;
+            --btn-secondary-text: var(--text-primary);
+            --btn-secondary-hover: #cfd6de;
+            --btn-outline-border: #adb5bd;
+            --btn-outline-text: var(--text-primary);
+            --btn-outline-hover-bg: #e9ecef;
+            --card-bg: var(--bg-card);
+            --card-hover-bg: #f5f5f5;
+            --card-shadow: var(--shadow-secondary);
+            --card-border: var(--border-card);
+        }
+
+        /* ======================== */
+        /* Main Body and Layout    */
+        /* ======================== */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .content-section {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            text-align: center;
+        }
+
+        /* ======================== */
+        /* Hero Section             */
+        /* ======================== */
+        .hero-section {
+            position: relative;
+            z-index: 1;
+            height: 60vh;
+            min-height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            color: #fff;
+            padding: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border-radius: 50px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            color: var(--text-primary);
+            background-color: var(--bg-card);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-placeholder);
+        }
+
+        .search-input:focus {
+            box-shadow: 0 0 0 4px var(--accent-primary);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent-primary);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background-color: #ff3344;
+        }
+
+        /* ======================== */
+        /* Movie & Show Cards       */
+        /* ======================== */
+        .movie-card {
+            background-color: var(--bg-card);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 15px var(--shadow-secondary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-card);
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 25px var(--shadow-primary);
+        }
+
+        .movie-card-image-container {
+            width: 100%;
+            height: 300px;
+            position: relative;
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .movie-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .movie-card-info {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .movie-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-primary);
+        }
+
+        .movie-card-rating {
+            display: flex;
+            align-items: center;
+            color: var(--rating-star-filled);
+            margin-bottom: 0.5rem;
+        }
+
+        .movie-card-rating span {
+            color: var(--text-secondary);
+            margin-left: 5px;
+        }
+
+        .movie-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .load-more-btn {
+            background-color: var(--accent-primary);
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .load-more-btn:hover {
+            background-color: var(--accent-secondary);
+        }
+
+        /* ======================== */
+        /* Scroll to Top Button */
+        /* ======================== */
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 1.5rem;
+            background-color: var(--accent-secondary);
+            color: rgb(255, 255, 255);
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 15px 20px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        #scrollToTopBtn.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #0559a6;
+            transform: translateY(-5px);
+        }
+
+        /* ======================== */
+        /* Header & Navbar        */
+        /* ======================== */
+        .navbar {
+            background-color: var(--bg-transparent);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-link);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-link);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--text-link-hover);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-link);
+        }
+
+        .cta-btn {
+            background-color: var(--accent-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-transparent);
+                border-top: 1px solid var(--border-primary);
+                padding: 1rem 0;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        /* ======================== */
+        /* Movie Grid               */
+        /* ======================== */
+        .movie-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            padding: 2rem 0;
+        }
+
+        /* ======================== */
+        /* Loading Spinner          */
+        /* ======================== */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #e50914;
+            animation: spin 1s ease infinite;
+            margin: 20px auto;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ======================== */
+        /* Cinema Hero & Ticker     */
+        /* ======================== */
+        .cinemaHero {
+            height: 40vh;
+            min-height: 300px;
+            position: relative;
+            overflow: hidden;
+            background: url('https://placehold.co/1920x1080/463d3b/fff?text=Cinema') no-repeat center center/cover;
+            border-radius: 1rem;
+        }
+
+        .cinema-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .cinema-hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            text-align: center;
+            color: white;
+        }
+
+        .cinema-hero-content h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .ticker-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 0.5rem 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .ticker-text {
+            display: inline-block;
+            animation: ticker-scroll 30s linear infinite;
+        }
+
+        @keyframes ticker-scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .ticker-item {
+            display: inline-block;
+            padding: 0 1rem;
+            color: #fff;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        .filter-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-controls select {
+            background-color: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border-card);
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .cinema-hall-section {
+            background-color: var(--bg-tertiary);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cinema-hall-section h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .cinema-hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .content-section h2 {
+                font-size: 1.8rem;
+            }
+            .filter-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* Footer styling */
+        .footer {
+            background-color: var(--bg-secondary);
+            color: var(--text-secondary);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-top: 1px solid var(--border-primary);
+        }
+    </style>
 </head>
-<body>
-    <!-- Custom Alert Modal -->
-    <div id="customAlert" class="custom-alert">
-        <div class="alert-content">
-            <i id="alertIcon" class="alert-icon"></i>
-            <p id="alertMessage">This is a custom alert message.</p>
-            <button id="closeAlertBtn">OK</button>
-        </div>
-    </div>
 
-    <!-- Map Modal -->
-    <div id="mapModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3>Cinema Location</h3>
-            <div id="mapImageContainer">
-                <!-- Map image will be loaded here -->
+<body class="bg-gray-900 text-white">
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="navbar-container container mx-auto">
+            <a href="#" class="logo">
+                <img src="https://asleki.github.io/CineWatchStreaming/images/CineWatch-logo.ico" alt="CineWatch Logo" class="logo-img rounded-full">
+                CineWatch
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Movies</a>
+                <a href="#" class="nav-link">TV Shows</a>
+                <a href="#" class="nav-link">About Us</a>
+                <a href="#" class="nav-link cta-btn">Sign In</a>
+            </div>
+            <div class="hamburger md:hidden">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- Final Confirmation Modal -->
-    <div id="confirmationModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div class="confirmation-icon">
-                <i class="fas fa-check-circle"></i>
+    <main class="container mx-auto">
+        <!-- Hero Section -->
+        <section class="cinemaHero rounded-xl shadow-lg mt-8 mb-8" id="cinemaHero">
+            <div class="cinema-hero-overlay"></div>
+            <div class="cinema-hero-content">
+                <h1 class="font-extrabold">Showing Now | Grab Your Tickets</h1>
             </div>
-            <h3 id="confirmationTitle">Booking Confirmed!</h3>
-            <p id="confirmationMessage"></p>
-            <p id="confirmationContact"></p>
-            <button id="closeConfirmationBtn">Close</button>
-        </div>
-    </div>
-
-    <div id="header-placeholder"></div>
-
-    <main>
-        <div class="stepper-container">
-            <div class="stepper-progress">
-                <div class="step-line"></div>
-                <div id="step-1" class="step active">1</div>
-                <div id="step-2" class="step">2</div>
-                <div id="step-3" class="step">3</div>
-            </div>
-        </div>
-
-        <section class="booking-section">
-            <!-- Step 1: Tickets & Seats -->
-            <div id="step-1-content" class="step-content active">
-                <div class="movie-info-card">
-                    <img id="moviePoster" src="" alt="Movie Poster" class="movie-poster">
-                    <div class="info">
-                        <h2 id="movieTitle">Movie Title</h2>
-                        <p id="cinemaName">Cinema Hall</p>
-                        <button id="viewMapBtn" class="primary-btn">View Map</button>
-                    </div>
-                </div>
-
-                <h3>Choose Showtime</h3>
-                <div id="showtimeContainer" class="showtime-container">
-                    <!-- Showtimes will be populated by JavaScript -->
-                </div>
-                
-                <h3>Select Your Seats</h3>
-                <div class="screen">Screen This Way</div>
-                <div id="seatContainer" class="seat-container">
-                    <!-- Seats will be populated by JavaScript -->
-                </div>
-                <div class="legend">
-                    <div class="legend-item"><div class="legend-box available"></div> Available</div>
-                    <div class="legend-item"><div class="legend-box selected"></div> Selected</div>
-                    <div class="legend-item"><div class="legend-box occupied"></div> Occupied</div>
-                </div>
-                <button id="nextStep1Btn" class="primary-btn mt-4">Next: Add-ons & Transport</button>
-            </div>
-
-            <!-- Step 2: Snacks & Cab Services -->
-            <div id="step-2-content" class="step-content">
-                <h3>Snacks & Beverages</h3>
-                <div id="snacksContainer" class="snacks-container">
-                    <!-- Snacks will be populated by JavaScript -->
-                </div>
-
-                <h3>Transport Services</h3>
-                <div id="transportContainer" class="transport-container">
-                    <!-- Transport options will be populated by JavaScript -->
-                </div>
-                
-                <div class="buttons-row">
-                    <button id="prevStep2Btn" class="secondary-btn">Previous</button>
-                    <button id="nextStep2Btn" class="primary-btn">Next: Payment</button>
+            <div class="ticker-container">
+                <div class="ticker-text" id="tickerText">
+                    <!-- Ticker content will be populated by JavaScript -->
+                    <span class="ticker-item">Loading titles...</span>
                 </div>
             </div>
+        </section>
 
-            <!-- Step 3: Payments & Confirmation -->
-            <div id="step-3-content" class="step-content">
-                <h3>Payment Method</h3>
-                <div id="paymentContainer" class="payment-container">
-                    <!-- Payment options will be populated by JavaScript -->
-                </div>
-                
-                <div class="order-summary-card">
-                    <h3>Order Summary</h3>
-                    <div id="summaryItems">
-                        <!-- Summary items will be populated by JavaScript -->
-                    </div>
-                    <div class="summary-total">
-                        <strong>Total:</strong> <span id="totalPrice">0 KES</span>
-                    </div>
-                </div>
+        <!-- Filter Controls Section -->
+        <section class="filter-controls">
+            <select id="countrySelect" class="rounded-lg shadow-md"></select>
+            <select id="citySelect" class="rounded-lg shadow-md" disabled></select>
+        </section>
 
-                <div class="buttons-row">
-                    <button id="prevStep3Btn" class="secondary-btn">Previous</button>
-                    <button id="confirmPaymentBtn" class="primary-btn">Confirm Payment</button>
-                </div>
+        <section class="content-section" id="cinemaGuideSection">
+            <h2>Cinema Guide</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4" id="cinemaGuideContainer">
+                <!-- Cinema cards will be generated by JavaScript -->
+                <div class="spinner" id="spinnerCinemaGuide"></div>
             </div>
         </section>
     </main>
 
-    <div id="footer-placeholder"></div>
+    <footer class="footer">
+        <p>&copy; 2024 CineWatch. All Rights Reserved.</p>
+        <p>This project is for educational purposes only.</p>
+    </footer>
 
-    <script src="js/header.js"></script>
-    <script src="js/buy-ticket.js"></script>
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Combined and embedded JavaScript -->
+    <script>
+        // Data for the cinema halls, embedded directly from the cinemaguide.json file.
+        // This eliminates the need for a network request to load this data.
+        const CINEMA_GUIDE_DATA = [{
+            "country": "Kenya",
+            "code": "KE",
+            "language": "en",
+            "cities": [{
+                "name": "Nairobi",
+                "cinemaHalls": [{
+                    "id": "nai-1",
+                    "name": "Imax Nairobi 20th Century",
+                    "welcomeMessage": "Welcome to Imax Nairobi! Experience the magic of the big screen with us. Enjoy our cutting-edge sound and visuals, and grab some of our freshly made snacks. Enjoy the movie!",
+                    "contact": "+254 712 345 678",
+                    "mapUrl": "https://maps.app.goo.gl/9r8f5g7h1j3k2l4m5",
+                    "transportServices": ["Uber", "Bolt", "Bus", "Tuk-tuk"],
+                    "paymentMethods": ["M-Pesa", "Cash", "Visa", "Mastercard"],
+                    "snacks": [{
+                        "name": "Large Popcorn & Soda",
+                        "price": 600,
+                        "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+                    }, {
+                        "name": "Hot Dog",
+                        "price": 450,
+                        "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+                    }, {
+                        "name": "Nachos",
+                        "price": 500,
+                        "image": "https://placehold.co/100x100/A42A00/white?text=Nachos"
+                    }],
+                    "showingNow": []
+                }, {
+                    "id": "nai-2",
+                    "name": "Anga Diamond Plaza",
+                    "welcomeMessage": "Welcome to Anga Diamond Plaza! Located in the heart of Nairobi, we offer a cozy and affordable movie experience. Our selection of local and international films is updated weekly. Grab your tickets and snacks, and enjoy the show!",
+                    "contact": "+254 723 456 789",
+                    "mapUrl": "https://maps.app.goo.gl/t9y8u7i6o5p4a3s2",
+                    "transportServices": ["Uber", "Bus"],
+                    "paymentMethods": ["M-Pesa", "Cash", "Card"],
+                    "snacks": [{
+                        "name": "Small Popcorn & Soda",
+                        "price": 400,
+                        "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+                    }, {
+                        "name": "Samosa",
+                        "price": 100,
+                        "image": "https://placehold.co/100x100/987F56/white?text=Samosa"
+                    }, {
+                        "name": "Kebab",
+                        "price": 120,
+                        "image": "https://placehold.co/100x100/5C4033/white?text=Kebab"
+                    }],
+                    "showingNow": []
+                }, {
+                    "id": "nai-3",
+                    "name": "Century Cinemax Garden City",
+                    "welcomeMessage": "Welcome to Century Cinemax Garden City! Enjoy a luxurious movie experience in our state-of-the-art halls. Our comfortable recliner seats and high-quality sound make every movie a special event. Don't forget to visit our snack bar for a variety of treats!",
+                    "contact": "+254 789 012 345",
+                    "mapUrl": "https://maps.app.goo.gl/h3e8r7w9e1z5s4f3",
+                    "transportServices": ["Uber", "Bolt", "Bus"],
+                    "paymentMethods": ["M-Pesa", "Cash", "Visa", "Mastercard", "Bank Transfer"],
+                    "snacks": [{
+                        "name": "Combo Box (Popcorn, Soda, Hot Dog)",
+                        "price": 850,
+                        "image": "https://placehold.co/100x100/A87D00/white?text=Combo+Box"
+                    }, {
+                        "name": "Slushie",
+                        "price": 300,
+                        "image": "https://placehold.co/100x100/2A7FFF/white?text=Slushie"
+                    }, {
+                        "name": "Chocolate Bar",
+                        "price": 150,
+                        "image": "https://placehold.co/100x100/4F2C1A/white?text=Chocolate"
+                    }],
+                    "showingNow": []
+                }]
+            }]
+        }, {
+            "country": "India",
+            "code": "IN",
+            "language": "ta",
+            "cities": [{
+                "name": "Chennai",
+                "cinemaHalls": [{
+                    "id": "che-1",
+                    "name": "Sathyam Cinemas",
+                    "welcomeMessage": "சத்யம் சினிமாவில் உங்களை வரவேற்கிறோம்! சிறந்த சினிமா அனுபவத்திற்காக எங்கள் உயர்தர ஒலியையும், படத்தையும் அனுபவிக்கலாம்.",
+                    "contact": "+91 44 4224 4000",
+                    "mapUrl": "https://maps.app.goo.gl/u3w2e1r4t5y6u7i8",
+                    "transportServices": ["Bus", "Metro", "Uber", "Auto"],
+                    "paymentMethods": ["Card", "Cash", "UPI"],
+                    "snacks": [{
+                        "name": "Classic Popcorn",
+                        "price": 150,
+                        "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+                    }, {
+                        "name": "Samosa",
+                        "price": 50,
+                        "image": "https://placehold.co/100x100/987F56/white?text=Samosa"
+                    }, {
+                        "name": "Hot Dog",
+                        "price": 120,
+                        "image": "https://placehold.co/100x100/C85A17/white?text=Hot+Dog"
+                    }],
+                    "showingNow": []
+                }, {
+                    "id": "che-2",
+                    "name": "AGS Cinemas, T. Nagar",
+                    "welcomeMessage": "ஏஜிஎஸ் சினிமாவில் உங்களை வரவேற்கிறோம்! உங்கள் குடும்பத்துடன் ஒரு மகிழ்ச்சியான அனுபவத்தை இங்கே காணலாம்.",
+                    "contact": "+91 44 4296 9000",
+                    "mapUrl": "https://maps.app.goo.gl/o1p2a3s4d5f6g7h8",
+                    "transportServices": ["Bus", "Metro", "Auto"],
+                    "paymentMethods": ["Card", "Cash", "UPI"],
+                    "snacks": [{
+                        "name": "Masala Popcorn",
+                        "price": 180,
+                        "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+                    }, {
+                        "name": "Bhelpuri",
+                        "price": 100,
+                        "image": "https://placehold.co/100x100/F5CBA7/white?text=Bhelpuri"
+                    }, {
+                        "name": "French Fries",
+                        "price": 90,
+                        "image": "https://placehold.co/100x100/FFD700/white?text=Fries"
+                    }],
+                    "showingNow": []
+                }, {
+                    "id": "che-3",
+                    "name": "Rohini Silver Screens, Koyambedu",
+                    "welcomeMessage": "ரோகினி சில்வர் ஸ்கிரீன்ஸில் உங்களை வரவேற்கிறோம்! ஒரு புதிய மற்றும் அழகான அனுபவத்திற்காக வருக.",
+                    "contact": "+91 44 2621 1666",
+                    "mapUrl": "https://maps.app.goo.gl/p0o9i8u7y6t5r4e3",
+                    "transportServices": ["Bus", "Uber"],
+                    "paymentMethods": ["Card", "Cash", "UPI"],
+                    "snacks": [{
+                        "name": "Popcorn",
+                        "price": 250,
+                        "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+                    }, {
+                        "name": "Vada",
+                        "price": 80,
+                        "image": "https://placehold.co/100x100/8B4513/white?text=Vada"
+                    }],
+                    "showingNow": []
+                }, {
+                    "id": "che-4",
+                    "name": "PVR Luxe, Velachery",
+                    "welcomeMessage": "பிவிஆர் லக்ஸில் உங்களை வரவேற்கிறோம்! எங்கள் பிரீமியம் அனுபவத்தை நீங்கள் அனுபவிக்கலாம்.",
+                    "contact": "+91 44 4224 3456",
+                    "mapUrl": "https://maps.app.goo.gl/t2y3u4i5o6p7a8s9",
+                    "transportServices": ["Bus", "Auto"],
+                    "paymentMethods": ["Card", "Cash", "UPI"],
+                    "snacks": [{
+                        "name": "Gourmet Combo",
+                        "price": 450,
+                        "image": "https://placehold.co/100x100/A87D00/white?text=Gourmet"
+                    }, {
+                        "name": "Beverage",
+                        "price": 120,
+                        "image": "https://placehold.co/100x100/2A7FFF/white?text=Beverage"
+                    }],
+                    "showingNow": []
+                }]
+            }, {
+                "name": "Mumbai",
+                "cinemaHalls": [{
+                    "id": "mum-1",
+                    "name": "PVR Juhu",
+                    "welcomeMessage": "Welcome to PVR Juhu! Mumbai's premier destination for blockbuster movies and a luxurious cinematic journey.",
+                    "contact": "+91 22 2670 1234",
+                    "mapUrl": "https://maps.app.goo.gl/y8h7j6k5l4m3n2p1",
+                    "transportServices": ["Bus", "Auto", "Local Train"],
+                    "paymentMethods": ["Card", "Cash", "UPI"],
+                    "snacks": [{
+                        "name": "Large Popcorn & Pepsi",
+                        "price": 350,
+                        "image": "https://placehold.co/100x100/A87D00/white?text=Popcorn"
+                    }, {
+                        "name": "Nachos with Salsa",
+                        "price": 280,
+                        "image": "https://placehold.co/100x100/A42A00/white?text=Nachos"
+                    }],
+                    "showingNow": []
+                }, {
+                    "id": "mum-2",
+                    "name": "Regal Cinema, Colaba",
+                    "welcomeMessage": "Welcome to Regal Cinema! A historical landmark bringing classic and contemporary cinema to the heart of Mumbai.",
+                    "contact": "+91 22 2284 3456",
+                    "mapUrl": "https://maps.app.goo.gl/p7y8u7i6o5p4a3s2",
+                    "transportServices": ["Bus", "Local Train"],
+                    "paymentMethods": ["Card", "Cash"],
+                    "snacks": [{
+                        "name": "Samosa",
+                        "price": 50,
+                        "image": "https://placehold.co/100x100/987F56/white?text=Samosa"
+                    }, {
+                        "name": "Vada Pav",
+                        "price": 40,
+                        "image": "https://placehold.co/100x100/8B4513/white?text=Vada+Pav"
+                    }],
+                    "showingNow": []
+                }]
+            }]
+        }];
+
+        // Combined JavaScript from cinemaguide.js
+        const API_KEY = '9c198aabc1df9fa96ea8d65e183cb8a3';
+        const BASE_URL = 'https://api.themoviedb.org/3';
+        const IMAGE_URL = 'https://image.tmdb.org/t/p/original';
+        const SMALL_IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
+
+        const API_ENDPOINTS = {
+            popularMovies: `${BASE_URL}/movie/popular?api_key=${API_KEY}`,
+            popularTvShows: `${BASE_URL}/tv/popular?api_key=${API_KEY}`,
+            newReleasesTv: `${BASE_URL}/tv/on_the_air?api_key=${API_KEY}`,
+            trendingMovies: `${BASE_URL}/trending/movie/week?api_key=${API_KEY}`,
+        };
+
+        const cinemaHero = document.getElementById('cinemaHero');
+        const tickerText = document.getElementById('tickerText');
+        const cinemaGuideContainer = document.getElementById('cinemaGuideContainer');
+        const spinner = document.getElementById('spinnerCinemaGuide');
+        const countrySelect = document.getElementById('countrySelect');
+        const citySelect = document.getElementById('citySelect');
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        let allMoviesAndShows = [];
+        let cinemaData = CINEMA_GUIDE_DATA;
+
+        async function fetchData(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error("Fetch failed:", error);
+                return null;
+            }
+        }
+
+        function createMovieCard(movie) {
+            const card = document.createElement('div');
+            card.className = 'movie-card rounded-xl overflow-hidden shadow-lg';
+            card.innerHTML = `
+                <div class="movie-card-image-container">
+                    <img src="${movie.poster_path ? SMALL_IMAGE_URL + movie.poster_path : 'https://placehold.co/500x750/333333/FFFFFF?text=Poster+Not+Available'}" alt="${movie.title || movie.name}">
+                </div>
+                <div class="movie-card-info">
+                    <h3 class="font-bold">${movie.title || movie.name}</h3>
+                    <div class="movie-card-rating">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <span>${movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A'}</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-2 flex-grow">${movie.overview ? movie.overview.substring(0, 100) + '...' : 'No overview available.'}</p>
+                </div>
+            `;
+            return card;
+        }
+
+        async function fetchMoviesAndShows() {
+            try {
+                const [
+                    popularMovies,
+                    popularTvShows,
+                    newReleasesTv,
+                    trendingMovies
+                ] = await Promise.all([
+                    fetchData(API_ENDPOINTS.popularMovies),
+                    fetchData(API_ENDPOINTS.popularTvShows),
+                    fetchData(API_ENDPOINTS.newReleasesTv),
+                    fetchData(API_ENDPOINTS.trendingMovies),
+                ]);
+
+                allMoviesAndShows = [].concat(
+                    popularMovies?.results || [],
+                    popularTvShows?.results || [],
+                    newReleasesTv?.results || [],
+                    trendingMovies?.results || []
+                ).filter(movie => movie.poster_path); // Filter out movies without a poster
+
+                if (allMoviesAndShows.length > 0) {
+                    updateTicker();
+                }
+
+            } catch (error) {
+                console.error("Error fetching movie data:", error);
+            }
+        }
+
+        function updateTicker() {
+            if (allMoviesAndShows.length === 0) return;
+
+            const shuffledMovies = [...allMoviesAndShows].sort(() => 0.5 - Math.random());
+            let tickerContent = '';
+            for (let i = 0; i < 10; i++) {
+                const movie = shuffledMovies[i % shuffledMovies.length];
+                tickerContent += `<span class="ticker-item">${movie.title || movie.name}</span>`;
+            }
+            tickerText.innerHTML = tickerContent;
+        }
+
+        function populateCountrySelect() {
+            countrySelect.innerHTML = `<option value="">Select Country</option>`;
+            cinemaData.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.code;
+                option.textContent = country.country;
+                option.dataset.language = country.language;
+                countrySelect.appendChild(option);
+            });
+        }
+
+        function populateCitySelect(countryCode) {
+            citySelect.innerHTML = `<option value="">Select City</option>`;
+            if (!countryCode) {
+                citySelect.disabled = true;
+                return;
+            }
+
+            const selectedCountry = cinemaData.find(c => c.code === countryCode);
+            if (selectedCountry) {
+                selectedCountry.cities.forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city.name;
+                    option.textContent = city.name;
+                    citySelect.appendChild(option);
+                });
+                citySelect.disabled = false;
+            } else {
+                citySelect.disabled = true;
+            }
+        }
+
+        function renderCinemaGuide(country = '', city = '') {
+            cinemaGuideContainer.innerHTML = '';
+            spinner.style.display = 'block';
+
+            let filteredData = cinemaData;
+            if (country) {
+                filteredData = filteredData.filter(c => c.code === country);
+            }
+            if (city) {
+                filteredData = filteredData.map(countryData => ({
+                    ...countryData,
+                    cities: countryData.cities.filter(c => c.name === city)
+                }));
+            }
+
+            if (filteredData.length > 0 && allMoviesAndShows.length > 0) {
+                filteredData.forEach(country => {
+                    country.cities.forEach(city => {
+                        city.cinemaHalls.forEach(hall => {
+                            const cinemaHallSection = document.createElement('div');
+                            cinemaHallSection.className = 'cinema-hall-section';
+                            cinemaHallSection.innerHTML = `<h2 class="text-white">${hall.name}</h2>`;
+
+                            const movieGrid = document.createElement('div');
+                            movieGrid.className = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4';
+
+                            for (let i = 0; i < 8; i++) {
+                                const randomMovie = allMoviesAndShows[Math.floor(Math.random() * allMoviesAndShows.length)];
+                                const movieCard = createMovieCard(randomMovie);
+                                movieGrid.appendChild(movieCard);
+                            }
+
+                            cinemaHallSection.appendChild(movieGrid);
+                            cinemaGuideContainer.appendChild(cinemaHallSection);
+                        });
+                    });
+                });
+            } else {
+                cinemaGuideContainer.innerHTML = '<p class="text-center text-red-500">No cinemas or movies found for the selected filters.</p>';
+            }
+
+            spinner.style.display = 'none';
+        }
+
+        // Event listeners
+        countrySelect.addEventListener('change', (e) => {
+            const countryCode = e.target.value;
+            populateCitySelect(countryCode);
+            renderCinemaGuide(countryCode, '');
+        });
+
+        citySelect.addEventListener('change', (e) => {
+            const countryCode = countrySelect.value;
+            const city = e.target.value;
+            renderCinemaGuide(countryCode, city);
+        });
+
+        // Scroll to top button logic
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        };
+
+        scrollToTopBtn.addEventListener('click', () => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+
+        // Hamburger menu logic
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+
+        // Initial calls
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchMoviesAndShows().then(() => {
+                populateCountrySelect();
+                renderCinemaGuide();
+            });
+        });
+        
+    </script>
 </body>
 </html>

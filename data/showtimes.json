@@ -1,0 +1,392 @@
+[
+  {
+    "hallId": "nai-1",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["A1", "A2", "B5"] },
+      { "time": "1:00 PM", "occupiedSeats": ["C3", "C4", "D7"] },
+      { "time": "4:00 PM", "occupiedSeats": ["F10", "F11"] },
+      { "time": "7:00 PM", "occupiedSeats": ["B1", "E9"] },
+      { "time": "10:00 PM", "occupiedSeats": ["J1", "K2"] }
+    ]
+  },
+  {
+    "hallId": "nai-2",
+    "showtimes": [
+      { "time": "11:00 AM", "occupiedSeats": ["A1", "B2", "C3"] },
+      { "time": "2:00 PM", "occupiedSeats": ["E5", "F6", "G7"] },
+      { "time": "5:00 PM", "occupiedSeats": ["I9", "J10"] },
+      { "time": "8:00 PM", "occupiedSeats": ["M1", "N2"] },
+      { "time": "11:00 PM", "occupiedSeats": ["O5", "P6"] }
+    ]
+  },
+  {
+    "hallId": "nai-3",
+    "showtimes": [
+      { "time": "10:30 AM", "occupiedSeats": ["D4", "E5", "F6"] },
+      { "time": "1:30 PM", "occupiedSeats": ["G7", "H8", "I9"] },
+      { "time": "4:30 PM", "occupiedSeats": ["J10", "K11", "L12"] },
+      { "time": "7:30 PM", "occupiedSeats": ["A1", "B2"] },
+      { "time": "10:30 PM", "occupiedSeats": ["C3", "D4"] }
+    ]
+  },
+  {
+    "hallId": "nai-4",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["B3", "C4", "D5"] },
+      { "time": "1:00 PM", "occupiedSeats": ["E6", "F7", "G8"] },
+      { "time": "4:00 PM", "occupiedSeats": ["H9", "I10", "J11"] },
+      { "time": "7:00 PM", "occupiedSeats": ["K12", "L1"] },
+      { "time": "10:00 PM", "occupiedSeats": ["M2", "N3"] }
+    ]
+  },
+  {
+    "hallId": "nai-5",
+    "showtimes": [
+      { "time": "10:30 AM", "occupiedSeats": ["A1", "B2", "C3"] },
+      { "time": "1:30 PM", "occupiedSeats": ["D4", "E5", "F6"] },
+      { "time": "4:30 PM", "occupiedSeats": ["G7", "H8", "I9"] },
+      { "time": "7:30 PM", "occupiedSeats": ["J10", "K11"] },
+      { "time": "10:30 PM", "occupiedSeats": ["L12", "M1"] }
+    ]
+  },
+  {
+    "hallId": "mom-1",
+    "showtimes": [
+      { "time": "11:00 AM", "occupiedSeats": ["A1", "A2", "A3"] },
+      { "time": "2:00 PM", "occupiedSeats": ["B4", "B5", "B6"] },
+      { "time": "5:00 PM", "occupiedSeats": ["C7", "C8", "C9"] },
+      { "time": "8:00 PM", "occupiedSeats": ["D10", "D11"] },
+      { "time": "11:00 PM", "occupiedSeats": ["E12", "F1"] }
+    ]
+  },
+  {
+    "hallId": "mom-2",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["F2", "F3", "F4"] },
+      { "time": "1:00 PM", "occupiedSeats": ["G5", "G6", "G7"] },
+      { "time": "4:00 PM", "occupiedSeats": ["H8", "H9", "H10"] },
+      { "time": "7:00 PM", "occupiedSeats": ["I11", "I12"] },
+      { "time": "10:00 PM", "occupiedSeats": ["J1", "J2"] }
+    ]
+  },
+  {
+    "hallId": "mom-3",
+    "showtimes": [
+      { "time": "11:30 AM", "occupiedSeats": ["K3", "K4", "K5"] },
+      { "time": "2:30 PM", "occupiedSeats": ["L6", "L7", "L8"] },
+      { "time": "5:30 PM", "occupiedSeats": ["M9", "M10", "M11"] },
+      { "time": "8:30 PM", "occupiedSeats": ["N12", "O1"] },
+      { "time": "11:30 PM", "occupiedSeats": ["P2", "Q3"] }
+    ]
+  },
+  {
+    "hallId": "kis-1",
+    "showtimes": [
+      { "time": "11:30 AM", "occupiedSeats": ["A1", "B1", "C1", "D1"] },
+      { "time": "2:30 PM", "occupiedSeats": ["E2", "F2", "G2", "H2"] },
+      { "time": "5:30 PM", "occupiedSeats": ["I3", "J3", "K3", "L3"] },
+      { "time": "8:30 PM", "occupiedSeats": ["M4", "N4", "O4", "P4"] },
+      { "time": "11:30 PM", "occupiedSeats": ["Q5", "R5", "S5", "T5"] }
+    ]
+  },
+  {
+    "hallId": "kis-2",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["A1", "A2", "A3"] },
+      { "time": "1:00 PM", "occupiedSeats": ["B4", "B5", "B6"] },
+      { "time": "4:00 PM", "occupiedSeats": ["C7", "C8", "C9"] },
+      { "time": "7:00 PM", "occupiedSeats": ["D10", "D11"] },
+      { "time": "10:00 PM", "occupiedSeats": ["E12", "F1"] }
+    ]
+  },
+  {
+    "hallId": "kis-3",
+    "showtimes": [
+      { "time": "11:00 AM", "occupiedSeats": ["G2", "G3", "G4"] },
+      { "time": "2:00 PM", "occupiedSeats": ["H5", "H6", "H7"] },
+      { "time": "5:00 PM", "occupiedSeats": ["I8", "I9", "I10"] },
+      { "time": "8:00 PM", "occupiedSeats": ["J11", "J12"] },
+      { "time": "11:00 PM", "occupiedSeats": ["K1", "K2"] }
+    ]
+  },
+  {
+    "hallId": "eld-1",
+    "showtimes": [
+      { "time": "10:30 AM", "occupiedSeats": ["A1", "B2", "C3"] },
+      { "time": "1:30 PM", "occupiedSeats": ["D4", "E5", "F6"] },
+      { "time": "4:30 PM", "occupiedSeats": ["G7", "H8", "I9"] },
+      { "time": "7:30 PM", "occupiedSeats": ["J10", "K11"] },
+      { "time": "10:30 PM", "occupiedSeats": ["L12", "M1"] }
+    ]
+  },
+  {
+    "hallId": "eld-2",
+    "showtimes": [
+      { "time": "11:00 AM", "occupiedSeats": ["N2", "O3", "P4"] },
+      { "time": "2:00 PM", "occupiedSeats": ["Q5", "R6", "S7"] },
+      { "time": "5:00 PM", "occupiedSeats": ["T8", "U9", "V10"] },
+      { "time": "8:00 PM", "occupiedSeats": ["W11", "X12"] },
+      { "time": "11:00 PM", "occupiedSeats": ["Y1", "Z2"] }
+    ]
+  },
+  {
+    "hallId": "eld-3",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["A1", "A2", "A3"] },
+      { "time": "1:00 PM", "occupiedSeats": ["B4", "B5", "B6"] },
+      { "time": "4:00 PM", "occupiedSeats": ["C7", "C8", "C9"] },
+      { "time": "7:00 PM", "occupiedSeats": ["D10", "D11"] },
+      { "time": "10:00 PM", "occupiedSeats": ["E12", "F1"] }
+    ]
+  },
+  {
+    "hallId": "eld-4",
+    "showtimes": [
+      { "time": "10:30 AM", "occupiedSeats": ["G2", "H3", "I4"] },
+      { "time": "1:30 PM", "occupiedSeats": ["J5", "K6", "L7"] },
+      { "time": "4:30 PM", "occupiedSeats": ["M8", "N9", "O10"] },
+      { "time": "7:30 PM", "occupiedSeats": ["P11", "Q12"] },
+      { "time": "10:30 PM", "occupiedSeats": ["R1", "S2"] }
+    ]
+  },
+  {
+    "hallId": "nak-1",
+    "showtimes": [
+      { "time": "11:00 AM", "occupiedSeats": ["T3", "U4", "V5"] },
+      { "time": "2:00 PM", "occupiedSeats": ["W6", "X7", "Y8"] },
+      { "time": "5:00 PM", "occupiedSeats": ["Z9", "A10", "B11"] },
+      { "time": "8:00 PM", "occupiedSeats": ["C12", "D1"] },
+      { "time": "11:00 PM", "occupiedSeats": ["E2", "F3"] }
+    ]
+  },
+  {
+    "hallId": "nak-2",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["G4", "H5", "I6"] },
+      { "time": "1:00 PM", "occupiedSeats": ["J7", "K8", "L9"] },
+      { "time": "4:00 PM", "occupiedSeats": ["M10", "N11", "O12"] },
+      { "time": "7:00 PM", "occupiedSeats": ["P1", "Q2"] },
+      { "time": "10:00 PM", "occupiedSeats": ["R3", "S4"] }
+    ]
+  },
+  {
+    "hallId": "nak-3",
+    "showtimes": [
+      { "time": "10:30 AM", "occupiedSeats": ["T5", "U6", "V7"] },
+      { "time": "1:30 PM", "occupiedSeats": ["W8", "X9", "Y10"] },
+      { "time": "4:30 PM", "occupiedSeats": ["Z11", "A12", "B1"] },
+      { "time": "7:30 PM", "occupiedSeats": ["C2", "D3"] },
+      { "time": "10:30 PM", "occupiedSeats": ["E4", "F5"] }
+    ]
+  },
+  {
+    "hallId": "lag-1",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["A1", "A2", "A3"] },
+      { "time": "1:00 PM", "occupiedSeats": ["B4", "B5", "B6"] },
+      { "time": "4:00 PM", "occupiedSeats": ["C7", "C8", "C9"] },
+      { "time": "7:00 PM", "occupiedSeats": ["D10", "D11"] },
+      { "time": "10:00 PM", "occupiedSeats": ["E12", "F1"] }
+    ]
+  },
+  {
+    "hallId": "lag-2",
+    "showtimes": [
+      { "time": "11:00 AM", "occupiedSeats": ["G2", "G3", "G4"] },
+      { "time": "2:00 PM", "occupiedSeats": ["H5", "H6", "H7"] },
+      { "time": "5:00 PM", "occupiedSeats": ["I8", "I9", "I10"] },
+      { "time": "8:00 PM", "occupiedSeats": ["J11", "J12"] },
+      { "time": "11:00 PM", "occupiedSeats": ["K1", "K2"] }
+    ]
+  },
+  {
+    "hallId": "lag-3",
+    "showtimes": [
+      { "time": "10:30 AM", "occupiedSeats": ["L3", "L4", "L5"] },
+      { "time": "1:30 PM", "occupiedSeats": ["M6", "M7", "M8"] },
+      { "time": "4:30 PM", "occupiedSeats": ["N9", "N10", "N11"] },
+      { "time": "7:30 PM", "occupiedSeats": ["O12", "P1"] },
+      { "time": "10:30 PM", "occupiedSeats": ["Q2", "R3"] }
+    ]
+  },
+  {
+    "hallId": "lag-4",
+    "showtimes": [
+      { "time": "11:00 AM", "occupiedSeats": ["S4", "T5", "U6"] },
+      { "time": "2:00 PM", "occupiedSeats": ["V7", "W8", "X9"] },
+      { "time": "5:00 PM", "occupiedSeats": ["Y10", "Z11", "A12"] },
+      { "time": "8:00 PM", "occupiedSeats": ["B1", "C2"] },
+      { "time": "11:00 PM", "occupiedSeats": ["D3", "E4"] }
+    ]
+  },
+  {
+    "hallId": "lag-5",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["F5", "G6", "H7"] },
+      { "time": "1:00 PM", "occupiedSeats": ["I8", "J9", "K10"] },
+      { "time": "4:00 PM", "occupiedSeats": ["L11", "M12", "N1"] },
+      { "time": "7:00 PM", "occupiedSeats": ["O2", "P3"] },
+      { "time": "10:00 PM", "occupiedSeats": ["Q4", "R5"] }
+    ]
+  },
+  {
+    "hallId": "abu-1",
+    "showtimes": [
+      { "time": "11:30 AM", "occupiedSeats": ["S6", "T7", "U8"] },
+      { "time": "2:30 PM", "occupiedSeats": ["V9", "W10", "X11"] },
+      { "time": "5:30 PM", "occupiedSeats": ["Y12", "Z1", "A2"] },
+      { "time": "8:30 PM", "occupiedSeats": ["B3", "C4"] },
+      { "time": "11:30 PM", "occupiedSeats": ["D5", "E6"] }
+    ]
+  },
+  {
+    "hallId": "abu-2",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["F7", "G8", "H9"] },
+      { "time": "1:00 PM", "occupiedSeats": ["I10", "J11", "K12"] },
+      { "time": "4:00 PM", "occupiedSeats": ["L1", "M2", "N3"] },
+      { "time": "7:00 PM", "occupiedSeats": ["O4", "P5"] },
+      { "time": "10:00 PM", "occupiedSeats": ["Q6", "R7"] }
+    ]
+  },
+  {
+    "hallId": "iba-1",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["S8", "T9", "U10"] },
+      { "time": "2:00 PM", "occupiedSeats": ["V11", "W12", "X1"] },
+      { "time": "5:00 PM", "occupiedSeats": ["Y2", "Z3", "A4"] },
+      { "time": "8:00 PM", "occupiedSeats": ["B5", "C6"] },
+      { "time": "11:00 PM", "occupiedSeats": ["D7", "E8"] }
+    ]
+  },
+  {
+    "hallId": "phc-1",
+    "showtimes": [
+      { "time": "10:30 AM", "occupiedSeats": ["F9", "G10", "H11"] },
+      { "time": "1:30 PM", "occupiedSeats": ["I12", "J1", "K2"] },
+      { "time": "4:30 PM", "occupiedSeats": ["L3", "M4", "N5"] },
+      { "time": "7:30 PM", "occupiedSeats": ["O6", "P7"] },
+      { "time": "10:30 PM", "occupiedSeats": ["Q8", "R9"] }
+    ]
+  },
+  {
+    "hallId": "kan-1",
+    "showtimes": [
+      { "time": "11:00 AM", "occupiedSeats": ["S10", "T11", "U12"] },
+      { "time": "2:00 PM", "occupiedSeats": ["V1", "W2", "X3"] },
+      { "time": "5:00 PM", "occupiedSeats": ["Y4", "Z5", "A6"] },
+      { "time": "8:00 PM", "occupiedSeats": ["B7", "C8"] },
+      { "time": "11:00 PM", "occupiedSeats": ["D9", "E10"] }
+    ]
+  },
+  {
+    "hallId": "che-1",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["F11", "G12", "H1"] },
+      { "time": "1:00 PM", "occupiedSeats": ["I2", "J3", "K4"] },
+      { "time": "4:00 PM", "occupiedSeats": ["L5", "M6", "N7"] },
+      { "time": "7:00 PM", "occupiedSeats": ["O8", "P9"] },
+      { "time": "10:00 PM", "occupiedSeats": ["Q10", "R11"] }
+    ]
+  },
+  {
+    "hallId": "che-2",
+    "showtimes": [
+      { "time": "10:30 AM", "occupiedSeats": ["S12", "T1", "U2"] },
+      { "time": "1:30 PM", "occupiedSeats": ["V3", "W4", "X5"] },
+      { "time": "4:30 PM", "occupiedSeats": ["Y6", "Z7", "A8"] },
+      { "time": "7:30 PM", "occupiedSeats": ["B9", "C10"] },
+      { "time": "10:30 PM", "occupiedSeats": ["D11", "E12"] }
+    ]
+  },
+  {
+    "hallId": "che-3",
+    "showtimes": [
+      { "time": "11:00 AM", "occupiedSeats": ["F1", "G2", "H3"] },
+      { "time": "2:00 PM", "occupiedSeats": ["I4", "J5", "K6"] },
+      { "time": "5:00 PM", "occupiedSeats": ["L7", "M8", "N9"] },
+      { "time": "8:00 PM", "occupiedSeats": ["O10", "P11"] },
+      { "time": "11:00 PM", "occupiedSeats": ["Q12", "R1"] }
+    ]
+  },
+  {
+    "hallId": "che-4",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["S2", "T3", "U4"] },
+      { "time": "1:00 PM", "occupiedSeats": ["V5", "W6", "X7"] },
+      { "time": "4:00 PM", "occupiedSeats": ["Y8", "Z9", "A10"] },
+      { "time": "7:00 PM", "occupiedSeats": ["B11", "C12"] },
+      { "time": "10:00 PM", "occupiedSeats": ["D1", "E2"] }
+    ]
+  },
+  {
+    "hallId": "mum-1",
+    "showtimes": [
+      { "time": "11:00 AM", "occupiedSeats": ["F3", "G4", "H5"] },
+      { "time": "2:00 PM", "occupiedSeats": ["I6", "J7", "K8"] },
+      { "time": "5:00 PM", "occupiedSeats": ["L9", "M10", "N11"] },
+      { "time": "8:00 PM", "occupiedSeats": ["O12", "P1"] },
+      { "time": "11:00 PM", "occupiedSeats": ["Q2", "R3"] }
+    ]
+  },
+  {
+    "hallId": "del-1",
+    "showtimes": [
+      { "time": "10:30 AM", "occupiedSeats": ["S4", "T5", "U6"] },
+      { "time": "1:30 PM", "occupiedSeats": ["V7", "W8", "X9"] },
+      { "time": "4:30 PM", "occupiedSeats": ["Y10", "Z11", "A12"] },
+      { "time": "7:30 PM", "occupiedSeats": ["B1", "C2"] },
+      { "time": "10:30 PM", "occupiedSeats": ["D3", "E4"] }
+    ]
+  },
+  {
+    "hallId": "hyd-1",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["F5", "G6", "H7"] },
+      { "time": "1:00 PM", "occupiedSeats": ["I8", "J9", "K10"] },
+      { "time": "4:00 PM", "occupiedSeats": ["L11", "M12", "N1"] },
+      { "time": "7:00 PM", "occupiedSeats": ["O2", "P3"] },
+      { "time": "10:00 PM", "occupiedSeats": ["Q4", "R5"] }
+    ]
+  },
+  {
+    "hallId": "ny-1",
+    "showtimes": [
+      { "time": "11:00 AM", "occupiedSeats": ["S6", "T7", "U8"] },
+      { "time": "2:00 PM", "occupiedSeats": ["V9", "W10", "X11"] },
+      { "time": "5:00 PM", "occupiedSeats": ["Y12", "Z1", "A2"] },
+      { "time": "8:00 PM", "occupiedSeats": ["B3", "C4"] },
+      { "time": "11:00 PM", "occupiedSeats": ["D5", "E6"] }
+    ]
+  },
+  {
+    "hallId": "la-1",
+    "showtimes": [
+      { "time": "10:30 AM", "occupiedSeats": ["F7", "G8", "H9"] },
+      { "time": "1:30 PM", "occupiedSeats": ["I10", "J11", "K12"] },
+      { "time": "4:30 PM", "occupiedSeats": ["L1", "M2", "N3"] },
+      { "time": "7:30 PM", "occupiedSeats": ["O4", "P5"] },
+      { "time": "10:30 PM", "occupiedSeats": ["Q6", "R7"] }
+    ]
+  },
+  {
+    "hallId": "chi-1",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["S8", "T9", "U10"] },
+      { "time": "1:00 PM", "occupiedSeats": ["V11", "W12", "X1"] },
+      { "time": "4:00 PM", "occupiedSeats": ["Y2", "Z3", "A4"] },
+      { "time": "7:00 PM", "occupiedSeats": ["B5", "C6"] },
+      { "time": "10:00 PM", "occupiedSeats": ["D7", "E8"] }
+    ]
+  },
+  {
+    "hallId": "acc-1",
+    "showtimes": [
+      { "time": "10:00 AM", "occupiedSeats": ["F9", "G10", "H11"] },
+      { "time": "1:00 PM", "occupiedSeats": ["I12", "J1", "K2"] },
+      { "time": "4:00 PM", "occupiedSeats": ["L3", "M4", "N5"] },
+      { "time": "7:00 PM", "occupiedSeats": ["O6", "P7"] },
+      { "time": "10:00 PM", "occupiedSeats": ["Q8", "R9"] }
+    ]
+  }
+]

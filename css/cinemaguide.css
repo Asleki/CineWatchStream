@@ -1,7 +1,8 @@
 /* Custom styles for the cinema guide page */
-:root {
-    /* Define color variables if needed */
-}
+/* ==========================================================
+   File: cinemaguide.css
+   Purpose: Styles for the cinema guide page.
+   ========================================================== */
 
 .cinema-hero {
     position: relative;
@@ -96,9 +97,10 @@
 }
 
 /* ==========================================================
-   New Styles for the Grid Layout
+   Updated Styles for the Cinema Section Card Layout
    ========================================================== */
 
+/* The main container for the cinema section */
 .cinema-hall-section {
     margin: 2rem;
     padding: 2rem;
@@ -107,6 +109,7 @@
     box-shadow: 0 4px 10px var(--shadow-primary);
 }
 
+/* Heading style for the section */
 .cinema-hall-section h2 {
     color: var(--text-primary);
     font-size: 2rem;
@@ -115,12 +118,14 @@
     text-align: center;
 }
 
+/* Grid for the movie cards */
 .movie-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
 }
 
+/* The movie card itself, now a flex container for two columns */
 .movie-card {
     background-color: var(--bg-card);
     border-radius: 10px;
@@ -128,7 +133,10 @@
     box-shadow: 0 4px 10px var(--shadow-secondary);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Arranges the poster and details side-by-side */
+    position: relative;
+    padding: 1rem;
+    gap: 1rem;
 }
 
 .movie-card:hover {
@@ -136,19 +144,55 @@
     box-shadow: 0 8px 15px var(--shadow-primary);
 }
 
+/* Container for the poster and the "Buy Ticket" button */
+.poster-and-buy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0; /* Prevents this column from shrinking */
+}
+
+/* Movie poster image */
 .movie-poster {
-    width: 100%;
+    width: 120px;
     height: auto;
-    border-radius: 10px 10px 0 0;
+    border-radius: 8px;
     object-fit: cover;
 }
 
+/* The "Buy Ticket" button, placed directly below the poster */
+.btn-buy {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    width: 100%;
+}
+
+.btn-buy:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+/* Text and details section, now a flex container to push content to the bottom */
 .movie-details {
-    padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex: 1;
+    justify-content: space-between;
+    flex: 1; /* Allows details to fill remaining space */
+}
+
+/* The specific movie info block */
+.movie-info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
 }
 
 .movie-details h4 {
@@ -161,16 +205,11 @@
 .movie-details p {
     font-size: 0.9rem;
     color: var(--text-secondary);
-    margin-bottom: 0.5rem;
+    margin: 0;
 }
 
-.btn-group {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.btn-buy, .btn-details {
+/* The "View Details" button, placed at the bottom of the details section */
+.btn-details {
     padding: 8px 12px;
     border-radius: 5px;
     font-size: 0.9rem;
@@ -178,20 +217,9 @@
     text-align: center;
     text-decoration: none;
     transition: background-color 0.3s ease;
-}
-
-.btn-buy {
-    background-color: var(--btn-primary-bg);
-    color: var(--btn-primary-text);
-}
-
-.btn-buy:hover {
-    background-color: var(--btn-primary-hover);
-}
-
-.btn-details {
     background-color: var(--btn-secondary-bg);
     color: var(--btn-secondary-text);
+    align-self: flex-end; /* Pushes the button to the bottom right */
 }
 
 .btn-details:hover {
