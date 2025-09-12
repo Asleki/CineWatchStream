@@ -1,0 +1,102 @@
+{
+  "troubleWords": {
+    "hello": "Hello! How can I assist you today?",
+    "hi": "Hi there! I'm here to help you.",
+    "thanks": "Thank you for reaching out! We're here to help.",
+    "thank you": "You're very welcome! Is there anything else I can help you with?",
+    "thenks": "Thank you! I'm glad I could help.",
+    "help": "I'm here to help! What seems to be the issue?",
+    "help me": "I'm here to help! What seems to be the issue?"
+  },
+  "liveAgentTriggers": [
+    "live agent",
+    "talk to agent",
+    "human",
+    "representative",
+    "connect to support",
+    "cannot fix",
+    "not working",
+    "still broken",
+    "escalate"
+  ],
+  "faqs": [
+    {
+      "id": "q1",
+      "question": "How do I create a CineWatch account?",
+      "answer": "To create an account, click the 'Sign Up' button on the homepage or mobile app. You'll need to provide your email address and create a password. You can also sign up using your Google or Facebook account.",
+      "keywords": ["create account", "sign up", "register", "new account"]
+    },
+    {
+      "id": "q2",
+      "question": "How do I change my password or reset it?",
+      "answer": "Go to your profile page or 'Account Settings'. There you will find an option to change your password. If you forgot your password, use the 'Forgot Password' link on the login page to receive a password reset link via email.",
+      "keywords": ["password", "change password", "reset password", "forgot password", "security"]
+    },
+    {
+      "id": "q3",
+      "question": "Why is my video buffering or lagging?",
+      "answer": "Buffering is often caused by a slow internet connection. Try restarting your router and modem. You can also try closing other applications that might be using up bandwidth, or lower the video quality in the playback settings.",
+      "keywords": ["buffering", "lagging", "slow video", "internet", "connection", "video quality"]
+    },
+    {
+      "id": "q4",
+      "question": "How can I add a movie or show to my watchlist?",
+      "answer": "On any movie or TV show page, you will see a 'Add to Watchlist' button, usually represented by a plus (+) icon. Click on it, and the title will be saved to your personal watchlist for you to watch later.",
+      "keywords": ["watchlist", "add to watchlist", "save for later", "playlist", "favorites"]
+    },
+    {
+      "id": "q5",
+      "question": "How do I create a custom playlist?",
+      "answer": "You can create custom playlists from your profile or 'My Lists' section. Simply click on 'Create New Playlist', give it a name, and then add movies or shows to it from their respective pages.",
+      "keywords": ["playlist", "create playlist", "custom list", "organize movies"]
+    },
+    {
+      "id": "q6",
+      "question": "What payment methods are supported?",
+      "answer": "We support various payment methods, including M-Pesa, Visa, Mastercard, and other common mobile and credit card options. You can view all supported methods on the subscription page.",
+      "keywords": ["payment", "billing", "credit card", "m-pesa", "subscription", "pay"]
+    },
+    {
+      "id": "q7",
+      "question": "My payment failed. What should I do?",
+      "answer": "First, ensure your card details are correct and that you have sufficient funds. If the issue persists, please contact your bank to check for any restrictions. You can also try a different payment method.",
+      "keywords": ["payment failed", "card declined", "billing issue", "failed transaction"]
+    },
+    {
+      "id": "q8",
+      "question": "How do I cancel my subscription?",
+      "answer": "You can cancel your subscription at any time from your 'Account Settings' or 'Billing' page. Your subscription will remain active until the end of the current billing cycle.",
+      "keywords": ["cancel subscription", "stop billing", "unsubscribe", "end plan"]
+    },
+    {
+      "id": "q9",
+      "question": "The video quality is poor. How can I improve it?",
+      "answer": "Check your playback settings and ensure the quality is set to 'Auto' or a higher resolution like 1080p or 4K. A poor internet connection can also force the quality to a lower setting.",
+      "keywords": ["video quality", "resolution", "HD", "4K", "blurry video"]
+    },
+    {
+      "id": "q10",
+      "question": "How do I redeem a gift card or promo code?",
+      "answer": "You can redeem a gift card or promo code on the 'Billing & Payments' section of your account. Enter the code in the 'Redeem Code' box and click 'Apply'.",
+      "keywords": ["gift card", "promo code", "redeem", "discount"]
+    },
+    {
+      "id": "q11",
+      "question": "How to buy a ticket for a movie?",
+      "answer": "To buy a ticket, navigate to the movie's page and look for the 'Buy Ticket' button. You will be redirected to a page where you can select the cinema, showtime, and seats. Follow the on-screen instructions to complete the payment.",
+      "keywords": ["buy ticket", "purchase ticket", "movie ticket", "booking", "showtime"]
+    },
+    {
+      "id": "q12",
+      "question": "My account is locked. How do I unlock it?",
+      "answer": "Your account may be locked due to too many failed login attempts. Please use the 'Forgot Password' link to reset your password, which will also unlock your account.",
+      "keywords": ["locked account", "account disabled", "login issue"]
+    },
+    {
+      "id": "q13",
+      "question": "How can I report a bug or technical issue?",
+      "answer": "If you encounter a technical issue, you can report it by typing 'report bug' or 'technical issue'. This will connect you to a live agent who can help you further.",
+      "keywords": ["report bug", "technical issue", "error", "bug", "glitch"]
+    }
+  ]
+}

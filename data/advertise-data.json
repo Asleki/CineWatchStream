@@ -1,0 +1,38 @@
+{
+  "ads_packages": [
+    {
+      "name": "Bronze",
+      "price": "Ksh. 5,000",
+      "description": "Ideal for startups and local businesses. Get your message out to our growing audience with a simple, effective ad campaign.",
+      "features": [
+        "20 second ad video",
+        "Targeted by content genre",
+        "Basic performance analytics",
+        "Displayed before movies & shows"
+      ]
+    },
+    {
+      "name": "Silver",
+      "price": "Ksh. 15,000",
+      "description": "For businesses looking for broader reach and better engagement. Perfect for small to medium-sized campaigns.",
+      "features": [
+        "30 second ad video",
+        "Targeted by user demographics",
+        "Detailed performance analytics",
+        "Exclusive placement on popular content"
+      ]
+    },
+    {
+      "name": "Gold",
+      "price": "Ksh. 40,000",
+      "description": "Our premium package for maximum visibility and brand impact. Reach a wider, more engaged audience with full control.",
+      "features": [
+        "60 second ad video",
+        "Targeted by user behavior & location",
+        "Premium performance dashboard",
+        "Interactive ad formats",
+        "Dedicated account manager"
+      ]
+    }
+  ]
+}

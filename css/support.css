@@ -1,0 +1,119 @@
+/* ==========================================================
+   File: support.css
+   Purpose: Styles for the support page.
+   ========================================================== */
+
+.support-page {
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80vh;
+    background-color: var(--background-color);
+}
+
+.support-container {
+    background: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.support-heading {
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    background: var(--input-background);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+#searchInput:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--accent-color-transparent);
+}
+
+.search-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+.faqs-list {
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+.faq-item {
+    background: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item:hover {
+    background-color: var(--hover-background);
+}
+
+.faq-question {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question i {
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    display: none;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 1rem;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.no-results {
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: 2rem;
+}

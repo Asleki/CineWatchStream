@@ -1,0 +1,32 @@
+[
+    {
+        "title": "A Growing Market",
+        "description": "The African streaming market is poised for explosive growth, driven by increasing internet penetration, smartphone adoption, and a young, tech-savvy population eager for culturally relevant content.",
+        "icon": "fas fa-chart-line"
+    },
+    {
+        "title": "Unique Content Strategy",
+        "description": "We specialize in authentic, high-quality African films and series, offering a unique value proposition that differentiates us from global competitors and builds a loyal, passionate user base.",
+        "icon": "fas fa-film"
+    },
+    {
+        "title": "Scalable Business Model",
+        "description": "Our model combines subscription-based services with a focus on local partnerships and content acquisition, creating a scalable and sustainable revenue stream with high growth potential.",
+        "icon": "fas fa-money-bill-wave"
+    },
+    {
+        "title": "Experienced Team",
+        "description": "Our leadership team brings together decades of experience in the technology, media, and entertainment industries, with deep roots in the African creative landscape.",
+        "icon": "fas fa-users"
+    },
+    {
+        "title": "Community-Driven",
+        "description": "Beyond streaming, we're building a community platform that connects filmmakers, artists, and fans, fostering an ecosystem that drives engagement and virality.",
+        "icon": "fas fa-handshake"
+    },
+    {
+        "title": "Strong Financial Projections",
+        "description": "Based on our current traction and market analysis, we project strong user growth, high retention rates, and a clear path to profitability within the next 3-5 years.",
+        "icon": "fas fa-dollar-sign"
+    }
+]

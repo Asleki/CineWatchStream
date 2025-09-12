@@ -139,7 +139,7 @@ async function fetchFeaturedContent() {
     const heroTitle = document.getElementById('heroTitle');
     const heroSynopsis = document.getElementById('heroSynopsis');
     const heroWatchNowBtn = document.getElementById('heroWatchNowBtn');
-    const heroAddToWatchlistBtn = document.getElementById('heroAddToWatchlistBtn');
+    const heroAddToPlaylistBtn = document.getElementById('heroAddToPlaylistBtn'); // Changed ID
     
     // Fetch a single trending movie or TV show to feature
     const data = await fetchData('/trending/all/day');
@@ -167,17 +167,16 @@ async function fetchFeaturedContent() {
         if (heroWatchNowBtn) {
             heroWatchNowBtn.href = `details.html?id=${featured.id}&type=${mediaType}`;
         }
-        if (heroAddToWatchlistBtn) {
-            heroAddToWatchlistBtn.href = `details.html?id=${featured.id}&type=${mediaType}`;
+        if (heroAddToPlaylistBtn) {
+            heroAddToPlaylistBtn.href = `details.html?id=${featured.id}&type=${mediaType}`;
         }
-
     } else {
         // Fallback content
         heroTitle.textContent = 'Welcome to CineWatch!';
         heroSynopsis.textContent = 'Your ultimate destination for movies and TV shows. Start exploring!';
         heroSection.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1280x720/282828/f0f0f0?text=CineWatch')`;
         if (heroWatchNowBtn) heroWatchNowBtn.style.display = 'none';
-        if (heroAddToWatchlistBtn) heroAddToWatchlistBtn.style.display = 'none';
+        if (heroAddToPlaylistBtn) heroAddToPlaylistBtn.style.display = 'none';
     }
 }
 

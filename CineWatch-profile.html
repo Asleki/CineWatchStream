@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your CineWatch profile, update your details, and change your profile picture.">
+    <meta name="keywords" content="CineWatch, profile, user account, settings, update profile, username, profile picture">
+    <meta name="author" content="Alex Malunda">
+
+    <meta property="og:title" content="My Profile - CineWatch">
+    <meta property="og:description" content="View and manage your personal CineWatch profile. Update your account information and preferences.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://asleki.github.io/CineWatchStreaming/CineWatch-profile.html">
+    <meta property="og:image" content="https://asleki.github.io/CineWatchStreaming/images/CineWatch-logo.ico">
+
+    <link rel="canonical" href="https://asleki.github.io/CineWatchStreaming/CineWatch-profile.html">
+
+    <title>My Profile - CineWatch</title>
+
+    <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/profile.css"> </head>
+<body>
+    <div id="customAlert" class="custom-alert">
+        <div class="alert-content">
+            <i id="alertIcon" class="alert-icon"></i>
+            <p id="alertMessage">This is a custom alert message.</p>
+            <button id="closeAlertBtn">OK</button>
+        </div>
+    </div>
+
+    <div id="header-placeholder"></div>
+
+    <main class="profile-page">
+        <div class="profile-container">
+            <h1 class="profile-heading">My Profile</h1>
+
+            <div class="profile-details">
+                <div class="profile-avatar-container">
+                    <img id="profileImage" src="images/placeholder-avatar.png" alt="Profile Picture" class="profile-avatar">
+                    <label for="profile-pic-upload" class="upload-btn" title="Change Profile Picture">
+                        <i class="fas fa-camera"></i>
+                    </label>
+                    <input type="file" id="profile-pic-upload" accept="image/*" style="display: none;">
+                </div>
+                <div class="profile-info">
+                    <p><strong>Username:</strong> <span id="usernameDisplay">Loading...</span></p>
+                    <p><strong>Email:</strong> <span id="emailDisplay">Loading...</span></p>
+                    <p><strong>Member Since:</strong> <span id="memberSinceDisplay">Loading...</span></p>
+                </div>
+            </div>
+
+            <form id="profileUpdateForm" class="update-form">
+                <h2>Update Profile</h2>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="usernameInput" name="username" placeholder="Enter new username">
+                </div>
+                <button type="submit" class="btn update-btn">Update Profile</button>
+            </form>
+
+            <div id="statusMessage" class="status-message"></div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <script src="js/header.js"></script>
+    <script src="js/CineWatch-profile.js"></script> </body>
+</html>

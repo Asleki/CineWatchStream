@@ -1,0 +1,153 @@
+/* ==========================================================
+   File: profile.css
+   Purpose: Styles for the user profile page.
+   ========================================================== */
+
+.profile-page {
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80vh;
+    background-color: var(--background-color);
+}
+
+.profile-container {
+    background: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.profile-heading {
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.profile-avatar-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    object-fit: cover;
+}
+
+.upload-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.upload-btn:hover {
+    transform: scale(1.1);
+}
+
+.profile-info {
+    text-align: left;
+    width: 100%;
+}
+
+.profile-info p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-info strong {
+    color: var(--text-secondary);
+}
+
+.update-form {
+    background: var(--background-color);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.update-form h2 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--input-background);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.update-btn {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.update-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.status-message {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+    display: none;
+    color: white;
+    font-weight: 600;
+}
+
+.status-message.success {
+    background-color: #28a745;
+}
+
+.status-message.error {
+    background-color: #dc3545;
+}

@@ -1,0 +1,132 @@
+/* ==========================================================
+   File: advertise.css
+   Purpose: Styles for the ad packages page.
+   ========================================================== */
+
+.advertise-page {
+    padding: 4rem 1rem;
+    background-color: var(--bg-primary);
+}
+
+.advertise-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.advertise-heading {
+    color: var(--accent-primary);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.advertise-intro {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.package-card {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow-secondary);
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px var(--shadow-primary);
+    border-color: var(--accent-primary);
+}
+
+.package-header {
+    margin-bottom: 1.5rem;
+}
+
+.package-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+}
+
+.package-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-top: 0.5rem;
+}
+
+.package-price span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.package-description {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.package-features {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+.feature-item i {
+    color: var(--state-success);
+}
+
+.divider {
+    height: 2px;
+    background-color: var(--border-divider);
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.select-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.select-btn:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+.icon-money {
+    color: var(--state-success);
+}

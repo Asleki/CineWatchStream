@@ -1,0 +1,46 @@
+[
+    {
+        "name": "Alex Malunda",
+        "role": "Founder & Lead Developer",
+        "image": "images/team/alex-malunda.jpg", 
+        "bio": "The visionary behind CineWatch, Alex brought his passion for cinema and coding skills from Mlolongo to create a platform for diverse storytelling.",
+        "social": {
+            "twitter": "https://twitter.com/your_twitter",
+            "linkedin": "https://linkedin.com/in/alexmalunda",
+            "github": "https://github.com/asleki"
+        }
+    },
+    {
+        "name": "Jane Wanjiku",
+        "role": "Head of Content Acquisition",
+        "image": "images/team/jane-wanjiku.jpg",
+        "bio": "Jane travels across Africa, discovering hidden cinematic gems and negotiating partnerships to bring exclusive content to CineWatch.",
+        "social": {
+            "twitter": "",
+            "linkedin": "https://linkedin.com/in/jane-wanjiku",
+            "github": ""
+        }
+    },
+    {
+        "name": "David Otieno",
+        "role": "Chief Technology Officer (CTO)",
+        "image": "images/team/david-otieno.jpg",
+        "bio": "With a knack for scalable solutions, David ensures CineWatch's infrastructure is robust, fast, and accessible to all our users.",
+        "social": {
+            "twitter": "https://twitter.com/david_otieno",
+            "linkedin": "https://linkedin.com/in/david-otieno",
+            "github": ""
+        }
+    },
+    {
+        "name": "Fatma Hassan",
+        "role": "Marketing & Community Manager",
+        "image": "images/team/fatma-hassan.jpg",
+        "bio": "Fatma connects CineWatch with its audience, building vibrant communities and spreading the word about our unique content.",
+        "social": {
+            "twitter": "",
+            "linkedin": "https://linkedin.com/in/fatma-hassan",
+            "github": ""
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "title": "Frontend Developer",
+        "description": "Design and implement user-facing features for the CineWatch web platform, ensuring a seamless and intuitive user experience.",
+        "qualifications": [
+            "Proficiency in HTML5, CSS3, and JavaScript",
+            "Experience with modern frameworks (React, Angular, or Vue)",
+            "Strong understanding of responsive design",
+            "Familiarity with RESTful APIs"
+        ],
+        "image": "https://placehold.co/400x200/525252/FFF?text=Frontend+Developer",
+        "status": "Available"
+    },
+    {
+        "title": "Content Curator",
+        "description": "Scout and acquire compelling films and series, with a special focus on African cinema, to enrich the CineWatch content library.",
+        "qualifications": [
+            "A passion for global and local cinema",
+            "Excellent negotiation and communication skills",
+            "Experience in content licensing or media management"
+        ],
+        "image": "https://placehold.co/400x200/525252/FFF?text=Content+Curator",
+        "status": "Available"
+    },
+    {
+        "title": "Full Stack Engineer",
+        "description": "Build and maintain both the server-side and client-side of our applications, from database management to the front end.",
+        "qualifications": [
+            "Experience with Node.js, Python, or a similar backend language",
+            "Proficiency with databases (SQL or NoSQL)",
+            "Knowledge of cloud services (AWS, Google Cloud, or Azure)"
+        ],
+        "image": "https://placehold.co/400x200/525252/FFF?text=Full+Stack+Engineer",
+        "status": "Closed"
+    },
+    {
+        "title": "Motion Graphics Designer",
+        "description": "Create stunning visual effects, intros, and promotional materials to enhance the CineWatch brand and content.",
+        "qualifications": [
+            "Expertise in Adobe After Effects and Premiere Pro",
+            "A portfolio showcasing motion graphics work",
+            "Creativity and attention to detail"
+        ],
+        "image": "https://placehold.co/400x200/525252/FFF?text=Motion+Graphics+Designer",
+        "status": "Available"
+    },
+    {
+        "title": "Product Manager",
+        "description": "Define the product roadmap, prioritize features, and work with engineering and design teams to build an amazing streaming experience.",
+        "qualifications": [
+            "Proven experience in a product management role",
+            "Strong analytical and problem-solving abilities",
+            "Excellent leadership and communication skills"
+        ],
+        "image": "https://placehold.co/400x200/525252/FFF?text=Product+Manager",
+        "status": "New"
+    }
+]

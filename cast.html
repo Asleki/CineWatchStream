@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cast & Crew | CineWatch</title>
+    <meta name="description" content="View detailed profiles of actors and film crew. Discover their biographies, filmography, and contributions to the world of cinema.">
+    <meta name="keywords" content="CineWatch, cast, crew, actor, actress, filmography, biography, director, movie, TV show, person details, cinema">
+    <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #1a1a1a;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b3b3b3;
+            --accent-primary: #e50914;
+            --link-primary: #e50914;
+            --link-hover: #ff3a46;
+            --card-bg: #222222;
+            --card-hover: #2d2d2d;
+            --btn-primary: #e50914;
+            --btn-primary-text: #ffffff;
+            --btn-primary-hover: #ff3a46;
+            --border-primary: #333333;
+            --shadow-primary: rgba(0, 0, 0, 0.5);
+            --shadow-secondary: rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* --- Main Page Container --- */
+        .cast-page {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- Hero Section (for backdrop image) --- */
+        .hero-section {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            margin-bottom: 2rem;
+            transition: opacity 0.5s ease;
+        }
+
+        .hero-section.hidden {
+            display: none;
+        }
+
+        /* --- Main Content Layout --- */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: -100px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .main-content.no-hero {
+            margin-top: 0;
+        }
+        
+        /* --- Actor Profile Section --- */
+        .actor-profile-container {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 8px 30px var(--shadow-primary);
+            overflow: hidden;
+            padding: 2rem;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .actor-profile-container.loading {
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-image-container {
+            width: 200px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px var(--shadow-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        #profileImage {
+            width: 20%;
+            height: 30%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.3s ease;
+        }
+        
+        #profileImage:hover {
+            transform: scale(1.05);
+        }
+        
+        .actor-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #actorName {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin: 0;
+        }
+
+        #actorKnownFor {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        #actorBorn {
+            font-size: 1rem;
+            color: var(--text-tertiary);
+            margin: 0;
+        }
+
+        #actorBio {
+            font-size: 1rem;
+            text-align: justify;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* --- Filmography Section --- */
+        .filmography {
+            margin-top: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .filmography-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .film-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 4px 15px var(--shadow-secondary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .film-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px var(--shadow-secondary);
+        }
+
+        .film-card img {
+            width: 100%;
+            height: 225px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-primary);
+        }
+
+        .film-info {
+            padding: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        
+        .film-info h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0;
+        }
+
+        .film-info p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .film-info .character {
+            font-style: italic;
+            font-size: 0.75rem;
+        }
+
+        /* --- Back Button & Spinners --- */
+        .back-button {
+            background-color: var(--btn-primary);
+            color: var(--btn-primary-text);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .back-button:hover {
+            background-color: var(--btn-primary-hover);
+            transform: scale(1.05);
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-left-color: var(--accent-primary);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        
+        .error-message {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--link-primary);
+            margin-top: 2rem;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* --- Responsive Design --- */
+        @media (min-width: 768px) {
+            .actor-profile-container {
+                flex-direction: row;
+                text-align: left;
+                align-items: flex-start;
+                gap: 2rem;
+            }
+            .profile-image-container {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div id="heroSection" class="hero-section hidden"></div>
+
+    <main class="main-content no-hero" id="mainContent">
+        <button id="backButton" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back
+        </button>
+
+        <section id="actorProfile" class="actor-profile-container loading">
+            <div id="profileSpinner" class="spinner"></div>
+            <img id="profileImage" class="hidden" src="" alt="Profile Photo">
+            <div id="actorDetails" class="actor-details">
+                <h1 id="actorName"></h1>
+                <h2 id="actorKnownFor"></h2>
+                <h3 id="actorBorn"></h3>
+                <p id="actorBio"></p>
+            </div>
+        </section>
+
+        <section class="filmography">
+            <h2 class="section-title">Filmography</h2>
+            <div id="filmographyContainer" class="filmography-grid">
+                <div id="filmographySpinner" class="spinner"></div>
+            </div>
+        </section>
+    </main>
+    
+    <div id="footer-placeholder"></div>
+
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const API_KEY = '9c198aabc1df9fa96ea8d65e183cb8a3';
+            const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
+            const TMDB_PROFILE_URL = 'https://image.tmdb.org/t/p/w300';
+            const TMDB_POSTER_URL = 'https://image.tmdb.org/t/p/w300';
+            const TMDB_BACKDROP_URL = 'https://image.tmdb.org/t/p/original';
+
+            // DOM Elements
+            const heroSection = document.getElementById('heroSection');
+            const mainContent = document.getElementById('mainContent');
+            const backButton = document.getElementById('backButton');
+            const profileImageElement = document.getElementById('profileImage');
+            const actorNameElement = document.getElementById('actorName');
+            const actorKnownForElement = document.getElementById('actorKnownFor');
+            const actorBioElement = document.getElementById('actorBio');
+            const actorBornElement = document.getElementById('actorBorn');
+            const filmographyContainer = document.getElementById('filmographyContainer');
+            const profileSpinner = document.getElementById('profileSpinner');
+            const filmographySpinner = document.getElementById('filmographySpinner');
+            const actorProfileContainer = document.getElementById('actorProfile');
+
+
+            // Get actor ID and backdrop path from URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const actorId = urlParams.get('actorId');
+            const backdropPath = urlParams.get('backdrop');
+
+            // --- Conditional UI based on URL parameters ---
+            if (backdropPath) {
+                // Set hero background and adjust main content margin
+                heroSection.style.backgroundImage = `url(${TMDB_BACKDROP_URL}${backdropPath})`;
+                heroSection.classList.remove('hidden');
+                mainContent.classList.remove('no-hero');
+            } else {
+                // Hide hero section and set fallback margin
+                heroSection.classList.add('hidden');
+                mainContent.classList.add('no-hero');
+            }
+
+            // Check if actorId exists, otherwise display an error
+            if (!actorId) {
+                actorProfileContainer.innerHTML = '<p class="error-message">Error: No actor ID provided.</p>';
+                profileSpinner.style.display = 'none';
+                filmographySpinner.style.display = 'none';
+                return;
+            }
+
+            /**
+             * Fetches data from a given TMDB API endpoint.
+             * @param {string} endpoint The API endpoint to fetch.
+             * @returns {Promise<object|null>} The JSON data or null on error.
+             */
+            async function fetchData(endpoint) {
+                try {
+                    const response = await fetch(`${TMDB_BASE_URL}${endpoint}?api_key=${API_KEY}`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return await response.json();
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                    return null;
+                }
+            }
+
+            // Fetch actor details
+            const actorData = await fetchData(`/person/${actorId}`);
+            profileSpinner.style.display = 'none'; // Hide spinner after fetch
+
+            if (actorData) {
+                // Populate actor profile information
+                const profileImageSrc = actorData.profile_path 
+                    ? `${TMDB_PROFILE_URL}${actorData.profile_path}` 
+                    : 'https://via.placeholder.com/300x450.png?text=No+Image';
+                
+                profileImageElement.src = profileImageSrc;
+                profileImageElement.alt = `Profile photo of ${actorData.name}`;
+                profileImageElement.classList.remove('hidden');
+                
+                actorNameElement.textContent = actorData.name || 'Unknown Actor';
+                actorKnownForElement.textContent = actorData.known_for_department || '';
+                actorBioElement.textContent = actorData.biography || 'No biography available.';
+                actorBornElement.textContent = actorData.birthday ? `Born: ${actorData.birthday}` : '';
+
+            } else {
+                actorProfileContainer.innerHTML = '<p class="error-message">Actor not found.</p>';
+                return; // Stop execution if actor data isn't found
+            }
+
+            // Fetch actor's combined credits (movies and TV shows)
+            const creditsData = await fetchData(`/person/${actorId}/combined_credits`);
+            filmographySpinner.style.display = 'none'; // Hide spinner
+
+            if (creditsData && creditsData.cast) {
+                filmographyContainer.innerHTML = ''; // Clear the spinner element
+                
+                // Sort credits by release date (newest first)
+                const sortedCredits = creditsData.cast.sort((a, b) => {
+                    const dateA = a.release_date || a.first_air_date || '';
+                    const dateB = b.release_date || b.first_air_date || '';
+                    return dateB.localeCompare(dateA);
+                });
+
+                sortedCredits.forEach(credit => {
+                    // Only create a card if a poster is available
+                    if (credit.poster_path) {
+                        const card = document.createElement('a');
+                        const mediaType = credit.media_type;
+                        
+                        card.href = `details.html?id=${credit.id}&type=${mediaType}`;
+                        card.classList.add('film-card');
+
+                        const posterSrc = `${TMDB_POSTER_URL}${credit.poster_path}`;
+                        const title = credit.title || credit.name || 'Untitled';
+                        const character = credit.character || '';
+                        const year = credit.release_date ? credit.release_date.substring(0, 4) : 
+                                     credit.first_air_date ? credit.first_air_date.substring(0, 4) : '';
+
+                        card.innerHTML = `
+                            <img src="${posterSrc}" alt="${title} poster">
+                            <div class="film-info">
+                                <h4>${title}</h4>
+                                <p class="character">${character}</p>
+                                <p class="year">${year}</p>
+                            </div>
+                        `;
+                        filmographyContainer.appendChild(card);
+                    }
+                });
+            } else {
+                filmographyContainer.innerHTML = '<p class="text-center text-gray-500">Filmography not available.</p>';
+            }
+
+            // Back button functionality
+            backButton.addEventListener('click', () => {
+                window.history.back();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular People | CineWatch</title>
+    <meta name="description" content="Discover the most popular actors and personalities in the world of African and international cinema on CineWatch.">
+    <meta name="keywords" content="CineWatch, popular people, actors, actresses, directors, cast, crew, film industry, cinema, Hollywood, Nollywood, Riverwood, African film">
+    <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <style>
+        /* Styles for the popular people page */
+        .popular-people-page {
+            padding: 4rem 1rem;
+            background-color: var(--bg-primary);
+            min-height: 80vh;
+            color: var(--text-primary);
+        }
+
+        .popular-people-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .popular-people-heading {
+            color: var(--accent-primary);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .person-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px var(--shadow-secondary);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .person-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px var(--shadow-secondary);
+        }
+
+        .person-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .person-photo {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: top;
+            border-bottom: 1px solid var(--border-primary);
+        }
+
+        .person-info {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .person-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .person-known-for {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        
+        .person-details {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            text-align: left;
+            margin-top: 0.5rem;
+        }
+
+        .loading-text, .error-text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-top: 4rem;
+        }
+
+        .load-more-btn {
+            background-color: var(--accent-primary);
+            color: var(--btn-primary-text);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .load-more-btn:hover {
+            background-color: var(--btn-primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 1.5rem;
+            border: none;
+            outline: none;
+            background-color: var(--accent-primary);
+            color: var(--btn-primary-text);
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px var(--shadow-primary);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: var(--btn-primary-hover);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="popular-people-page">
+        <div class="popular-people-container">
+            <h1 class="popular-people-heading">Popular People</h1>
+            <p style="font-size: 1.2rem; color: var(--text-secondary);">Browse the most popular actors and directors in the film industry.</p>
+            <div id="people-list-container" class="people-grid">
+                <!-- Person cards will be dynamically inserted here -->
+                <div class="loading-text">Loading popular people...</div>
+            </div>
+            <button id="loadMoreBtn" class="load-more-btn" style="display: none;">Load More</button>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const peopleListContainer = document.getElementById('people-list-container');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            const API_KEY = '9c198aabc1df9fa96ea8d65e183cb8a3';
+            const BASE_URL = 'https://api.themoviedb.org/3';
+            const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
+            let currentPage = 1;
+
+            // Scroll to Top Button functionality
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            });
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Function to fetch popular people from TMDb
+            async function fetchPopularPeople(page) {
+                try {
+                    const response = await fetch(`${BASE_URL}/person/popular?api_key=${API_KEY}&page=${page}`);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const data = await response.json();
+                    renderPeopleCards(data.results);
+                    if (data.total_pages > currentPage) {
+                        loadMoreBtn.style.display = 'block';
+                    } else {
+                        loadMoreBtn.style.display = 'none';
+                    }
+                } catch (error) {
+                    console.error('Failed to fetch popular people:', error);
+                    peopleListContainer.innerHTML = `<div class="error-text">Failed to load data. Please try again later.</div>`;
+                    loadMoreBtn.style.display = 'none';
+                }
+            }
+
+            // Function to render the person cards
+            function renderPeopleCards(people) {
+                if (!people || people.length === 0) {
+                    if (currentPage === 1) {
+                        peopleListContainer.innerHTML = `<div class="error-text">No popular people found.</div>`;
+                    }
+                    loadMoreBtn.style.display = 'none';
+                    return;
+                }
+
+                if (currentPage === 1) {
+                    peopleListContainer.innerHTML = ''; // Clear loading text on first load
+                }
+                
+                people.forEach(person => {
+                    const personCard = document.createElement('div');
+                    personCard.classList.add('person-card');
+
+                    // Construct the URL for the detailed page
+                    const detailsUrl = `cast.html?actorId=${person.id}`;
+
+                    const knownForTitles = person.known_for
+                        .map(item => item.title || item.name)
+                        .filter(Boolean)
+                        .slice(0, 3) // Show top 3 known for titles
+                        .join(', ');
+
+                    personCard.innerHTML = `
+                        <a href="${detailsUrl}">
+                            <img src="${person.profile_path ? IMAGE_BASE_URL + person.profile_path : 'https://placehold.co/500x750/333333/FFFFFF?text=No+Image'}" alt="${person.name}" class="person-photo">
+                            <div class="person-info">
+                                <h3 class="person-name" title="${person.name}">${person.name}</h3>
+                                <p class="person-known-for">${person.known_for_department}</p>
+                                <p class="person-details">
+                                    <strong>Known for:</strong> ${knownForTitles || 'N/A'}
+                                </p>
+                            </div>
+                        </a>
+                    `;
+                    peopleListContainer.appendChild(personCard);
+                });
+            }
+
+            // Initial fetch
+            fetchPopularPeople(currentPage);
+
+            // Load more button functionality
+            loadMoreBtn.addEventListener('click', () => {
+                currentPage++;
+                fetchPopularPeople(currentPage);
+            });
+        });
+    </script>
+</body>
+</html>

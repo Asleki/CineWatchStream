@@ -10,12 +10,12 @@
     <meta property="og:title" content="CineWatch - Copyright Infringement Claim">
     <meta property="og:description" content="Official DMCA takedown notice form for reporting copyrighted content on CineWatch.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://asleki.github.io/CineWatchStreaming/infringement_step1.html">
+    <meta property="og:url" content="https://asleki.github.io/CineWatchStreaming/infringement_step3.html">
     <meta property="og:image" content="https://asleki.github.io/CineWatchStreaming/images/CineWatch-logo.ico">
 
-    <link rel="canonical" href="https://asleki.github.io/CineWatchStreaming/infringement_step1.html">
+    <link rel="canonical" href="https://asleki.github.io/CineWatchStreaming/infringement_step3.html">
 
-    <title>CineWatch | Claim Step 1</title>
+    <title>CineWatch | Claim Step 3</title>
 
     <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -172,7 +172,7 @@
         .back-btn:hover {
             background-color: var(--bg-tertiary);
         }
-
+        
         /* Success Message Modal */
         .success-message-modal {
             text-align: center;
@@ -207,30 +207,20 @@
     <div id="header-placeholder"></div>
 
     <main class="infringement-page">
-        <div class="infringement-container" id="infringement-step1-container">
+        <div class="infringement-container" id="infringement-step3-container">
             <h1 class="infringement-heading">Copyright Infringement Claim</h1>
             <p class="infringement-intro">This form is for copyright owners or their authorized agents to report content on CineWatch that they believe infringes on their copyrighted work. Please fill out the form carefully and completely.</p>
 
-            <form id="infringement-form-step1" class="infringement-form-content" action="infringement_step2.html">
-                <h2 class="step-title">Step 1: Your Information</h2>
-                <p class="step-description">Please provide your contact details as the claimant.</p>
+            <form id="infringement-form-step3" class="infringement-form-content" action="infringement_step4.html">
+                <h2 class="step-title">Step 3: Details of Infringement</h2>
+                <p class="step-description">Please provide the exact location of the content you are reporting.</p>
                 <div class="form-group">
-                    <label for="claimant-name">Full Name</label>
-                    <input type="text" id="claimant-name" name="claimant-name" required>
+                    <label for="infringing-url">URL(s) to Infringing Content on CineWatch</label>
+                    <textarea id="infringing-url" name="infringing-url" rows="5" required></textarea>
+                    <small>Please provide a separate URL for each piece of content. Add timestamps if the infringement is only a portion of the content.</small>
                 </div>
-                <div class="form-group">
-                    <label for="claimant-email">Email Address</label>
-                    <input type="email" id="claimant-email" name="claimant-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="claimant-phone">Phone Number (Optional)</label>
-                    <input type="tel" id="claimant-phone" name="claimant-phone">
-                </div>
-                <div class="form-group">
-                    <label for="claimant-address">Full Address</label>
-                    <textarea id="claimant-address" name="claimant-address" required></textarea>
-                </div>
-                <div class="form-actions" style="justify-content: flex-end;">
+                <div class="form-actions">
+                    <a href="infringement_step2.html" class="btn back-btn">Back</a>
                     <button type="submit" class="btn">Next</button>
                 </div>
             </form>
