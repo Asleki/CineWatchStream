@@ -618,13 +618,13 @@ body.light-mode .cast-grid .card:hover h4 {
 }
 
 /* --- Video Grid Styles for Multiple Trailers --- */
-
+/* The key to vertical scrolling is this overflow property. */
 #trailer-carousel {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
     padding: 2rem;
-    overflow-y: auto; /* Allows the content to scroll vertically if needed */
+    overflow-y: auto; 
 }
 
 .video-card {
@@ -685,6 +685,7 @@ body.light-mode .cast-grid .card:hover h4 {
     color: var(--text-secondary);
     margin: 0;
 }
+
 
 /* ======================== */
 /* Scroll to Top Button */
