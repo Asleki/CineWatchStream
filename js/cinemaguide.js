@@ -118,7 +118,7 @@ function createMovieCard(item, hall) {
             <p>${episodeInfo}</p>
             <p>Time: ${randomShowtime} | Price: ${ticketPrice}</p>
             <div class="btn-group">
-                <a href="buy-ticket.html?hallId=${hall.id}&movieId=${item.id}" class="btn-buy">Buy Ticket</a>
+                <a href="#" class="btn-buy">Buy Ticket</a>
                 <a href="details.html?id=${item.id}&type=${mediaType}" class="btn-details">View </a>
             </div>
         </div>
