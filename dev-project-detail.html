@@ -3,26 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detailed information on a software development project by Alex Malunda.">
     <title>Project Details</title>
-    
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVK8WpS0P7Z7lT7G1P6fC6dE9X2A8w7a67W9F/x/3n4gQ1j2oO8w0vA/y/Bv1/c+Bv1/c+Bv1/c+Bv1/c+" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/colors.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/developer-styles.css">
+    <link rel="stylesheet" href="css/dev-project-detail-styles.css">
 </head>
 <body>
     <div id="header-placeholder"></div>
-    <main class="project-detail-content">
-        <div class="container">
-            <section class="project-detail-section" id="project-detail">
-                </section>
+
+    <main class="developer-page-main">
+        <div class="developer-profile-container">
+            <a href="dev-projects.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Back to Projects
+            </a>
+            
+            <section class="project-details-section">
+                <h1 id="project-title"></h1>
+                <img id="project-image" src="" alt="Project Image" class="project-image">
+                <div class="project-info-grid">
+                    <div class="project-details-card">
+                        <h2>Description</h2>
+                        <p id="project-description"></p>
+                    </div>
+                    <div class="project-details-card">
+                        <h2>Technologies Used</h2>
+                        <div id="tech-stack-icons" class="tech-stack-container"></div>
+                    </div>
+                    <div class="project-details-card">
+                        <h2>Key Features</h2>
+                        <ul id="features-list"></ul>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
+
     <div id="footer-placeholder"></div>
-    <script src="js/header-footer-loader.js"></script>
-    <script src="js/projects.js"></script>
+    
+    <script src="js/header.js"></script>
+    <script src="js/dev-project-detail.js"></script>
+    <script src="js/footer.js"></script>
 </body>
 </html>

@@ -3,34 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A comprehensive portfolio of software development projects by Alex Malunda, including web, mobile, and console applications.">
-    <meta name="keywords" content="Alex Malunda, BYU-Idaho, software projects, web development, portfolio, front-end, back-end, HTML, CSS, JavaScript, C#, Python">
-    <meta name="author" content="Alex Malunda">
+    <meta name="description" content="A complete portfolio of software development projects by Alex Malunda.">
     <title>All Projects - Alex Malunda</title>
-    
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVK8WpS0P7Z7lT7G1P6fC6dE9X2A8w7a67W9F/x/3n4gQ1j2oO8w0vA/y/Bv1/c+Bv1/c+Bv1/c+Bv1/c+" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/colors.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/developer-styles.css">
 </head>
 <body>
     <div id="header-placeholder"></div>
-    <main class="projects-list-page-content">
-        <div class="container">
+
+    <main class="developer-page-main">
+        <div class="developer-profile-container">
+            <a href="index.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Back to Profile
+            </a>
+
             <section class="projects-section">
-                <h1>My Projects</h1>
-                <p>A list of all my development projects. Click on a project for more details!</p>
-                <div class="projects-grid" id="projects-grid-full">
+                <h2>All Projects</h2>
+                <p class="subtitle">Here is a complete list of my development projects. Click on a project to learn more!</p>
+                <div id="projects-container" class="projects-grid">
                     </div>
             </section>
         </div>
     </main>
+
     <div id="footer-placeholder"></div>
+    
     <script src="js/header.js"></script>
-    <script src="js/projects.js"></script>
+    <script src="js/dev-projects.js"></script>
+    <script src="js/footer.js"></script>
 </body>
 </html>
