@@ -1,44 +1,27 @@
-/* ==========================================================
-   File: playlist.js
-   Purpose: Handles all playlist management logic using localStorage.
-   ========================================================== */
-
 export const playlistManager = {
-    // Key for storing the playlist in localStorage
-    STORAGE_KEY: 'cineWatchPlaylist',
-
-    // Fetches the current playlist from localStorage.
-    getPlaylist: function() {
-        const playlistString = localStorage.getItem(this.STORAGE_KEY);
-        try {
-            return playlistString ? JSON.parse(playlistString) : [];
-        } catch (e) {
-            console.error("Failed to parse playlist from localStorage:", e);
-            return [];
-        }
+    getPlaylist: () => {
+        const playlist = localStorage.getItem('myPlaylist');
+        return playlist ? JSON.parse(playlist) : [];
     },
 
-    // Saves the updated playlist to localStorage.
-    savePlaylist: function(playlist) {
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(playlist));
+    savePlaylist: (playlist) => {
+        localStorage.setItem('myPlaylist', JSON.stringify(playlist));
     },
 
-    // Adds a new item (movie/TV show) to the playlist.
-    addItem: function(item) {
-        const playlist = this.getPlaylist();
-        const existingItem = playlist.find(p => p.id === item.id && p.type === item.type);
+    addItem: (item) => {
+        const playlist = playlistManager.getPlaylist();
+        const existingItem = playlist.find(i => i.id === item.id);
         if (!existingItem) {
             playlist.push(item);
-            this.savePlaylist(playlist);
-            return true; // Item was added
+            playlistManager.savePlaylist(playlist);
+            return true;
         }
-        return false; // Item already exists
+        return false;
     },
 
-    // Removes an item from the playlist by its ID and type.
-    removeItem: function(id, type) {
-        let playlist = this.getPlaylist();
-        playlist = playlist.filter(item => !(item.id === id && item.type === type));
-        this.savePlaylist(playlist);
+    removeItem: (itemId) => {
+        let playlist = playlistManager.getPlaylist();
+        const updatedPlaylist = playlist.filter(item => item.id.toString() !== itemId.toString());
+        playlistManager.savePlaylist(updatedPlaylist);
     }
 };

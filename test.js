@@ -5,9 +5,6 @@
 // from the TMDb API onto the homepage of the CineWatch website.
 // All UI-related logic (header, search bar, dark mode, etc.) is handled by a separate header.js file.
 
-// Import the playlistManager from the new utility file
-import { playlistManager } from './utils/playlist.js';
-
 // =====================
 // API Configuration
 // =====================
@@ -32,25 +29,17 @@ const TMDB_GENRE_ID_COMEDY = '35';
 const TMDB_ACTOR_ID_JACKIE_CHAN = '18897';
 const TMDB_ACTOR_ID_SALMAN_KHAN = '17926';
 
-// =====================
-// DOM Elements
-// =====================
-const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-const customAlert = document.getElementById('customAlert');
-const alertMessage = document.getElementById('alertMessage');
-const closeAlertBtn = document.getElementById('closeAlertBtn');
-const alertIcon = document.getElementById('alertIcon');
 
 // =====================
 // Utility Functions
 // =====================
 
 /**
- * Fetches data from the TMDb API.
- * @param {string} endpoint - The API endpoint to call (e.g., '/movie/popular').
- * @param {object} params - Optional query parameters.
- * @returns {Promise<object>} The JSON response data.
- */
+ * Fetches data from the TMDb API.
+ * @param {string} endpoint - The API endpoint to call (e.g., '/movie/popular').
+ * @param {object} params - Optional query parameters.
+ * @returns {Promise<object>} The JSON response data.
+ */
 async function fetchData(endpoint, params = {}) {
     const url = new URL(`${BASE_URL}${endpoint}`);
     url.searchParams.append('api_key', API_KEY);
@@ -73,10 +62,10 @@ async function fetchData(endpoint, params = {}) {
 }
 
 /**
- * Creates and appends a show card to a container.
- * @param {object} show - The movie or TV show object from the API.
- * @param {HTMLElement} container - The HTML element to append the card to.
- */
+ * Creates and appends a show card to a container.
+ * @param {object} show - The movie or TV show object from the API.
+ * @param {HTMLElement} container - The HTML element to append the card to.
+ */
 function createShowCard(show, container) {
     if (!show || !show.poster_path) return;
 
@@ -116,89 +105,15 @@ function createShowCard(show, container) {
     container.appendChild(card);
 }
 
-// Function to display a custom alert modal
-function showAlert(message, type = 'success') {
-    if (customAlert && alertMessage && alertIcon) {
-        alertMessage.textContent = message;
-        alertIcon.className = 'alert-icon'; // Reset icon classes
-        if (type === 'success') {
-            alertIcon.classList.add('fas', 'fa-check-circle');
-            customAlert.className = 'custom-alert success';
-        } else if (type === 'error') {
-            alertIcon.classList.add('fas', 'fa-times-circle');
-            customAlert.className = 'custom-alert error';
-        } else {
-            alertIcon.classList.add('fas', 'fa-info-circle');
-            customAlert.className = 'custom-alert info';
-        }
-        customAlert.style.display = 'flex';
-    }
-}
-
-// Event listener for the custom alert's close button
-if (closeAlertBtn) {
-    closeAlertBtn.addEventListener('click', () => {
-        customAlert.style.display = 'none';
-    });
-}
-
-// --- Playlist Feature Functions ---
-
 /**
- * Adds an item to the playlist and shows a modal confirmation.
- * @param {object} item The movie or TV show object to add.
+ * Populates a carousel section with fetched shows.
+ * @param {string} endpoint - The TMDb API endpoint.
+ * @param {HTMLElement} container - The carousel inner container.
+ * @param {string} mediaType - 'movie' or 'tv'.
+ * @param {number} totalFetch - Total number of results to fetch.
+ * @param {number} displayLimit - Number of results to display.
+ * @returns {Promise<void>}
  */
-function addAndShowPlaylistModal(item) {
-    const wasAdded = playlistManager.addItem(item);
-    if (wasAdded) {
-        showAlert(`${item.title || item.name} has been added to your playlist!`, 'success');
-    } else {
-        showAlert(`${item.title || item.name} is already in your playlist.`, 'info');
-    }
-}
-
-/**
- * Attaches event listeners to all "Add to Playlist" buttons.
- * @param {string} selector The CSS selector for the buttons.
- */
-function setupPlaylistButtons(selector) {
-    const buttons = document.querySelectorAll(selector);
-    buttons.forEach(button => {
-        button.addEventListener('click', async (e) => {
-            e.preventDefault();
-            const id = button.dataset.id;
-            const type = button.dataset.type;
-            if (id && type) {
-                try {
-                    const data = await fetchData(`/${type}/${id}`);
-                    if (data) {
-                        addAndShowPlaylistModal({
-                            id: data.id,
-                            type: type,
-                            title: data.title || data.name,
-                            poster_path: data.poster_path,
-                            backdrop_path: data.backdrop_path,
-                            release_date: data.release_date || data.first_air_date
-                        });
-                    }
-                } catch (error) {
-                    console.error("Failed to add item to playlist:", error);
-                    showAlert("An error occurred. Please try again.", "error");
-                }
-            }
-        });
-    });
-}
-
-/**
- * Populates a carousel section with fetched shows.
- * @param {string} endpoint - The TMDb API endpoint.
- * @param {HTMLElement} container - The carousel inner container.
- * @param {string} mediaType - 'movie' or 'tv'.
- * @param {number} totalFetch - Total number of results to fetch.
- * @param {number} displayLimit - Number of results to display.
- * @returns {Promise<void>}
- */
 async function fetchAndPopulateShows(endpoint, container, mediaType, totalFetch, displayLimit) {
     const spinner = container.querySelector('.spinner');
     if (spinner) spinner.style.display = 'block';
@@ -218,8 +133,8 @@ async function fetchAndPopulateShows(endpoint, container, mediaType, totalFetch,
 }
 
 /**
- * Fetches and populates the hero section with a single featured item.
- */
+ * Fetches and populates the hero section with a single featured item.
+ */
 async function fetchFeaturedContent() {
     const heroSection = document.getElementById('heroSection');
     const heroTitle = document.getElementById('heroTitle');
@@ -254,9 +169,7 @@ async function fetchFeaturedContent() {
             heroWatchNowBtn.href = `details.html?id=${featured.id}&type=${mediaType}`;
         }
         if (heroAddToPlaylistBtn) {
-            // Set data attributes for the playlist button
-            heroAddToPlaylistBtn.dataset.id = featured.id;
-            heroAddToPlaylistBtn.dataset.type = mediaType;
+            heroAddToPlaylistBtn.href = `details.html?id=${featured.id}&type=${mediaType}`;
         }
     } else {
         // Fallback content
@@ -269,12 +182,12 @@ async function fetchFeaturedContent() {
 }
 
 /**
- * Fetches movies by a specific production company.
- * @param {string} companyId - The TMDb company ID.
- * @param {HTMLElement} container - The container to populate.
- * @param {number} totalFetch - Total number of results to fetch.
- * @param {number} displayLimit - Number of results to display.
- */
+ * Fetches movies by a specific production company.
+ * @param {string} companyId - The TMDb company ID.
+ * @param {HTMLElement} container - The container to populate.
+ * @param {number} totalFetch - Total number of results to fetch.
+ * @param {number} displayLimit - Number of results to display.
+ */
 async function fetchMoviesByCompany(companyId, container, totalFetch, displayLimit) {
     const spinner = container.querySelector('.spinner');
     if (spinner) spinner.style.display = 'block';
@@ -294,9 +207,9 @@ async function fetchMoviesByCompany(companyId, container, totalFetch, displayLim
 }
 
 /**
- * Sets up the carousel functionality for a given section.
- * @param {string} sectionId - The ID of the section container.
- */
+ * Sets up the carousel functionality for a given section.
+ * @param {string} sectionId - The ID of the section container.
+ */
 const setupCarousel = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (!section) return; // Exit if section doesn't exist
@@ -314,10 +227,10 @@ const setupCarousel = (sectionId) => {
 };
 
 /**
- * Handles carousel scrolling.
- * @param {HTMLElement} carousel - The carousel element to scroll.
- * @param {string} direction - 'left' or 'right'.
- */
+ * Handles carousel scrolling.
+ * @param {HTMLElement} carousel - The carousel element to scroll.
+ * @param {string} direction - 'left' or 'right'.
+ */
 const scrollCarousel = (carousel, direction) => {
     const scrollAmount = 250; // Adjust as needed
     if (direction === 'left') {
@@ -328,27 +241,27 @@ const scrollCarousel = (carousel, direction) => {
 };
 
 /**
- * Fetches and populates content for Warner Bros.
- */
+ * Fetches and populates content for Warner Bros.
+ */
 async function fetchWarnerBrosMovies(container, totalFetch, displayLimit) {
     await fetchMoviesByCompany(TMDB_COMPANY_ID_WARNER_BROS, container, totalFetch, displayLimit);
 }
 
 /**
- * Fetches and populates content for Tyler Perry Studios.
- */
+ * Fetches and populates content for Tyler Perry Studios.
+ */
 async function fetchTylerPerryStudiosMovies(container, totalFetch, displayLimit) {
     await fetchMoviesByCompany(TMDB_COMPANY_ID_TYLER_PERRY_STUDIOS, container, totalFetch, displayLimit);
 }
 
 
 /**
- * Fetches movies with a specific genre.
- * @param {string} genreId - The TMDb genre ID.
- * @param {HTMLElement} container - The container to populate.
- * @param {number} totalFetch - Total number of results to fetch.
- * @param {number} displayLimit - Number of results to display.
- */
+ * Fetches movies with a specific genre.
+ * @param {string} genreId - The TMDb genre ID.
+ * @param {HTMLElement} container - The container to populate.
+ * @param {number} totalFetch - Total number of results to fetch.
+ * @param {number} displayLimit - Number of results to display.
+ */
 async function fetchMoviesByGenre(genreId, container, totalFetch, displayLimit) {
     const spinner = container.querySelector('.spinner');
     if (spinner) spinner.style.display = 'block';
@@ -368,12 +281,12 @@ async function fetchMoviesByGenre(genreId, container, totalFetch, displayLimit) 
 }
 
 /**
- * Fetches TV shows with a specific genre.
- * @param {string} genreId - The TMDb genre ID.
- * @param {HTMLElement} container - The container to populate.
- * @param {number} totalFetch - Total number of results to fetch.
- * @param {number} displayLimit - Number of results to display.
- */
+ * Fetches TV shows with a specific genre.
+ * @param {string} genreId - The TMDb genre ID.
+ * @param {HTMLElement} container - The container to populate.
+ * @param {number} totalFetch - Total number of results to fetch.
+ * @param {number} displayLimit - Number of results to display.
+ */
 async function fetchTvShowsByGenre(genreId, container, totalFetch, displayLimit) {
     const spinner = container.querySelector('.spinner');
     if (spinner) spinner.style.display = 'block';
@@ -394,30 +307,30 @@ async function fetchTvShowsByGenre(genreId, container, totalFetch, displayLimit)
 
 
 /**
- * Fetches and populates documentaries.
- */
+ * Fetches and populates documentaries.
+ */
 async function fetchDocumentaries(container, totalFetch, displayLimit) {
     await fetchMoviesByGenre(TMDB_GENRE_ID_DOCUMENTARY, container, totalFetch, displayLimit);
 }
 
 /**
- * Fetches and populates reality TV shows.
- */
+ * Fetches and populates reality TV shows.
+ */
 async function fetchRealityTvShows(container, totalFetch, displayLimit) {
     await fetchTvShowsByGenre(TMDB_GENRE_ID_REALITY, container, totalFetch, displayLimit);
 }
 
 /**
- * Fetches and populates talk shows.
- */
+ * Fetches and populates talk shows.
+ */
 async function fetchTalkShows(container, totalFetch, displayLimit) {
     await fetchTvShowsByGenre(TMDB_GENRE_ID_TALK_SHOW, container, totalFetch, displayLimit);
 }
 
 
 /**
- * Fetches and populates Bollywood content.
- */
+ * Fetches and populates Bollywood content.
+ */
 async function fetchBollywoodContent(container, totalFetch, displayLimit) {
     const spinner = container.querySelector('.spinner');
     if (spinner) spinner.style.display = 'block';
@@ -441,8 +354,8 @@ async function fetchBollywoodContent(container, totalFetch, displayLimit) {
 
 
 /**
- * Fetches and populates K-Drama content.
- */
+ * Fetches and populates K-Drama content.
+ */
 async function fetchKDramaContent(container, totalFetch, displayLimit) {
     const spinner = container.querySelector('.spinner');
     if (spinner) spinner.style.display = 'block';
@@ -462,8 +375,8 @@ async function fetchKDramaContent(container, totalFetch, displayLimit) {
 }
 
 /**
- * Fetches and populates Chinese content.
- */
+ * Fetches and populates Chinese content.
+ */
 async function fetchChineseContent(container, totalFetch, displayLimit) {
     const spinner = container.querySelector('.spinner');
     if (spinner) spinner.style.display = 'block';
@@ -493,8 +406,8 @@ async function fetchChineseContent(container, totalFetch, displayLimit) {
 }
 
 /**
- * Fetches and populates Hollywood content (movies and TV shows from the USA).
- */
+ * Fetches and populates Hollywood content (movies and TV shows from the USA).
+ */
 async function fetchHollywoodContent(container, totalFetch, displayLimit) {
     const spinner = container.querySelector('.spinner');
     if (spinner) spinner.style.display = 'block';
@@ -523,8 +436,8 @@ async function fetchHollywoodContent(container, totalFetch, displayLimit) {
 }
 
 /**
- * Fetches and populates International Hits (popular content from specific actors).
- */
+ * Fetches and populates International Hits (popular content from specific actors).
+ */
 async function fetchInternationalHits(container, totalFetch, displayLimit) {
     const spinner = container.querySelector('.spinner');
     if (spinner) spinner.style.display = 'block';
@@ -551,8 +464,8 @@ async function fetchInternationalHits(container, totalFetch, displayLimit) {
 }
 
 /**
- * Fetches and populates Swahili and Kenyan shows.
- */
+ * Fetches and populates Swahili and Kenyan shows.
+ */
 async function fetchSwahiliAndKenyanShows(container, totalFetch, displayLimit) {
     const spinner = container.querySelector('.spinner');
     if (spinner) spinner.style.display = 'block';
@@ -637,7 +550,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (lastModifiedSpan_footer) {
         lastModifiedSpan_footer.textContent = new Date(document.lastModified).toLocaleDateString();
     }
-
-    // Now, setup the playlist buttons
-    setupPlaylistButtons('#heroAddToPlaylistBtn, .add-to-playlist-btn');
 });

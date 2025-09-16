@@ -1,105 +1,80 @@
-/* ==========================================================
-   File: CineWatch-profile.js
-   Purpose: Handles the logic for the user profile page.
-   ========================================================== */
+// =====================
+// js/CineWatch-playlist.js
+// =====================
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Check if the user is logged in
-    // NOTE: This is a placeholder. You need to implement your own
-    // authentication check here, for example, by checking for a token
-    // in localStorage or a session cookie.
-    const isAuthenticated = true; // Placeholder for a real auth check
+const TMDB_IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 
-    if (!isAuthenticated) {
-        // Redirect to login or home page if not authenticated
-        window.location.href = 'index.html';
-        return;
-    }
+const playlistGrid = document.getElementById('playlistGrid');
 
-    // DOM Elements
-    const profileImage = document.getElementById('profileImage');
-    const profilePicUpload = document.getElementById('profile-pic-upload');
-    const usernameDisplay = document.getElementById('usernameDisplay');
-    const emailDisplay = document.getElementById('emailDisplay');
-    const memberSinceDisplay = document.getElementById('memberSinceDisplay');
-    const usernameInput = document.getElementById('usernameInput');
-    const profileUpdateForm = document.getElementById('profileUpdateForm');
-    const statusMessage = document.getElementById('statusMessage');
+/**
+ * Creates a playlist card with all the show details.
+ * @param {object} item - The show item from localStorage.
+ */
+function createPlaylistCard(item) {
+    const card = document.createElement('div');
+    card.classList.add('playlist-card');
+    card.dataset.id = item.id;
 
-    // Helper function to show status messages
-    function showAlert(message, type) {
-        if (statusMessage) {
-            statusMessage.textContent = message;
-            statusMessage.className = `status-message ${type}`;
-            statusMessage.style.display = 'block';
-            setTimeout(() => {
-                statusMessage.style.display = 'none';
-            }, 5000); // Hide after 5 seconds
-        }
-    }
+    const posterUrl = item.poster_path ? `${TMDB_IMAGE_URL}${item.poster_path}` : 'images/placeholder-poster.png';
+    const year = item.release_date ? new Date(item.release_date).getFullYear() : 'N/A';
 
-    // Fetch and display user details
-    const fetchUserDetails = async () => {
-        // NOTE: Replace this with an actual API call to your backend
-        // to fetch the user's data.
-        // Placeholder user data
-        const userData = {
-            username: "Alex_Malunda",
-            email: "alex.m@example.com",
-            memberSince: "2024-01-15",
-            profilePicUrl: "https://i.pravatar.cc/150?u=a" // Placeholder image
-        };
+    card.innerHTML = `
+        <img src="${posterUrl}" alt="${item.title} poster" class="playlist-card-poster">
+        <div class="playlist-card-info">
+            <h3 class="playlist-card-title">${item.title}</h3>
+            <p class="playlist-card-meta">
+                <span>${year}</span>
+                <span class="dot-divider">·</span>
+                <span>${item.genres}</span>
+                <span class="dot-divider">·</span>
+                <span>${item.language}</span>
+            </p>
+            <p class="playlist-card-synopsis">${item.overview}</p>
+            <div class="playlist-card-actions">
+                <a href="details.html?id=${item.id}&type=${item.media_type}" class="btn btn-primary">View Details</a>
+                <button class="btn btn-secondary remove-btn"><i class="fas fa-trash-alt"></i> Remove</button>
+            </div>
+        </div>
+    `;
 
-        if (userData) {
-            usernameDisplay.textContent = userData.username;
-            emailDisplay.textContent = userData.email;
-            memberSinceDisplay.textContent = new Date(userData.memberSince).toLocaleDateString();
-            profileImage.src = userData.profilePicUrl;
-            usernameInput.value = userData.username;
-        } else {
-            // Handle case where user data could not be fetched
-            usernameDisplay.textContent = "N/A";
-            emailDisplay.textContent = "N/A";
-            memberSinceDisplay.textContent = "N/A";
-            showAlert("Failed to load user data.", "error");
-        }
-    };
-
-    // Handle form submission for updating username
-    profileUpdateForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const newUsername = usernameInput.value.trim();
-
-        if (newUsername.length < 3) {
-            showAlert("Username must be at least 3 characters long.", "error");
-            return;
-        }
-
-        // NOTE: Replace this with an actual API call to update the username.
-        const success = true; // Placeholder for API response
-        if (success) {
-            usernameDisplay.textContent = newUsername;
-            showAlert("Username updated successfully!", "success");
-        } else {
-            showAlert("Failed to update username. Please try again.", "error");
-        }
+    // Add event listener for the remove button
+    card.querySelector('.remove-btn').addEventListener('click', () => {
+        removeFromPlaylist(item.id);
     });
 
-    // Handle profile picture update
-    profilePicUpload.addEventListener('change', async (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
+    return card;
+}
 
-        // NOTE: Replace this with an actual API call to upload the image.
-        const imageUrl = URL.createObjectURL(file);
-        
-        showAlert("Profile picture updated successfully! (Local preview)", "success");
-        profileImage.src = imageUrl;
+/**
+ * Renders the entire playlist from localStorage.
+ */
+function renderPlaylist() {
+    const myPlaylist = JSON.parse(localStorage.getItem('myPlaylist')) || [];
+    playlistGrid.innerHTML = ''; // Clear the grid before re-rendering
 
-        // Clean up the object URL to free up memory
-        profileImage.onload = () => URL.revokeObjectURL(imageUrl);
-    });
+    if (myPlaylist.length === 0) {
+        const emptyMessage = document.createElement('p');
+        emptyMessage.classList.add('empty-message');
+        emptyMessage.textContent = 'Your playlist is empty. Add some movies or TV shows to get started!';
+        playlistGrid.appendChild(emptyMessage);
+    } else {
+        myPlaylist.forEach(item => {
+            const card = createPlaylistCard(item);
+            playlistGrid.appendChild(card);
+        });
+    }
+}
 
-    // Initial fetch of user details
-    fetchUserDetails();
-});
+/**
+ * Removes an item from the playlist.
+ * @param {number} id - The ID of the item to remove.
+ */
+function removeFromPlaylist(id) {
+    let myPlaylist = JSON.parse(localStorage.getItem('myPlaylist')) || [];
+    const updatedPlaylist = myPlaylist.filter(item => item.id !== id);
+    localStorage.setItem('myPlaylist', JSON.stringify(updatedPlaylist));
+    renderPlaylist(); // Re-render the playlist
+}
+
+// Initial render when the page loads
+document.addEventListener('DOMContentLoaded', renderPlaylist);

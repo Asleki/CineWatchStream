@@ -40,8 +40,9 @@
 }
 
 .logo-image {
-  height: 40px;
+  height: 60px;
   margin-right: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .header-actions {

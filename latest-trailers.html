@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CineWatch: Explore the latest movie and TV show trailers. Stay up-to-date with new releases, popular hits, and upcoming content.">
+    <meta name="keywords" content="movie trailers, tv show trailers, new trailers, popular trailers, upcoming trailers, CineWatch">
+    <meta name="author" content="Alex Malunda">
+
+    <meta property="og:title" content="CineWatch - Latest Trailers">
+    <meta property="og:description" content="Watch the latest and most popular movie and TV show trailers on CineWatch.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asleki.github.io/CineWatchStreaming/latest-trailers.html">
+    <meta property="og:image" content="https://asleki.github.io/CineWatchStreaming/images/CineWatch-logo.ico">
+
+    <link rel="canonical" href="https://asleki.github.io/CineWatchStreaming/latest-trailers.html">
+
+    <title>CineWatch - Latest Trailers</title>
+
+    <link rel="icon" type="image/x-icon" href="images/CineWatch-logo.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/trailers.css">
+
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="trailers-page-main">
+        <section class="page-header">
+            <h1>Latest Trailers</h1>
+            <div class="filter-buttons">
+                <span id="filter-bar-indicator" class="filter-indicator"></span>
+                <button class="filter-btn active" data-filter="popular">Popular</button>
+                <button class="filter-btn" data-filter="now_playing">In Theaters</button>
+                <button class="filter-btn" data-filter="upcoming">Coming Soon</button>
+                <button class="filter-btn" data-filter="on_the_air">On TV</button>
+            </div>
+        </section>
+
+        <section class="trailers-grid-section">
+            <div id="trailers-grid-container" class="trailers-grid">
+                <div class="spinner"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <div id="trailerModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModalBtn" class="close-btn">&times;</span>
+            <div class="video-container">
+                <iframe id="trailerIframe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/header.js"></script>
+    <script src="js/trailers.js"></script>
+</body>
+</html>

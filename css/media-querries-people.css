@@ -1,0 +1,34 @@
+/* ==========================================================
+   File: media-querries-people.css
+   Purpose: Responsive styles for the popular people page on small screens.
+   ========================================================== */
+
+@media (max-width: 600px) {
+    /* Adjust grid columns to be smaller for more compact display on small screens */
+    .people-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    /* Change the person card to a flexible column layout for better stacking */
+    .person-card {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* Use an aspect ratio to control the image size and prevent distortion */
+    .person-photo-wrapper {
+        width: 100%;
+        aspect-ratio: 2 / 3;
+        overflow: hidden;
+    }
+
+    /* Ensure the image fills its container and keeps the face visible */
+    .person-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+}

@@ -3,13 +3,42 @@
    Purpose: Displays all items from the user's playlist saved in localStorage.
    ========================================================== */
 
-import { playlistManager } from './utils/playlist.js';
-import { setupPlaylistButtons } from './CineWatch-main.js';
-
 document.addEventListener('DOMContentLoaded', () => {
     const playlistGrid = document.getElementById('playlistGrid');
 
-    // Function to create and display a single playlist item card
+    /**
+     * Retrieves the playlist from localStorage.
+     * @returns {Array<Object>} The playlist array.
+     */
+    const getPlaylist = () => {
+        const playlist = localStorage.getItem('myPlaylist');
+        return playlist ? JSON.parse(playlist) : [];
+    };
+
+    /**
+     * Saves the updated playlist to localStorage.
+     * @param {Array<Object>} playlist - The updated playlist array.
+     */
+    const savePlaylist = (playlist) => {
+        localStorage.setItem('myPlaylist', JSON.stringify(playlist));
+    };
+
+    /**
+     * Removes an item from the playlist and reloads the display.
+     * @param {string} itemId - The ID of the item to remove.
+     */
+    const removeItem = (itemId) => {
+        let playlist = getPlaylist();
+        const updatedPlaylist = playlist.filter(item => item.id.toString() !== itemId);
+        savePlaylist(updatedPlaylist);
+        loadPlaylist();
+    };
+
+    /**
+     * Creates and displays a single playlist item card.
+     * @param {object} item - The playlist item object.
+     * @returns {HTMLElement} The created card element.
+     */
     const createPlaylistCard = (item) => {
         const card = document.createElement('div');
         card.className = 'playlist-item';
@@ -18,19 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = item.title || item.name;
 
         card.innerHTML = `
-            <a href="details.html?id=${item.id}&type=${item.type}">
+            <a href="details.html?id=${item.id}&type=${item.media_type}">
                 <img src="${posterUrl}" alt="${title}">
                 <h3>${title}</h3>
             </a>
-            <button class="remove-btn" data-id="${item.id}" data-type="${item.type}" title="Remove from Playlist">&times;</button>
+            <button class="remove-btn" data-id="${item.id}" title="Remove from Playlist">&times;</button>
         `;
 
         return card;
     };
 
-    // Load and display the playlist items on page load
+    /**
+     * Loads and displays the playlist items on page load.
+     */
     const loadPlaylist = () => {
-        const playlist = playlistManager.getPlaylist();
+        const playlist = getPlaylist();
         playlistGrid.innerHTML = ''; // Clear the container
 
         if (playlist.length === 0) {
@@ -40,10 +71,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = createPlaylistCard(item);
                 playlistGrid.appendChild(card);
             });
-            // Re-initialize remove buttons after all cards are added
-            setupPlaylistButtons('.remove-btn');
         }
     };
+
+    // Use event delegation to handle clicks on remove buttons
+    playlistGrid.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target.classList.contains('remove-btn')) {
+            const itemId = target.dataset.id;
+            removeItem(itemId);
+        }
+    });
 
     // Initialize the page
     loadPlaylist();

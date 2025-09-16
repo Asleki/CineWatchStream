@@ -413,6 +413,32 @@ main {
 #scrollToTopBtn:hover {
     background-color: var(--accent-primary);
 }
+
+/* =====================
+/* Toast Message Styling */
+/* ===================== */
+
+.toast-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(30, 255, 0, 0.8);
+    color: var(--primary-color-text-white);
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Class to make the toast message visible */
+.toast-message.show {
+    opacity: 1;
+}
 /* ======================== */
 /* Responsive Design       */
 /* ======================== */

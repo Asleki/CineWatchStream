@@ -29,9 +29,50 @@ const TMDB_GENRE_ID_COMEDY = '35';
 const TMDB_ACTOR_ID_JACKIE_CHAN = '18897';
 const TMDB_ACTOR_ID_SALMAN_KHAN = '17926';
 
+let currentHeroShow; // Global variable to store the featured show
+
 // =====================
 // Utility Functions
 // =====================
+
+// Map of genre IDs to names
+const genreMap = {
+    28: 'Action', 12: 'Adventure', 16: 'Animation', 35: 'Comedy', 80: 'Crime',
+    99: 'Documentary', 18: 'Drama', 10751: 'Family', 14: 'Fantasy', 36: 'History',
+    27: 'Horror', 10402: 'Music', 9648: 'Mystery', 10749: 'Romance', 878: 'Science Fiction',
+    10770: 'TV Movie', 53: 'Thriller', 10752: 'War', 37: 'Western',
+    10759: 'Action & Adventure', 10762: 'Kids', 10763: 'News', 10764: 'Reality',
+    10765: 'Sci-Fi & Fantasy', 10766: 'Soap', 10767: 'Talk', 10768: 'War & Politics'
+};
+
+// Map of language codes to names
+const languageMap = {
+    'en': 'English', 'es': 'Spanish', 'fr': 'French', 'hi': 'Hindi', 'ko': 'Korean', 'zh': 'Chinese'
+};
+
+/**
+ * Displays a temporary confirmation message to the user.
+ * @param {string} message - The message to display.
+ */
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.classList.add('toast-message');
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    // Make the toast visible
+    requestAnimationFrame(() => {
+        toast.classList.add('show');
+    });
+
+    // Animate the fade-out and remove the toast after 3 seconds
+    setTimeout(() => {
+        toast.classList.remove('show');
+        toast.addEventListener('transitionend', () => {
+            toast.remove();
+        }, { once: true });
+    }, 3000);
+}
 
 /**
  * Fetches data from the TMDb API.
@@ -146,6 +187,7 @@ async function fetchFeaturedContent() {
     
     if (data && data.results && data.results.length > 0) {
         const featured = data.results[0];
+        currentHeroShow = featured; // Store the featured show in the global variable
         const backdropPath = featured.backdrop_path;
         const posterPath = featured.poster_path;
         const title = featured.title || featured.name;
@@ -501,7 +543,47 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Load featured content for hero section
     await fetchFeaturedContent();
-    
+
+    // Add to playlist functionality
+    const heroAddToPlaylistBtn = document.getElementById('heroAddToPlaylistBtn');
+    if (heroAddToPlaylistBtn) {
+        heroAddToPlaylistBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            if (!currentHeroShow) {
+                showToast('Could not add to playlist. Please try again.');
+                return;
+            }
+
+            // Get the existing playlist from localStorage or create a new array
+            const myPlaylist = JSON.parse(localStorage.getItem('myPlaylist')) || [];
+            
+            // Check if the show is already in the playlist
+            const isAlreadyInPlaylist = myPlaylist.some(item => item.id === currentHeroShow.id);
+
+            if (isAlreadyInPlaylist) {
+                showToast('This show is already in your playlist!');
+            } else {
+                // Get detailed info for the show to save to playlist
+                const showDetails = {
+                    id: currentHeroShow.id,
+                    title: currentHeroShow.title || currentHeroShow.name,
+                    overview: currentHeroShow.overview,
+                    poster_path: currentHeroShow.poster_path,
+                    backdrop_path: currentHeroShow.backdrop_path,
+                    release_date: currentHeroShow.release_date || currentHeroShow.first_air_date,
+                    vote_average: currentHeroShow.vote_average,
+                    media_type: currentHeroShow.media_type,
+                    genres: (currentHeroShow.genre_ids || []).map(id => genreMap[id]).join(', '),
+                    language: languageMap[currentHeroShow.original_language] || currentHeroShow.original_language.toUpperCase()
+                };
+                myPlaylist.push(showDetails);
+                localStorage.setItem('myPlaylist', JSON.stringify(myPlaylist));
+                showToast('Added to your playlist!');
+            }
+        });
+    }
+
     // Define categories for easy iteration
     const categories = [
         { id: 'popularTvSection', containerId: 'popularTvContainer', endpoint: '/tv/popular', mediaType: 'tv', customFetch: null, totalFetch: 20, displayLimit: 10 },

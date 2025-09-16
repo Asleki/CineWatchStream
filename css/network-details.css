@@ -8,11 +8,12 @@
    ---------------------------------------------------------- */
 .hero-section {
     position: relative;
-    height: 80vh;
+    height: auto; /* Use auto height for flexibility */
     min-height: 500px;
     display: flex;
     align-items: center;
-    padding: 0 4%;
+    justify-content: center; /* Center content horizontally on small screens */
+    padding: 20px 4%; /* Add padding for spacing */
     background-size: cover;
     background-position: center center;
     transition: background-image 0.5s ease-in-out;
@@ -32,24 +33,28 @@
 
 .hero-content {
     display: flex;
+    flex-direction: column; /* Stacks columns vertically on mobile */
     align-items: center;
-    gap: 40px;
+    text-align: center;
+    gap: 20px; /* Adjust spacing between elements */
     position: relative;
     z-index: 2;
-    /* Make all content within the hero section white */
     color: white;
+    width: 100%; /* Ensure content takes full width */
 }
 
-.left-column {
+.left-column, .right-column {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
     gap: 15px;
 }
 
 #heroPoster {
-    width: 250px;
+    width: 80%; /* Fluid width for responsiveness */
+    max-width: 250px; /* Prevents it from getting too large */
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -57,27 +62,15 @@
 }
 
 .right-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    flex-grow: 1;
+    align-items: center;
 }
 
 #heroShowName {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 8vw, 3.5rem); /* Fluid font size */
     font-weight: 700;
     margin-bottom: 10px;
-    /* This will override the parent's color to your accent color */
     color: var(--accent-primary);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-#heroNetworkName {
-    /* Style for the LaTeX-rendered network name */
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0;
 }
 
 .network-logo-wrapper {
@@ -121,6 +114,22 @@
     border-radius: 20px;
 }
 
+/* ----------------------------------------------------------
+   Responsive Design
+   ---------------------------------------------------------- */
+@media (min-width: 769px) {
+    .hero-content {
+        flex-direction: row; /* Switches to a row layout on larger screens */
+        text-align: left;
+        align-items: center;
+        gap: 40px;
+    }
+    .left-column, .right-column {
+        align-items: flex-start;
+        text-align: left;
+        width: auto;
+    }
+}
 /* ----------------------------------------------------------
    Show Cards - Grid View
    ---------------------------------------------------------- */

@@ -1,0 +1,236 @@
+/* =====================
+   trailers.css
+   ===================== */
+   
+/* General page layout for trailers */
+.trailers-page-main {
+    padding: 20px;
+    min-height: 80vh;
+}
+
+/* Page header and filter buttons */
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    position: relative;
+    background-color: var(--bg-card);
+    padding: 8px;
+    border-radius: 50px;
+    box-shadow: inset 0 2px 4px var(--shadow-secondary);
+}
+
+.filter-btn {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.filter-btn:hover {
+    color: var(--text-link-hover);
+}
+
+/* The moving background bar */
+.filter-indicator {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: var(--accent-primary);
+    height: calc(100% - 16px);
+    border-radius: 50px;
+    z-index: 0;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+.filter-btn.active {
+    color: var(--btn-primary-text);
+}
+
+/* Trailers Grid */
+.trailers-grid-section {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.trailers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Trailer Card */
+.trailer-card {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--shadow-secondary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    cursor: pointer;
+}
+
+.trailer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-primary);
+}
+
+.trailer-thumbnail {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    position: relative;
+}
+
+.trailer-thumbnail-wrapper {
+    position: relative;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.3s ease;
+    pointer-events: none;
+}
+
+.trailer-card:hover .play-icon {
+    color: var(--accent-primary);
+}
+
+.trailer-info {
+    padding: 15px;
+    min-height: 100px;
+}
+
+.trailer-info h4 {
+    font-size: 1.2rem;
+    margin: 0 0 5px;
+    color: var(--text-primary);
+}
+
+.trailer-info p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Spinner */
+.spinner {
+    border: 5px solid var(--border-primary);
+    border-top: 5px solid var(--accent-primary);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error message styling */
+.error-message {
+    color: var(--text-secondary);
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 50px;
+    grid-column: 1 / -1;
+}
+
+/* =====================
+   Modal Styling
+   ===================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-overlay);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    position: relative;
+    padding: 0;
+    width: 90%;
+    max-width: 900px;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.close-btn {
+    color: var(--text-primary);
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 1001;
+    cursor: pointer;
+    text-shadow: 0 0 5px var(--shadow-primary);
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--accent-primary);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
