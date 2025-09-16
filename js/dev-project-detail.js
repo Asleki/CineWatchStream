@@ -32,7 +32,7 @@ const SKILL_ICONS = {
  * @returns {string} The HTML string for the skill icons.
  */
 function createSkillIcons(skills) {
-    return skills.map(skill => {
+    return (skills || []).map(skill => {
         const iconClass = SKILL_ICONS[skill] || "fa-solid fa-code"; // Default icon if not found
         return `<span class="skill-icon" title="${skill}"><i class="${iconClass}"></i></span>`;
     }).join('');
@@ -85,7 +85,24 @@ async function loadProjectDetails() {
 
         const featuresList = document.getElementById('features-list');
         if (featuresList) {
-            featuresList.innerHTML = project.features.map(feature => `<li>${feature}</li>`).join('');
+            // The change here prevents the 'undefined' error
+            featuresList.innerHTML = (project.features || []).map(feature => `<li>${feature}</li>`).join('');
+        }
+
+        // Check for and display live and GitHub links
+        const liveLinkContainer = document.getElementById('live-link-container');
+        const githubLinkContainer = document.getElementById('github-link-container');
+
+        if (liveLinkContainer && project.liveLink) {
+            liveLinkContainer.innerHTML = `<a href="${project.liveLink}" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa-solid fa-external-link-alt"></i> Live Demo
+            </a>`;
+        }
+
+        if (githubLinkContainer && project.github) {
+            githubLinkContainer.innerHTML = `<a href="${project.github}" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa-brands fa-github"></i> GitHub Repo
+            </a>`;
         }
 
         // Update page title for SEO and usability
