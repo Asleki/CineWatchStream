@@ -6,7 +6,7 @@
 .terms-hero {
     position: relative;
     height: 250px;
-    background-image: url('https://placehold.co/1920x400/282828/f0f0f0?text=Terms+of+Service');
+    background-image: url('../images/abouthero.jpg');
     background-size: cover;
     background-position: center;
     display: flex;

@@ -6,7 +6,7 @@
 .contact-hero {
     position: relative;
     height: 300px;
-    background-image: url('https://placehold.co/1920x400/282828/f0f0f0?text=Contact+Us');
+    background-image: url('../images/contacthero.jpg');
     background-size: cover;
     background-position: center;
     display: flex;

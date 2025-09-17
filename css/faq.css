@@ -6,7 +6,7 @@
 .faq-hero {
     position: relative;
     height: 250px;
-    background-image: url('https://placehold.co/1920x400/282828/f0f0f0?text=FAQ');
+    background-image: url('../images/policy.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
